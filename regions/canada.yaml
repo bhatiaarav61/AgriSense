@@ -1,0 +1,343 @@
+id: canada
+name: "Canada"
+displayName:
+  en: "Canada"
+  fr: "Canada"
+isoCode: "CA"
+timezone: "America/Toronto"
+languages:
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+  - code: "fr"
+    name: "French"
+    nativeName: "Français"
+    rtl: false
+defaultLanguage: "en"
+currency: "CAD"
+coordinates:
+  latMin: 42.0
+  latMax: 70.0
+  lonMin: -141.0
+  lonMax: -52.6
+crops:
+  - id: "wheat"
+    name: "Wheat"
+    scientificName: "Triticum aestivum"
+    localNames:
+      en: "Wheat"
+      fr: "Blé"
+    growingSeasons: ["spring", "winter"]
+    diseaseClasses: ["fusarium_head_blight", "yellow_rust", "tan_spot"]
+    icon: "🌾"
+    color: "#D97706"
+  - id: "canola"
+    name: "Canola"
+    scientificName: "Brassica napus"
+    localNames:
+      en: "Canola"
+      fr: "Canola"
+    growingSeasons: ["spring"]
+    diseaseClasses: ["canola_blackleg", "clubroot", "sclerotinia_stem_rot"]
+    icon: "🌼"
+    color: "#FACC15"
+  - id: "barley"
+    name: "Barley"
+    scientificName: "Hordeum vulgare"
+    localNames:
+      en: "Barley"
+      fr: "Orge"
+    growingSeasons: ["spring"]
+    diseaseClasses: ["barley_net_blotch", "barley_scald"]
+    icon: "🌿"
+    color: "#65A30D"
+  - id: "potato"
+    name: "Potato"
+    scientificName: "Solanum tuberosum"
+    localNames:
+      en: "Potato"
+      fr: "Pomme de terre"
+    growingSeasons: ["spring"]
+    diseaseClasses: ["potato_late_blight"]
+    icon: "🥔"
+    color: "#A16207"
+diseases:
+  - id: "fusarium_head_blight"
+    name: "Fusarium Head Blight (Scab)"
+    scientificName: "Fusarium graminearum"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Bleached spikelets on otherwise green heads"
+      - "Orange spore masses at glume bases"
+      - "Shriveled tombstone grain with DON risk"
+    localNames:
+      en: "Fusarium Head Blight"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered DMI fungicide at flowering when risk models warn; use moderately resistant varieties and manage DON at harvest."
+    preventiveMeasures:
+      - "Avoid maize as previous crop"
+      - "MR varieties"
+      - "Risk-based flowering spray"
+      - "Clean seed"
+    imageTags: ["fusarium_head_blight", "scab", "wheat"]
+    confidenceThreshold: 0.75
+  - id: "yellow_rust"
+    name: "Stripe Rust"
+    scientificName: "Puccinia striiformis"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Yellow pustules in stripes along veins"
+      - "Yellow spore dust on hands"
+      - "Favored by cool, humid weather"
+    localNames:
+      en: "Stripe Rust"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered triazole at first foci and monitor weekly; choose resistant varieties for the prairies."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Weekly scouting in spring"
+      - "Timely fungicide at detection"
+    imageTags: ["stripe_rust", "wheat_rust", "wheat"]
+    confidenceThreshold: 0.7
+  - id: "tan_spot"
+    name: "Tan Spot"
+    scientificName: "Pyrenophora tritici-repentis"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Small tan-brown oval lesions with yellow halo"
+      - "Expands to diamond-shaped blotches"
+      - "Worse in continuous wheat with surface residue"
+    localNames:
+      en: "Tan Spot"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): A registered fungicide at flag leaf pays when lesions cover the upper canopy; rotate and manage residue."
+    preventiveMeasures:
+      - "Rotation out of wheat"
+      - "Residue management"
+      - "Resistant varieties"
+    imageTags: ["tan_spot", "pyrenophora", "wheat"]
+    confidenceThreshold: 0.65
+  - id: "canola_blackleg"
+    name: "Blackleg"
+    scientificName: "Leptosphaeria maculans"
+    cropIds: ["canola"]
+    symptoms:
+      - "Lesions on leaves with dark pycnidia specks"
+      - "Stem-base canker and cross-section blackening"
+      - "Premature ripening and lodging"
+    localNames:
+      en: "Blackleg"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Use resistant (R-gene) varieties matched to local pathotype and a registered fungicide at the 2–4 leaf stage where risk is high; rotate canola 2–3 years."
+    preventiveMeasures:
+      - "Long rotations (2–3 years)"
+      - "R-gene resistant varieties"
+      - "Bury infected residue"
+      - "Scout stubble for cankers"
+    imageTags: ["blackleg", "leptosphaeria", "canola"]
+    confidenceThreshold: 0.7
+  - id: "clubroot"
+    name: "Clubroot"
+    scientificName: "Plasmodiophora brassicae"
+    cropIds: ["canola"]
+    symptoms:
+      - "Clubbed, swollen roots"
+      - "Yellowing and wilting patches in the field"
+      - "Premature death and tiny pods"
+    localNames:
+      en: "Clubroot"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — plant clubroot-resistant varieties, lengthen rotations, and prevent soil movement (clean equipment, limit traffic in infested patches)."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Long rotation (3–4 years)"
+      - "Equipment sanitation"
+      - "Scout and patch-manage early"
+    imageTags: ["clubroot", "plasmodiophora", "canola"]
+    confidenceThreshold: 0.75
+  - id: "sclerotinia_stem_rot"
+    name: "Sclerotinia Stem Rot"
+    scientificName: "Sclerotinia sclerotiorum"
+    cropIds: ["canola"]
+    symptoms:
+      - "Bleached, shredded stems with black sclerotia inside"
+      - "White mold in humid canopy at flowering"
+      - "Premature ripening in patches"
+    localNames:
+      en: "Sclerotinia Stem Rot"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered fungicide at 20–50% flowering when the petal-test/weather risk is high; rotate with cereals."
+    preventiveMeasures:
+      - "Rotation with non-hosts"
+      - "Risk-based spraying at flowering"
+      - "Avoid very dense canopies"
+    imageTags: ["sclerotinia", "white_mold", "canola"]
+    confidenceThreshold: 0.7
+  - id: "barley_net_blotch"
+    name: "Net Blotch"
+    scientificName: "Pyrenophora teres"
+    cropIds: ["barley"]
+    symptoms:
+      - "Net-like dark streaks expanding to blotches"
+      - "Yellow halos around lesions"
+      - "Seed- and residue-borne"
+    localNames:
+      en: "Net Blotch"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Use certified seed and a registered fungicide at flag leaf when disease is moving up the canopy; rotate out of barley."
+    preventiveMeasures:
+      - "Certified seed"
+      - "Rotation"
+      - "Residue management"
+    imageTags: ["net_blotch", "pyrenophora", "barley"]
+    confidenceThreshold: 0.7
+  - id: "barley_scald"
+    name: "Scald"
+    scientificName: "Rhynchosporium secalis"
+    cropIds: ["barley"]
+    symptoms:
+      - "Gray-green water-soaked lesions with scalloped brown margins"
+      - "Lesions on leaves and sheaths"
+      - "Favored by cool, wet weather"
+    localNames:
+      en: "Scald"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered fungicide when lesions reach the upper canopy; resistant varieties and seed treatment help."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Certified seed"
+      - "Rotation"
+    imageTags: ["scald", "rhynchosporium", "barley"]
+    confidenceThreshold: 0.7
+  - id: "potato_late_blight"
+    name: "Potato Late Blight"
+    scientificName: "Phytophthora infestans"
+    cropIds: ["potato"]
+    symptoms:
+      - "Water-soaked dark lesions with white mold ring under leaves"
+      - "Rapid spread in cool humid weather"
+      - "Tuber rot in field and storage"
+    localNames:
+      en: "Late Blight"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Follow a DSS (e.g., spore/trap networks) and apply a registered late-blight fungicide on a protective schedule in risk periods; destroy cull piles."
+    preventiveMeasures:
+      - "Certified seed"
+      - "Destroy cull and volunteer plants"
+      - "Protective fungicide calendar"
+      - "Timely haulm destruction"
+    imageTags: ["late_blight", "phytophthora", "potato"]
+    confidenceThreshold: 0.75
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "America/Toronto"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B08", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["canada"]
+    priority: 100
+    enabled: true
+  - id: "groq-1"
+    name: "Groq"
+    type: "groq"
+    baseUrl: "https://api.groq.com/openai/v1"
+    apiKeyEnvVar: "GROQ_API_KEY"
+    models:
+      llama-3.1-70b-versatile:
+        id: "llama-3.1-70b-versatile"
+        taskTypes: ["advisory", "chat", "yield-prediction"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 6000
+      tokensPerMinute: 6000
+    regions: ["canada"]
+    priority: 90
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in Canada.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "advisory-en"
+    taskType: "advisory"
+    language: "en"
+    systemPrompt: |
+      You are a provincial extension agronomist for Canadian growers.
+      Give practical, economical, label-compliant advice (IPM first).
+      Respond ONLY with valid JSON:
+      {
+        "treatment": "step-by-step treatment instructions",
+        "preventive_measures": ["measure1", "measure2"],
+        "follow_up": "when to re-check and next steps",
+        "safety_warnings": ["warning1", "warning2"]
+      }
+    userPromptTemplate: |
+      Provide a recommendation for {disease} in {crop} ({region}).
+      Severity: {severity}. Language: {language}.
+      Symptoms: {symptoms}
+      Local names: {local_names}
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.1.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/canada-v1.1.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2026-09-27T00:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "Canada region configuration: wheat, canola, barley and potato; English and French support."

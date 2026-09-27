@@ -1,0 +1,297 @@
+id: australia
+name: "Australia"
+displayName:
+  en: "Australia"
+isoCode: "AU"
+timezone: "Australia/Sydney"
+languages:
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+defaultLanguage: "en"
+currency: "AUD"
+coordinates:
+  latMin: -43.7
+  latMax: -10.7
+  lonMin: 113.2
+  lonMax: 153.6
+crops:
+  - id: "wheat"
+    name: "Wheat"
+    scientificName: "Triticum aestivum"
+    localNames:
+      en: "Wheat"
+    growingSeasons: ["winter"]
+    diseaseClasses: ["stripe_rust", "tan_spot", "septoria_nodorum_blotch"]
+    icon: "🌾"
+    color: "#D97706"
+  - id: "barley"
+    name: "Barley"
+    scientificName: "Hordeum vulgare"
+    localNames:
+      en: "Barley"
+    growingSeasons: ["winter"]
+    diseaseClasses: ["barley_net_blotch", "barley_powdery_mildew"]
+    icon: "🌿"
+    color: "#65A30D"
+  - id: "grape"
+    name: "Grapevine"
+    scientificName: "Vitis vinifera"
+    localNames:
+      en: "Grapevine"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["grape_powdery_mildew"]
+    icon: "🍇"
+    color: "#7C3AED"
+  - id: "cotton"
+    name: "Cotton"
+    scientificName: "Gossypium hirsutum"
+    localNames:
+      en: "Cotton"
+    growingSeasons: ["summer-irrigated"]
+    diseaseClasses: ["verticillium_wilt_cotton"]
+    icon: "🧵"
+    color: "#94A3B8"
+diseases:
+  - id: "stripe_rust"
+    name: "Stripe Rust"
+    scientificName: "Puccinia striiformis"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Yellow pustules in stripes along veins"
+      - "Yellow spore dust rubs off"
+      - "Can explode through a variety in one season"
+    localNames:
+      en: "Stripe Rust"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered triazole at first detection and follow with a second fungicide per label in continuing pressure; monitor variety rust ratings."
+    preventiveMeasures:
+      - "Avoid susceptible varieties"
+      - "Graze or early-sow management"
+      - "Weekly scouting in spring"
+      - "Remove volunteer wheat (green bridge)"
+    imageTags: ["stripe_rust", "wheat_rust", "wheat"]
+    confidenceThreshold: 0.7
+  - id: "tan_spot"
+    name: "Yellow Spot (Tan Spot)"
+    scientificName: "Pyrenophora tritici-repentis"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Tan-brown oval lesions with yellow halo"
+      - "Starts on lower leaves from stubble-borne spores"
+      - "Worst in wheat-on-wheat stubble systems"
+    localNames:
+      en: "Yellow Spot"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered fungicide at flag leaf–GS39 when upper-canopy infection threatens; rotate away from wheat stubble where possible."
+    preventiveMeasures:
+      - "Avoid wheat-on-wheat"
+      - "Stubble management"
+      - "Resistant varieties"
+      - "Paddock selection"
+    imageTags: ["tan_spot", "pyrenophora", "wheat"]
+    confidenceThreshold: 0.65
+  - id: "septoria_nodorum_blotch"
+    name: "Septoria Nodorum Blotch"
+    scientificName: "Parastagonospora nodorum"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Brown lens-shaped lesions without distinct margins"
+      - "Glume blotch on heads later (brown-speckled glumes)"
+      - "Favored by wet, windy spells"
+    localNames:
+      en: "Septoria Nodorum Blotch"
+    severityLevels: ["medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered fungicide at flag leaf and again at head emergence if glume blotch threatens; choose varieties with decent nodorum ratings."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Seed treatment (seed-borne phase)"
+      - "Stubble management"
+    imageTags: ["nodorum_blotch", "stagonospora", "wheat"]
+    confidenceThreshold: 0.65
+  - id: "barley_net_blotch"
+    name: "Net Blotch"
+    scientificName: "Pyrenophora teres"
+    cropIds: ["barley"]
+    symptoms:
+      - "Net-like dark streaks becoming blotches"
+      - "Yellow halos around lesions"
+      - "Stubble-borne; worst in barley-on-barley"
+    localNames:
+      en: "Net Blotch"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered fungicide at GS31–GS39 when disease is climbing the canopy; paddock selection away from barley stubble."
+    preventiveMeasures:
+      - "Avoid barley-on-barley"
+      - "Resistant varieties"
+      - "Green-bridge control"
+    imageTags: ["net_blotch", "pyrenophora", "barley"]
+    confidenceThreshold: 0.7
+  - id: "barley_powdery_mildew"
+    name: "Barley Powdery Mildew"
+    scientificName: "Blumeria graminis f.sp. hordei"
+    cropIds: ["barley"]
+    symptoms:
+      - "White fluffy patches on leaves turning gray"
+      - "Tiny black specks in older patches"
+      - "Lush, nitrogen-rich crops most affected"
+    localNames:
+      en: "Powdery Mildew"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered mildewicide when patches cover the upper canopy before GS39; adjust nitrogen and choose resistant varieties."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Moderate nitrogen"
+      - "Early monitoring"
+    imageTags: ["powdery_mildew", "blumeria", "barley"]
+    confidenceThreshold: 0.7
+  - id: "grape_powdery_mildew"
+    name: "Grapevine Powdery Mildew"
+    scientificName: "Erysiphe necator"
+    cropIds: ["grape"]
+    symptoms:
+      - "White-gray powdery film on leaves and bunches"
+      - "Berries scar or split"
+      - "Favored by warm, humid canopy conditions"
+    localNames:
+      en: "Powdery Mildew"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply registered sulfur or DMI program from pre-flowering to bunch closure per label; open the canopy by shoot thinning."
+    preventiveMeasures:
+      - "Sulfur program"
+      - "Canopy management"
+      - "Monitor bunch zone"
+    imageTags: ["powdery_mildew", "erysiphe", "grape"]
+    confidenceThreshold: 0.7
+  - id: "verticillium_wilt_cotton"
+    name: "Verticillium Wilt"
+    scientificName: "Verticillium dahliae"
+    cropIds: ["cotton"]
+    symptoms:
+      - "Interveinal yellowing ('tiger-striped' leaves)"
+      - "One-sided branch wilting"
+      - "Brown discoloration of vascular tissue"
+    localNames:
+      en: "Verticillium Wilt"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — use tolerant varieties, avoid infested fields for sensitive crops, and manage stubble; soil testing informs severity class."
+    preventiveMeasures:
+      - "Tolerant varieties"
+      - "Rotation to cereals"
+      - "Hygiene of machinery and soil movement"
+      - "Avoid over-irrigation"
+    imageTags: ["verticillium", "wilt", "cotton"]
+    confidenceThreshold: 0.7
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "Australia/Sydney"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B08", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["australia"]
+    priority: 100
+    enabled: true
+  - id: "groq-1"
+    name: "Groq"
+    type: "groq"
+    baseUrl: "https://api.groq.com/openai/v1"
+    apiKeyEnvVar: "GROQ_API_KEY"
+    models:
+      llama-3.1-70b-versatile:
+        id: "llama-3.1-70b-versatile"
+        taskTypes: ["advisory", "chat", "yield-prediction"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 6000
+      tokensPerMinute: 6000
+    regions: ["australia"]
+    priority: 90
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in Australia.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "advisory-en"
+    taskType: "advisory"
+    language: "en"
+    systemPrompt: |
+      You are a state department agronomist for Australian growers.
+      Give practical, economical, label-compliant advice (IPM first).
+      Respond ONLY with valid JSON:
+      {
+        "treatment": "step-by-step treatment instructions",
+        "preventive_measures": ["measure1", "measure2"],
+        "follow_up": "when to re-check and next steps",
+        "safety_warnings": ["warning1", "warning2"]
+      }
+    userPromptTemplate: |
+      Provide a recommendation for {disease} in {crop} ({region}).
+      Severity: {severity}. Language: {language}.
+      Symptoms: {symptoms}
+      Local names: {local_names}
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.1.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/australia-v1.1.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2026-09-27T00:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "Australia region configuration: wheat, barley, grapevine and cotton; English support."

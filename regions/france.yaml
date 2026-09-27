@@ -1,0 +1,315 @@
+id: france
+name: "France"
+displayName:
+  en: "France"
+  fr: "France"
+isoCode: "FR"
+timezone: "Europe/Paris"
+languages:
+  - code: "fr"
+    name: "French"
+    nativeName: "Français"
+    rtl: false
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+defaultLanguage: "fr"
+currency: "EUR"
+coordinates:
+  latMin: 41.3
+  latMax: 51.3
+  lonMin: -5.2
+  lonMax: 9.7
+crops:
+  - id: "wheat"
+    name: "Wheat"
+    scientificName: "Triticum aestivum"
+    localNames:
+      en: "Wheat"
+      fr: "Blé tendre"
+    growingSeasons: ["autumn-sown"]
+    diseaseClasses: ["yellow_rust", "septoria_leaf_blotch"]
+    icon: "🌾"
+    color: "#D97706"
+  - id: "grape"
+    name: "Grapevine"
+    scientificName: "Vitis vinifera"
+    localNames:
+      en: "Grapevine"
+      fr: "Vigne"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["grape_downy_mildew", "grape_powdery_mildew"]
+    icon: "🍇"
+    color: "#7C3AED"
+  - id: "potato"
+    name: "Potato"
+    scientificName: "Solanum tuberosum"
+    localNames:
+      en: "Potato"
+      fr: "Pomme de terre"
+    growingSeasons: ["spring"]
+    diseaseClasses: ["potato_late_blight"]
+    icon: "🥔"
+    color: "#A16207"
+  - id: "maize"
+    name: "Maize"
+    scientificName: "Zea mays"
+    localNames:
+      en: "Maize"
+      fr: "Maïs"
+    growingSeasons: ["spring-sown"]
+    diseaseClasses: ["maize_eyespot", "common_rust"]
+    icon: "🌽"
+    color: "#F59E0B"
+diseases:
+  - id: "yellow_rust"
+    name: "Yellow (Stripe) Rust"
+    scientificName: "Puccinia striiformis"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Yellow pustules in stripes along leaf veins"
+      - "Yellow powder rubs off easily"
+      - "Severe in cool, wet springs"
+    localNames:
+      en: "Yellow Rust"
+      fr: "Rouille jaune"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply an authorized triazole (e.g., propiconazole 25% EC @ 1ml/L) at first signs; respect French CRd dose guidance. Prefer resistant varieties."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Monitor from stem extension"
+      - "Balanced nitrogen"
+      - "Varied sowing dates"
+    imageTags: ["yellow_rust", "wheat_rust", "wheat"]
+    confidenceThreshold: 0.7
+  - id: "septoria_leaf_blotch"
+    name: "Septoria Leaf Blotch"
+    scientificName: "Zymoseptoria tritici"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Long gray-brown streaks between veins"
+      - "Tiny black fruiting bodies in lesions"
+      - "Progresses from lower leaves upward"
+    localNames:
+      en: "Septoria Leaf Blotch"
+      fr: "Septoriose"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Treat at T1–T2 stages (flag leaf) with a multisite + triazole program per French guidance. Rotate modes of action."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Bury crop residue"
+      - "Crop rotation"
+      - "Avoid very dense canopies"
+    imageTags: ["septoria", "zymoseptoria", "wheat"]
+    confidenceThreshold: 0.7
+  - id: "grape_downy_mildew"
+    name: "Grapevine Downy Mildew"
+    scientificName: "Plasmopara viticola"
+    cropIds: ["grape"]
+    symptoms:
+      - "Oil spots (yellow, translucent) on leaves"
+      - "White downy growth on leaf underside"
+      - "Brown shriveling of berries (rot)"
+    localNames:
+      en: "Downy Mildew"
+      fr: "Mildiou"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply authorized fungicide (metalaxyl-family, cymoxanil or copper for organic) at 5–6 leaves and before each rain period; remove suckers for airflow."
+    preventiveMeasures:
+      - "Pre-rain protective sprays"
+      - "Canopy management and leaf thinning"
+      - "Remove infected debris"
+      - "Adequate vineyard drainage"
+    imageTags: ["downy_mildew", "plasmopara", "grape"]
+    confidenceThreshold: 0.7
+  - id: "grape_powdery_mildew"
+    name: "Grapevine Powdery Mildew"
+    scientificName: "Erysiphe necator"
+    cropIds: ["grape"]
+    symptoms:
+      - "White-gray powdery film on leaves and berries"
+      - "Berries split or scarred"
+      - "Ascosporic infections on young leaves in spring"
+    localNames:
+      en: "Powdery Mildew"
+      fr: "Oïdium"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply sulfur (8–20 kg/ha depending on stage) or authorized DMI/SDHI fungicides from flowering; never exceed residue limits."
+    preventiveMeasures:
+      - "Sulfur program from early season"
+      - "Canopy aeration"
+      - "Remove high-risk dense zones"
+      - "Monitor bunch closure onward"
+    imageTags: ["powdery_mildew", "erysiphe", "grape"]
+    confidenceThreshold: 0.7
+  - id: "potato_late_blight"
+    name: "Potato Late Blight"
+    scientificName: "Phytophthora infestans"
+    cropIds: ["potato"]
+    symptoms:
+      - "Water-soaked gray-green blotches with white mold ring under leaves"
+      - "Brown lesions spread fast in humid weather"
+      - "Tuber rot in storage"
+    localNames:
+      en: "Late Blight"
+      fr: "Mildiou de la pomme de terre"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Use a disease-warning service; apply authorized anti-mildew products (cyazofamid, mandipropamid, copper for organic) on a 7–10 day cadence in risk periods."
+    preventiveMeasures:
+      - "Certified seed"
+      - "Destroy volunteer potatoes"
+      - "Timed haulm destruction"
+      - "Avoid overhead irrigation"
+    imageTags: ["late_blight", "phytophthora", "potato"]
+    confidenceThreshold: 0.75
+  - id: "maize_eyespot"
+    name: "Maize Eyespot"
+    scientificName: "Aureobasidium zeae"
+    cropIds: ["maize"]
+    symptoms:
+      - "Small round lesions with brown ring and translucent halo"
+      - "Coalesce into necrotic patches late season"
+      - "Worse in cool, humid fields with residue"
+    localNames:
+      en: "Eyespot"
+      fr: "Helminthosporiose (ocellaire)"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Usually controlled by residue management and varietal choice; a fungicide is rarely justified — consult local guidance before treating."
+    preventiveMeasures:
+      - "Bury or remove maize residue"
+      - "Rotate crops"
+      - "Choose tolerant hybrids"
+      - "Avoid continuous maize"
+    imageTags: ["eyespot", "aureobasidium", "maize"]
+    confidenceThreshold: 0.65
+  - id: "common_rust"
+    name: "Common Rust"
+    scientificName: "Puccinia sorghi"
+    cropIds: ["maize"]
+    symptoms:
+      - "Cinnamon-brown pustules scattered on leaves"
+      - "Powdery spores rub off"
+      - "Favors warm, humid nights"
+    localNames:
+      en: "Common Rust"
+      fr: "Rouille du maïs"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Usually minor in France; if severe on sensitive hybrids before grain fill, an authorized triazole may pay — weigh economics first."
+    preventiveMeasures:
+      - "Tolerant hybrids"
+      - "Balanced fertility"
+      - "Avoid very late sowing"
+    imageTags: ["common_rust", "puccinia", "maize"]
+    confidenceThreshold: 0.65
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "Europe/Paris"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B08", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["france"]
+    priority: 100
+    enabled: true
+  - id: "openrouter-1"
+    name: "OpenRouter"
+    type: "openrouter"
+    baseUrl: "https://openrouter.ai/api/v1"
+    apiKeyEnvVar: "OPENROUTER_API_KEY"
+    models:
+      google/gemini-flash-1.5:
+        id: "google/gemini-flash-1.5"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 20
+      requestsPerDay: 500
+    regions: ["france"]
+    priority: 60
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in France.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "advisory-fr"
+    taskType: "advisory"
+    language: "fr"
+    systemPrompt: |
+      Vous êtes ingénieur agronome pour les agriculteurs français.
+      Donnez des conseils pratiques, économiques et conformes à la réglementation française.
+      Répondez UNIQUEMENT en JSON valide :
+      {
+        "treatment": "instructions de traitement étape par étape",
+        "preventive_measures": ["mesure1", "mesure2"],
+        "follow_up": "quand et quoi vérifier ensuite",
+        "safety_warnings": ["avertissement1", "avertissement2"]
+      }
+    userPromptTemplate: |
+      Donnez un avis pour {disease} sur {crop} ({region}).
+      Gravité : {severity}. Langue : {language}.
+      Symptômes : {symptoms}
+      Noms locaux : {local_names}
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.1.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/france-v1.1.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2026-09-27T00:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "France region configuration: wheat, grapevine, potato and maize; French language support."

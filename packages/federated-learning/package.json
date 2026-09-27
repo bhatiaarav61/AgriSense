@@ -1,0 +1,26 @@
+{
+  "name": "@agrisense/federated-learning",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "server": "tsx src/server.ts",
+    "client": "tsx src/client.ts"
+  },
+  "dependencies": {
+    "@agrisense/region-config": "^1.0.0",
+    "@agrisense/shared-sdk": "^1.0.0",
+    "ws": "^8.14.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/ws": "^8.5.10",
+    "typescript": "^5.3.0",
+    "tsx": "^4.6.0",
+    "vitest": "^1.0.0"
+  }
+}

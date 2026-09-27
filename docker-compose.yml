@@ -1,0 +1,110 @@
+version: '3.8'
+
+services:
+  # API Router Service
+  router:
+    build:
+      context: ./packages/api-router
+      dockerfile: Dockerfile
+    image: agrisense/router:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=production
+      - PORT=8000
+      - HOST=0.0.0.0
+      - REGIONS_DIR=/app/regions
+      - LOG_LEVEL=info
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - HF_API_KEY=${HF_API_KEY}
+      - TOGETHER_API_KEY=${TOGETHER_API_KEY}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - SENTINEL_HUB_API_KEY=${SENTINEL_HUB_API_KEY}
+    env_file:
+      - .env
+    volumes:
+      - ./regions:/app/regions:ro
+    depends_on:
+      - redis
+      - db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Redis for caching and rate limiting
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # PostgreSQL for persistent data
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: agrisense
+      POSTGRES_USER: agrisense
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-agrisense_dev_password}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agrisense -d agrisense"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Cooperative Dashboard
+  dashboard:
+    build:
+      context: ./apps/coop-dashboard
+      dockerfile: Dockerfile
+    image: agrisense/dashboard:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=http://router:8000
+    env_file:
+      - .env
+    depends_on:
+      - router
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Edge Model Server (for model downloads)
+  model-server:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./models:/usr/share/nginx/html:ro
+    restart: unless-stopped
+
+volumes:
+  redis_data:
+  postgres_data:
+
+networks:
+  default:
+    name: agrisense-network

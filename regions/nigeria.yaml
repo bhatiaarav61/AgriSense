@@ -1,0 +1,1235 @@
+id: nigeria
+name: "Nigeria"
+displayName:
+  en: "Nigeria"
+  ha: "Najeriya"
+  yo: "Orílẹ̀-èdè Nàìjíríà"
+  ig: "Naijiria"
+isoCode: "NG"
+timezone: "Africa/Lagos"
+languages:
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+  - code: "ha"
+    name: "Hausa"
+    nativeName: "Hausa"
+    rtl: false
+  - code: "yo"
+    name: "Yoruba"
+    nativeName: "Yorùbá"
+    rtl: false
+  - code: "ig"
+    name: "Igbo"
+    nativeName: "Asụsụ Igbo"
+    rtl: false
+defaultLanguage: "en"
+currency: "NGN"
+coordinates:
+  latMin: 4.2
+  latMax: 13.9
+  lonMin: 2.7
+  lonMax: 14.7
+crops:
+  - id: "maize"
+    name: "Maize"
+    scientificName: "Zea mays"
+    localNames:
+      en: "Maize"
+      ha: "Masara"
+      yo: "Agbado"
+      ig: "Oka"
+    growingSeasons: ["early", "late", "dry-season"]
+    diseaseClasses: ["fall_armyworm", "maize_streak", "gray_leaf_spot", "northern_leaf_blight", "southern_rust", "ear_rot", "stalk_rot", "downy_mildew"]
+    icon: "🌽"
+    color: "#8B5CF6"
+  - id: "cassava"
+    name: "Cassava"
+    scientificName: "Manihot esculenta"
+    localNames:
+      en: "Cassava"
+      ha: "Rogo"
+      yo: "Ẹ̀gẹ́"
+      ig: "Akpu"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["cassava_mosaic", "cassava_brown_streak", "cassava_bacterial_blight", "cassava_root_rot", "cassava_green_mite", "cassava_mealybug"]
+    icon: "🌱"
+    color: "#6B4226"
+  - id: "yam"
+    name: "Yam"
+    scientificName: "Dioscorea rotundata / D. alata"
+    localNames:
+      en: "Yam"
+      ha: "Doya"
+      yo: "Ìṣu"
+      ig: "Ji"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["yam_mosaic", "yam_anthracnose", "yam_dry_rot", "yam_soft_rot", "yam_nematode", "yam_scale"]
+    icon: "🍠"
+    color: "#F59E0B"
+  - id: "rice"
+    name: "Rice"
+    scientificName: "Oryza sativa"
+    localNames:
+      en: "Rice"
+      ha: "Shinkafa"
+      yo: "Ìrẹsì"
+      ig: "Osikapa"
+    growingSeasons: ["wet", "dry"]
+    diseaseClasses: ["bacterial_leaf_blight", "blast", "brown_spot", "tungro", "sheath_blight", "rice_yellow_mottle", "bakanae", "narrow_brown_spot"]
+    icon: "🌾"
+    color: "#10B981"
+  - id: "sorghum"
+    name: "Sorghum"
+    scientificName: "Sorghum bicolor"
+    localNames:
+      en: "Sorghum"
+      ha: "Dawa"
+      yo: "Ọka baba"
+      ig: "Okpuru"
+    growingSeasons: ["wet", "dry"]
+    diseaseClasses: ["sorghum_downy_mildew", "sorghum_anthracnose", "sorghum_grain_mold", "sorghum_ergot", "sorghum_leaf_blight", "sorghum_rust", "sorghum_smut"]
+    icon: "🌾"
+    color: "#EC4899"
+diseases:
+  - id: "fall_armyworm"
+    name: "Fall Armyworm"
+    scientificName: "Spodoptera frugiperda"
+    cropIds: ["maize"]
+    symptoms:
+      - "Ragged holes in leaves (window-paning)"
+      - "Frass (sawdust-like) in whorl"
+      - "Larvae with inverted Y on head"
+      - "Severe defoliation in young plants"
+    localNames:
+      en: "Fall Armyworm"
+      ha: "Menyeto na Farko"
+      yo: "Kòkòrò Ayé"
+      ig: "Ọkụkọ Ụzọ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply emamectin benzoate 5% SG @ 0.4g/L or spinetoram 11.7% SC @ 0.5ml/L. Target early instar larvae (1-3rd). Apply in evening. Use pheromone traps @ 5/ha for monitoring."
+    preventiveMeasures:
+      - "Early planting to avoid peak population"
+      - "Intercrop with legumes/desmodium (push-pull)"
+      - "Release Trichogramma @ 50,000/ha weekly"
+      - "Apply neem-based formulations preventively"
+      - "Deep summer plowing to expose pupae"
+    imageTags: ["fall_armyworm", "spodoptera", "maize", "caterpillar"]
+    confidenceThreshold: 0.8
+  - id: "maize_streak"
+    name: "Maize Streak Virus"
+    scientificName: "Maize streak virus (MSV)"
+    cropIds: ["maize"]
+    symptoms:
+      - "Yellow-white streaks parallel to leaf veins"
+      - "Streaks coalesce into larger chlorotic areas"
+      - "Stunted growth, poor cob formation"
+      - "Transmitted by leafhoppers (Cicadulina mbila)"
+    localNames:
+      en: "Maize Streak"
+      ha: "Mwele na Masara"
+      yo: "Ìtàn Agbado"
+      ig: "Njirimara Oka"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Control leafhopper vector with imidacloprid 17.8% SL @ 0.3ml/L as seed treatment or soil application. Use resistant varieties (e.g., TZEE-W POP STR C4). Remove infected plants early."
+    preventiveMeasures:
+      - "Use resistant/tolerant varieties"
+      - "Early planting to avoid vector"
+      - "Remove grassy weeds (alternate hosts)"
+      - "Seed treatment with imidacloprid"
+    imageTags: ["maize_streak", "virus", "leafhopper", "maize"]
+    confidenceThreshold: 0.75
+  - id: "gray_leaf_spot_maize"
+    name: "Gray Leaf Spot"
+    scientificName: "Cercospora zeae-maydis"
+    cropIds: ["maize"]
+    symptoms:
+      - "Rectangular gray-tan lesions"
+      - "Lesions parallel to leaf veins"
+      - "Distinct margins with yellow halo"
+      - "Lower leaves affected first"
+    localNames:
+      en: "Gray Leaf Spot"
+      ha: "Vigezo vya Kijivu"
+      yo: "Àwọn Dá Lẹ́ẹ́kẹ́"
+      ig: "Ntu Oka"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply azoxystrobin 23% SC @ 1ml/L or pyraclostrobin 20% WG @ 0.6g/L or propiconazole 25% EC @ 1ml/L at tasseling. Repeat if needed."
+    preventiveMeasures:
+      - "Use resistant hybrids"
+      - "Crop rotation (2+ years)"
+      - "Tillage to bury residue"
+      - "Balanced fertilization"
+    imageTags: ["gray_leaf_spot", "cercospora", "maize"]
+    confidenceThreshold: 0.7
+  - id: "northern_leaf_blight"
+    name: "Northern Corn Leaf Blight"
+    scientificName: "Exserohilum turcicum"
+    cropIds: ["maize"]
+    symptoms:
+      - "Long elliptical gray-green lesions"
+      - "Lesions turn tan with dark margins"
+      - "Starts on lower leaves, moves up"
+      - "Severe blighting of leaves"
+    localNames:
+      en: "Northern Corn Leaf Blight"
+      ha: "Helmintosporiose"
+      yo: "Dúdú Agbado"
+      ig: "Ọbara Oka"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or azoxystrobin 23% SC @ 1ml/L or propiconazole 25% EC @ 1ml/L at first sign. Repeat at 15-day intervals."
+    preventiveMeasures:
+      - "Use resistant hybrids"
+      - "Crop rotation with non-hosts"
+      - "Bury crop residue"
+      - "Avoid overhead irrigation"
+    imageTags: ["northern_leaf_blight", "exserohilum", "maize"]
+    confidenceThreshold: 0.7
+  - id: "southern_rust"
+    name: "Southern Rust"
+    scientificName: "Puccinia polysora"
+    cropIds: ["maize"]
+    symptoms:
+      - "Light orange pustules (upper surface)"
+      - "Pustules more dense than common rust"
+      - "Rapid development in warm/humid"
+      - "Can cause severe loss"
+    localNames:
+      en: "Southern Rust"
+      ha: "Farugan Polysora"
+      yo: "Ìtàn Pupa"
+      ig: "Ọbara Pupa"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply triazole + strobilurin fungicides (epoxiconazole + pyraclostrobin) at VT-R1. Constant monitoring. Tolerant hybrids."
+    preventiveMeasures:
+      - "Tolerant hybrids"
+      - "Planting at recommended time"
+      - "Intensive monitoring"
+    imageTags: ["southern_rust", "puccinia_polysora", "maize"]
+    confidenceThreshold: 0.8
+  - id: "ear_rot_maize"
+    name: "Ear Rot"
+    scientificName: "Fusarium verticillioides / Aspergillus flavus"
+    cropIds: ["maize"]
+    symptoms:
+      - "White to pink mold on kernels"
+      - "Kernel rotting starting from tip"
+      - "Mycotoxin contamination risk"
+      - "Husk tightly adhering to ear"
+    localNames:
+      en: "Ear Rot"
+      ha: "Ƙwarya na Kifi"
+      yo: "Kọ́rọ̀ Agbado"
+      ig: "Ncha Oka"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Harvest at proper moisture (20-25%). Dry quickly to <14% moisture. Store in aerated conditions. No effective field spray; prevention critical. Use resistant hybrids."
+    preventiveMeasures:
+      - "Use resistant hybrids"
+      - "Avoid late planting"
+      - "Control ear-feeding insects"
+      - "Harvest at correct moisture"
+      - "Proper drying and storage"
+    imageTags: ["ear_rot", "fusarium", "aspergillus", "maize"]
+    confidenceThreshold: 0.7
+  - id: "stalk_rot"
+    name: "Stalk Rot"
+    scientificName: "Fusarium moniliforme / Colletotrichum graminicola / Gibberella zeae"
+    cropIds: ["maize"]
+    symptoms:
+      - "Internal stalk rotting"
+      - "Plants lodge easily"
+      - "Internal discoloration (pink, red, black)"
+      - "Poorly filled ears (chaffy ears)"
+    localNames:
+      en: "Stalk Rot"
+      ha: "Ƙwarya na Kwaƙi"
+      yo: "Kọ́rọ̀ Ẹ̀kà"
+      ig: "Ncha Ọkpukpu"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Manage water stress. Avoid excessive nitrogen. Early harvest of lodged areas. Hybrids with good standability."
+    preventiveMeasures:
+      - "Adequate water management"
+      - "Balanced nitrogen"
+      - "Control stalk insects"
+      - "Hybrids with stay-green"
+    imageTags: ["stalk_rot", "fusarium", "colletotrichum", "maize"]
+    confidenceThreshold: 0.7
+  - id: "downy_mildew"
+    name: "Downy Mildew"
+    scientificName: "Peronosclerospora sorghi / P. philippinensis"
+    cropIds: ["maize"]
+    symptoms:
+      - "Chlorotic striping on leaves"
+      - "White downy growth on underside"
+      - "Stunted, bushy plants"
+      - "Proliferation of tassels (crazy top)"
+    localNames:
+      en: "Downy Mildew"
+      ha: "Mildew na Kasa"
+      yo: "Ìgbàà àìlérí"
+      ig: "Ọbara Ọcha"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Seed treatment with metalaxyl-M + mancozib. Rogue out systemically infected plants. Use resistant hybrids. Avoid maize after maize in infected fields."
+    preventiveMeasures:
+      - "Seed treatment with metalaxyl"
+      - "Use resistant hybrids"
+      - "Remove infected plants early"
+      - "Crop rotation"
+    imageTags: ["downy_mildew", "peronosclerospora", "maize"]
+    confidenceThreshold: 0.8
+  - id: "cassava_mosaic"
+    name: "Cassava Mosaic Disease"
+    scientificName: "African cassava mosaic virus (ACMV) / East African cassava mosaic virus (EACMV)"
+    cropIds: ["cassava"]
+    symptoms:
+      - "Mosaic/mottling on leaves"
+      - "Leaf distortion and curling"
+      - "Stunted growth"
+      - "Reduced root yield"
+      - "Transmitted by whitefly (Bemisia tabaci)"
+    localNames:
+      en: "Cassava Mosaic"
+      ha: "Mosaic na Rogo"
+      yo: "Ìtàn Ẹ̀gẹ́"
+      ig: "Njirimara Akpu"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Use virus-free stem cuttings. Control whitefly with imidacloprid soil application. Remove infected plants. Use resistant varieties (e.g., TME 419, TMS 30572, NR 8082)."
+    preventiveMeasures:
+      - "Use certified virus-free cuttings"
+      - "Control whitefly vectors"
+      - "Remove infected plants promptly"
+      - "Use resistant/tolerant varieties"
+      - "Crop rotation"
+    imageTags: ["cassava_mosaic", "acmv", "eacmv", "whitefly", "cassava"]
+    confidenceThreshold: 0.75
+  - id: "cassava_brown_streak"
+    name: "Cassava Brown Streak Disease"
+    scientificName: "Cassava brown streak virus (CBSV) / Ugandan cassava brown streak virus (UCBSV)"
+    cropIds: ["cassava"]
+    symptoms:
+      - "Yellow chlorotic streaks on leaves"
+      - "Brown necrotic streaks on stems"
+      - "Root necrosis (corky, dry rot)"
+      - "Severe root quality loss"
+      - "Transmitted by whitefly"
+    localNames:
+      en: "Cassava Brown Streak"
+      ha: "Kwayar Rogo"
+      yo: "Ìtàn Bíbíí"
+      ig: "Njirimara Ọchá"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Use virus-free planting material. Remove infected plants immediately. Control whitefly vectors. Use resistant varieties (e.g., NAROCASS 1, NAROCASS 2). No chemical control."
+    preventiveMeasures:
+      - "Use clean planting material"
+      - "Remove infected plants"
+      - "Control whitefly"
+      - "Resistant varieties"
+    imageTags: ["cassava_brown_streak", "cbsv", "ucbsv", "cassava"]
+    confidenceThreshold: 0.8
+  - id: "cassava_bacterial_blight"
+    name: "Cassava Bacterial Blight"
+    scientificName: "Xanthomonas axonopodis pv. manihotis"
+    cropIds: ["cassava"]
+    symptoms:
+      - "Angular water-soaked spots on leaves"
+      - "Spots turn brown with yellow halo"
+      - "Gum exudate on petioles/stems"
+      - "Dieback and wilting"
+    localNames:
+      en: "Cassava Bacterial Blight"
+      ha: "Bacterial Blight na Rogo"
+      yo: "Ìtàn Baktéria"
+      ig: "Njirimara Baktéria"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Use disease-free cuttings. Copper-based bactericides (copper oxychloride 50% WP @ 2.5g/L). Remove infected plants. Avoid overhead irrigation. Crop rotation."
+    preventiveMeasures:
+      - "Use disease-free cuttings"
+      - "Copper-based sprays"
+      - "Remove infected plants"
+      - "Avoid overhead irrigation"
+    imageTags: ["cassava_bacterial_blight", "xanthomonas", "cassava"]
+    confidenceThreshold: 0.7
+  - id: "cassava_root_rot"
+    name: "Cassava Root Rot"
+    scientificName: "Phytophthora spp. / Fusarium spp. / Rhizoctonia solani"
+    cropIds: ["cassava"]
+    symptoms:
+      - "Wilting and yellowing of leaves"
+      - "Dark brown/black root lesions"
+      - "Root constriction and rotting"
+      - "Plant death in severe cases"
+    localNames:
+      en: "Cassava Root Rot"
+      ha: "Kwayar Kankare na Rogo"
+      yo: "Kọ́rọ̀ Ẹ̀gbẹ́"
+      ig: "Ncha Akpakpando"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Use healthy cuttings from disease-free fields. Ensure good drainage. Avoid waterlogging. Fungicide drench with metalaxyl + mancozeb. Crop rotation."
+    preventiveMeasures:
+      - "Use healthy planting material"
+      - "Ensure good drainage"
+      - "Avoid waterlogging"
+      - "Crop rotation"
+    imageTags: ["cassava_root_rot", "phytophthora", "fusarium", "cassava"]
+    confidenceThreshold: 0.8
+  - id: "cassava_green_mite"
+    name: "Cassava Green Mite"
+    scientificName: "Mononychellus tanajoa"
+    cropIds: ["cassava"]
+    symptoms:
+      - "Yellow speckling on upper leaf surface"
+      - "White webbing on underside"
+      - "Leaf curling and drying"
+      - "Severe defoliation"
+    localNames:
+      en: "Cassava Green Mite"
+      ha: "Mite na Rogo"
+      yo: "Ẹ̀yìn Ẹ̀gẹ́"
+      ig: "Njirimara Isi"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply abamectin 1.8% EC @ 0.5ml/L or spiromesifen 22.9% SC @ 1ml/L. Biological control with Typhlodromalus aripo. Resistant varieties."
+    preventiveMeasures:
+      - "Use resistant varieties"
+      - "Biological control (predatory mites)"
+      - "Avoid drought stress"
+    imageTags: ["cassava_green_mite", "mononychellus", "cassava"]
+    confidenceThreshold: 0.7
+  - id: "cassava_mealybug"
+    name: "Cassava Mealybug"
+    scientificName: "Phenacoccus manihoti"
+    cropIds: ["cassava"]
+    symptoms:
+      - "White waxy colonies on stems/leaves"
+      - "Stunted growth, bunchy tops"
+      - "Leaf curling and yellowing"
+      - "Severe yield loss"
+    localNames:
+      en: "Cassava Mealybug"
+      ha: "Mealybug na Rogo"
+      yo: "Ẹ̀yìn Púpá"
+      ig: "Njirimara Ncha"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Biological control with Anagyrus lopezi (parasitic wasp). Neem-based sprays. Remove infested tips. Resistant varieties."
+    preventiveMeasures:
+      - "Biological control (A. lopezi)"
+      - "Resistant varieties"
+      - "Neem-based sprays"
+    imageTags: ["cassava_mealybug", "phenacoccus", "cassava"]
+    confidenceThreshold: 0.75
+  - id: "yam_mosaic"
+    name: "Yam Mosaic Virus"
+    scientificName: "Yam mosaic virus (YMV)"
+    cropIds: ["yam"]
+    symptoms:
+      - "Mosaic/mottling on leaves"
+      - "Leaf narrowing and distortion"
+      - "Stunted vines"
+      - "Reduced tuber yield"
+      - "Transmitted by aphids"
+    localNames:
+      en: "Yam Mosaic"
+      ha: "Mosaic na Doya"
+      yo: "Ìtàn Ìṣu"
+      ig: "Njirimara Ji"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Use virus-free seed yams. Control aphid vectors. Remove infected plants. Use resistant varieties (e.g., TDr 89/02665, TDr 89/02677)."
+    preventiveMeasures:
+      - "Use virus-free seed yams"
+      - "Control aphid vectors"
+      - "Remove infected plants"
+      - "Use resistant varieties"
+    imageTags: ["yam_mosaic", "ymv", "aphid", "yam"]
+    confidenceThreshold: 0.75
+  - id: "yam_anthracnose"
+    name: "Yam Anthracnose"
+    scientificName: "Colletotrichum gloeosporioides"
+    cropIds: ["yam"]
+    symptoms:
+      - "Dark brown lesions on vines/leaves"
+      - "Lesions with orange spore masses"
+      - "Vine dieback"
+      - "Tuber rot in storage"
+    localNames:
+      en: "Yam Anthracnose"
+      ha: "Anthracnose na Doya"
+      yo: "Ìtàn Pupa"
+      ig: "Njirimara Ọchá"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole 25% EC @ 1ml/L. Remove infected vines. Use healthy seed yams. Proper curing before storage."
+    preventiveMeasures:
+      - "Use healthy seed yams"
+      - "Fungicide treatment of setts"
+      - "Remove infected vines"
+      - "Proper curing"
+    imageTags: ["yam_anthracnose", "colletotrichum", "yam"]
+    confidenceThreshold: 0.75
+  - id: "yam_dry_rot"
+    name: "Yam Dry Rot"
+    scientificName: "Fusarium oxysporum / F. solani"
+    cropIds: ["yam"]
+    symptoms:
+      - "Dry, firm rot of tubers"
+      - "White to pink mycelium in cavities"
+      - "Black sclerotia on tuber surface"
+      - "Progressive in storage"
+    localNames:
+      en: "Yam Dry Rot"
+      ha: "Kwayar Kankare"
+      yo: "Kọ́rọ̀ Gígi"
+      ig: "Ncha Ọkụ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Careful harvesting to avoid wounds. Cure tubers properly (28-30°C, 85-90% RH). Fungicide dip (thiabendazole). Ventilated storage."
+    preventiveMeasures:
+      - "Avoid tuber injury"
+      - "Proper curing"
+      - "Fungicide treatment"
+      - "Ventilated storage"
+    imageTags: ["yam_dry_rot", "fusarium", "yam"]
+    confidenceThreshold: 0.7
+  - id: "yam_soft_rot"
+    name: "Yam Soft Rot"
+    scientificName: "Pectobacterium carotovorum / Erwinia chrysanthemi"
+    cropIds: ["yam"]
+    symptoms:
+      - "Soft, watery rot of tubers"
+      - "Foul odor"
+      - "Rapid spread in storage"
+      - "Complete tuber breakdown"
+    localNames:
+      en: "Yam Soft Rot"
+      ha: "Kwayar Rike"
+      yo: "Kọ́rọ̀ Rírí"
+      ig: "Ncha Ọhúrú"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No chemical control. Careful handling. Proper curing and drying. Ventilated storage. Remove infected tubers immediately."
+    preventiveMeasures:
+      - "Careful handling"
+      - "Proper curing/drying"
+      - "Ventilated storage"
+      - "Remove infected tubers"
+    imageTags: ["yam_soft_rot", "pectobacterium", "erwinia", "yam"]
+    confidenceThreshold: 0.8
+  - id: "yam_nematode"
+    name: "Yam Nematode"
+    scientificName: "Scutellonema bradys / Pratylenchus spp."
+    cropIds: ["yam"]
+    symptoms:
+      - "Dry rot lesions on tubers"
+      - "Cracked, scaly tuber surface"
+      - "Stunted vine growth"
+      - "Reduced tuber size"
+    localNames:
+      en: "Yam Nematode"
+      ha: "Nematode na Doya"
+      yo: "Ẹ̀yìn Kòkòrò"
+      ig: "Njirimara Nkwá"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Hot water treatment of setts (50-55°C for 40 min). Nematicide application. Crop rotation with non-hosts. Organic amendments (neem cake)."
+    preventiveMeasures:
+      - "Hot water treatment of setts"
+      - "Nematicide treatment"
+      - "Crop rotation"
+      - "Organic amendments"
+    imageTags: ["yam_nematode", "scutellonema", "yam"]
+    confidenceThreshold: 0.75
+  - id: "yam_scale"
+    name: "Yam Scale"
+    scientificName: "Aspidiella hartii"
+    cropIds: ["yam"]
+    symptoms:
+      - "White circular scales on tuber surface"
+      - "Tubers become rough and unsightly"
+      - "Reduced market value"
+      - "Can cause tuber dehydration"
+    localNames:
+      en: "Yam Scale"
+      ha: "Scale na Doya"
+      yo: "Ẹ̀yìn Púpá"
+      ig: "Njirimara Nzu"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Hot water treatment (50-55°C for 40 min). Insecticide dip (dimethoate). Clean storage. Remove scales manually."
+    preventiveMeasures:
+      - "Hot water treatment"
+      - "Insecticide treatment"
+      - "Clean storage"
+    imageTags: ["yam_scale", "aspidiella", "yam"]
+    confidenceThreshold: 0.65
+  - id: "bacterial_leaf_blight"
+    name: "Bacterial Leaf Blight"
+    scientificName: "Xanthomonas oryzae pv. oryzae"
+    cropIds: ["rice"]
+    symptoms:
+      - "Water-soaked lesions on leaves"
+      - "Yellow to white stripes along leaf veins"
+      - "Leaves drying from tip to base"
+      - "Wilting of seedlings (kresek phase)"
+    localNames:
+      en: "Bacterial Leaf Blight"
+      ha: "Bacterial Blight na Shinkafa"
+      yo: "Ìtàn Baktéria"
+      ig: "Njirimara Baktéria"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply copper-based bactericides (copper oxychloride 50% WP @ 2.5g/L) at first sign. Repeat at 10-15 day intervals. Ensure field drainage. Use resistant varieties like FARO 44, FARO 52. Avoid excess nitrogen."
+    preventiveMeasures:
+      - "Use certified disease-free seeds"
+      - "Treat seeds with streptomycin sulphate (1g/kg seed)"
+      - "Maintain proper field sanitation"
+      - "Avoid continuous rice cultivation"
+      - "Balance fertilizer application (avoid excess N)"
+    imageTags: ["bacterial_leaf_blight", "rice", "xanthomonas"]
+    confidenceThreshold: 0.75
+  - id: "blast"
+    name: "Rice Blast"
+    scientificName: "Magnaporthe oryzae"
+    cropIds: ["rice"]
+    symptoms:
+      - "Diamond-shaped lesions with gray centers"
+      - "Dark brown margins on lesions"
+      - "Neck blast causing panicle breakage"
+      - "Node blast causing stem breakage"
+    localNames:
+      en: "Rice Blast"
+      ha: "Blast na Shinkafa"
+      yo: "Ìtàn Ìrẹsì"
+      ig: "Njirimara Osikapa"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply tricyclazole 75% WP @ 0.6g/L or isoprothiolane 40% EC @ 1.5ml/L. Spray at tillering and panicle initiation stages. Avoid excess nitrogen. Ensure proper water management."
+    preventiveMeasures:
+      - "Use resistant varieties (e.g., FARO 44, FARO 52, FARO 57)"
+      - "Treat seeds with carbendazim (2g/kg)"
+      - "Split nitrogen application"
+      - "Maintain shallow water (2-3 cm)"
+      - "Remove collateral weed hosts"
+    imageTags: ["rice_blast", "magnaporthe", "diamond_lesions"]
+    confidenceThreshold: 0.7
+  - id: "brown_spot"
+    name: "Brown Spot"
+    scientificName: "Cochliobolus miyabeanus"
+    cropIds: ["rice"]
+    symptoms:
+      - "Small circular brown spots on leaves"
+      - "Yellow halo around spots"
+      - "Spots on glumes causing 'pecky rice'"
+      - "Seedling blight in nursery"
+    localNames:
+      en: "Brown Spot"
+      ha: "Kwayar Kankare"
+      yo: "Dá Bísí"
+      ig: "Ncha Ọchá"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole 25% EC @ 1ml/L. Spray at early tillering and boot leaf stage. Improve soil fertility (especially Si and K)."
+    preventiveMeasures:
+      - "Use balanced fertilization (adequate K and Si)"
+      - "Treat seeds with thiram (3g/kg)"
+      - "Remove infected plant debris"
+      - "Avoid water stress"
+    imageTags: ["brown_spot", "cochliobolus", "rice"]
+    confidenceThreshold: 0.65
+  - id: "tungro"
+    name: "Rice Tungro Disease"
+    scientificName: "Rice tungro bacilliform virus (RTBV) + Rice tungro spherical virus (RTSV)"
+    cropIds: ["rice"]
+    symptoms:
+      - "Stunted growth with yellow/orange leaves"
+      - "Reduced tillering"
+      - "Small panicles with incomplete grain filling"
+      - "Transmitted by green leafhopper"
+    localNames:
+      en: "Tungro"
+      ha: "Tungro"
+      yo: "Tungro"
+      ig: "Tungro"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Control green leafhopper vector with imidacloprid 17.8% SL @ 0.3ml/L or thiamethoxam 25% WG @ 0.4g/L. Remove infected plants. Use resistant varieties (e.g., FARO 51, FARO 52)."
+    preventiveMeasures:
+      - "Early planting to avoid vector peak"
+      - "Use resistant/tolerant varieties"
+      - "Control grassy weeds in bunds"
+      - "Synchronous planting in area"
+    imageTags: ["tungro", "rice", "virus", "leafhopper"]
+    confidenceThreshold: 0.7
+  - id: "sheath_blight"
+    name: "Sheath Blight"
+    scientificName: "Rhizoctonia solani"
+    cropIds: ["rice"]
+    symptoms:
+      - "Oval lesions on leaf sheaths near water level"
+      - "Gray-green centers with dark brown borders"
+      - "Sclerotia (white to brown) on lesions"
+      - "Flag leaf sheath infection reduces grain filling"
+    localNames:
+      en: "Sheath Blight"
+      ha: "Sheath Blight"
+      yo: "Ìtàn Ẹ̀kà"
+      ig: "Njirimara Ọkpukpu"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply validamycin A 3% L @ 2.5ml/L or hexaconazole 5% SC @ 1ml/L or propiconazole 25% EC @ 1ml/L. Spray at maximum tillering and boot leaf stage. Avoid dense planting and excess nitrogen."
+    preventiveMeasures:
+      - "Avoid dense planting (proper spacing)"
+      - "Balance nitrogen with K and Si"
+      - "Drain field at late tillering"
+      - "Remove crop residue after harvest"
+    imageTags: ["sheath_blight", "rhizoctonia", "rice"]
+    confidenceThreshold: 0.7
+  - id: "rice_yellow_mottle"
+    name: "Rice Yellow Mottle Virus"
+    scientificName: "Rice yellow mottle virus (RYMV)"
+    cropIds: ["rice"]
+    symptoms:
+      - "Yellow mottling on leaves"
+      - "Stunted growth"
+      - "Reduced tillering"
+      - "Poor panicle exertion"
+      - "Transmitted by beetles (Chaetocnema spp.)"
+    localNames:
+      en: "Rice Yellow Mottle"
+      ha: "RYMV"
+      yo: "Ìtàn Pupa"
+      ig: "Njirimara Ọchá"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Control beetle vector with insecticides. Remove infected plants. Use resistant varieties (e.g., FARO 52, FARO 57). Weed control in bunds."
+    preventiveMeasures:
+      - "Use resistant varieties"
+      - "Control beetle vectors"
+      - "Weed management"
+      - "Synchronous planting"
+    imageTags: ["rice_yellow_mottle", "rymv", "beetle", "rice"]
+    confidenceThreshold: 0.75
+  - id: "bakanae"
+    name: "Bakanae (Foolish Seedling)"
+    scientificName: "Fusarium fujikuroi"
+    cropIds: ["rice"]
+    symptoms:
+      - "Abnormally tall, thin seedlings"
+      - "Yellowish leaves, weak stems"
+      - "Plants easily lodge"
+      - "Empty or partially filled grains"
+    localNames:
+      en: "Bakanae"
+      ha: "Bakanae"
+      yo: "Bakanae"
+      ig: "Bakanae"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Seed treatment with carbendazim 50% WP @ 2g/kg or thiophanate-methyl 70% WP @ 2g/kg. Hot water treatment (52°C for 10 min). Use resistant varieties."
+    preventiveMeasures:
+      - "Seed treatment mandatory"
+      - "Hot water treatment (52°C, 10 min)"
+      - "Use resistant varieties"
+      - "Remove infected seedlings"
+    imageTags: ["bakanae", "fusarium", "rice"]
+    confidenceThreshold: 0.7
+  - id: "narrow_brown_spot"
+    name: "Narrow Brown Spot"
+    scientificName: "Cercospora janseana"
+    cropIds: ["rice"]
+    symptoms:
+      - "Narrow linear brown lesions"
+      - "Lesions parallel to leaf veins"
+      - "Gray center with brown margins"
+      - "Premature leaf aging"
+    localNames:
+      en: "Narrow Brown Spot"
+      ha: "Kwayar Dogo"
+      yo: "Dá Kẹrin"
+      ig: "Ncha Nta"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply propiconazole 25% EC @ 1ml/L or mancozeb 75% WP @ 2.5g/L at boot leaf stage. Use resistant varieties. Balanced nutrition."
+    preventiveMeasures:
+      - "Use resistant varieties"
+      - "Balanced fertilization"
+      - "Proper water management"
+    imageTags: ["narrow_brown_spot", "cercospora", "rice"]
+    confidenceThreshold: 0.65
+  - id: "sorghum_downy_mildew"
+    name: "Sorghum Downy Mildew"
+    scientificName: "Peronosclerospora sorghi"
+    cropIds: ["sorghum"]
+    symptoms:
+      - "Chlorotic striping on leaves"
+      - "White downy growth on underside"
+      - "Stunted, bushy plants"
+      - "Proliferation of panicles"
+      - "Systemic infection"
+    localNames:
+      en: "Sorghum Downy Mildew"
+      ha: "Mildew na Dawa"
+      yo: "Ìgbàà Dawa"
+      ig: "Njirimara Ọcha"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Seed treatment with metalaxyl-M + mancozeb. Rogue out systemically infected plants. Use resistant varieties. Avoid sorghum after sorghum in infected fields."
+    preventiveMeasures:
+      - "Seed treatment with metalaxyl"
+      - "Use resistant varieties"
+      - "Remove infected plants early"
+      - "Crop rotation"
+    imageTags: ["sorghum_downy_mildew", "peronosclerospora", "sorghum"]
+    confidenceThreshold: 0.8
+  - id: "sorghum_anthracnose"
+    name: "Sorghum Anthracnose"
+    scientificName: "Colletotrichum graminicola"
+    cropIds: ["sorghum"]
+    symptoms:
+      - "Elliptical lesions with red margins"
+      - "Black acervuli in lesion centers"
+      - "Stalk rot in severe cases"
+      - "Grain mold if panicle infected"
+    localNames:
+      en: "Sorghum Anthracnose"
+      ha: "Anthracnose na Dawa"
+      yo: "Ìtàn Pupa Dawa"
+      ig: "Njirimara Ọchá"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole 25% EC @ 1ml/L. Seed treatment with thiabendazole. Use resistant varieties. Crop rotation."
+    preventiveMeasures:
+      - "Use resistant varieties"
+      - "Seed treatment"
+      - "Crop rotation"
+      - "Remove crop debris"
+    imageTags: ["sorghum_anthracnose", "colletotrichum", "sorghum"]
+    confidenceThreshold: 0.7
+  - id: "sorghum_grain_mold"
+    name: "Sorghum Grain Mold"
+    scientificName: "Fusarium spp. / Alternaria spp. / Curvularia spp. / Phoma spp."
+    cropIds: ["sorghum"]
+    symptoms:
+      - "Moldy grains on panicle"
+      - "Pink, gray, black discoloration"
+      - "Reduced grain quality"
+      - "Mycotoxin contamination risk"
+    localNames:
+      en: "Sorghum Grain Mold"
+      ha: "Kwayan Kifi na Dawa"
+      yo: "Kọ́rọ̀ Kifi"
+      ig: "Ncha Kifi"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Harvest at physiological maturity. Quick drying to <13% moisture. Fungicide at flowering (azoxystrobin + propiconazole). Resistant varieties with open panicles."
+    preventiveMeasures:
+      - "Timely harvest"
+      - "Quick drying"
+      - "Resistant varieties (open panicle)"
+      - "Fungicide at flowering"
+    imageTags: ["sorghum_grain_mold", "fusarium", "alternaria", "sorghum"]
+    confidenceThreshold: 0.7
+  - id: "sorghum_ergot"
+    name: "Sorghum Ergot"
+    scientificName: "Claviceps africana"
+    cropIds: ["sorghum"]
+    symptoms:
+      - "Honeydew exudate on florets"
+      - "Sclerotia replace grains"
+      - "Toxic alkaloids in sclerotia"
+      - "Reduced grain set"
+    localNames:
+      en: "Sorghum Ergot"
+      ha: "Ergot na Dawa"
+      yo: "Ìtàn Ergot"
+      ig: "Njirimara Ergot"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No effective chemical control at flowering. Plant early to avoid ergot-favorable weather. Use resistant varieties. Deep plowing to bury sclerotia."
+    preventiveMeasures:
+      - "Early planting"
+      - "Resistant varieties"
+      - "Deep plowing"
+      - "Crop rotation"
+    imageTags: ["sorghum_ergot", "claviceps", "sorghum"]
+    confidenceThreshold: 0.8
+  - id: "sorghum_leaf_blight"
+    name: "Sorghum Leaf Blight"
+    scientificName: "Exserohilum turcicum / Bipolaris sorokiniana"
+    cropIds: ["sorghum"]
+    symptoms:
+      - "Elliptical gray-green lesions"
+      - "Lesions turn tan with reddish margins"
+      - "Starts on lower leaves"
+      - "Severe blighting"
+    localNames:
+      en: "Sorghum Leaf Blight"
+      ha: "Blight na Dawa"
+      yo: "Ìtàn Ẹ̀wé"
+      ig: "Njirimara Akwụkwọ"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole 25% EC @ 1ml/L at first sign. Repeat at 14-day intervals. Use resistant varieties."
+    preventiveMeasures:
+      - "Use resistant varieties"
+      - "Crop rotation"
+      - "Bury crop residue"
+      - "Avoid overhead irrigation"
+    imageTags: ["sorghum_leaf_blight", "exserohilum", "bipolaris", "sorghum"]
+    confidenceThreshold: 0.7
+  - id: "sorghum_rust"
+    name: "Sorghum Rust"
+    scientificName: "Puccinia purpurea"
+    cropIds: ["sorghum"]
+    symptoms:
+      - "Small reddish-brown pustules"
+      - "Pustules on both leaf surfaces"
+      - "Black teliospores late season"
+    localNames:
+      en: "Sorghum Rust"
+      ha: "Faruga na Dawa"
+      yo: "Ìtàn Pupa"
+      ig: "Njirimara Pupa"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole 25% EC @ 1ml/L at early infection. Use resistant varieties."
+    preventiveMeasures:
+      - "Use resistant varieties"
+      - "Early planting"
+      - "Balanced nutrition"
+    imageTags: ["sorghum_rust", "puccinia", "sorghum"]
+    confidenceThreshold: 0.65
+  - id: "sorghum_smut"
+    name: "Sorghum Smut"
+    scientificName: "Sporisorium sorghi / S. reilianum"
+    cropIds: ["sorghum"]
+    symptoms:
+      - "Black smut sori in panicle"
+      - "Sori covered by thin membrane"
+      - "Stunted plants (head smut)"
+      - "Grain replaced by spores"
+    localNames:
+      en: "Sorghum Smut"
+      ha: "Smut na Dawa"
+      yo: "Smut"
+      ig: "Njirimara Smut"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Seed treatment with carboxin 75% WP @ 2g/kg or tebuconazole 2% DS @ 1.25g/kg. Remove smutted heads before spore release. Use resistant varieties."
+    preventiveMeasures:
+      - "Seed treatment mandatory"
+      - "Remove smutted heads"
+      - "Use resistant varieties"
+      - "Crop rotation"
+    imageTags: ["sorghum_smut", "sporisorium", "sorghum"]
+    confidenceThreshold: 0.7
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "Africa/Lagos"
+  - id: "nasa-power"
+    name: "NASA POWER"
+    type: "nasa-power"
+    baseUrl: "https://power.larc.nasa.gov/api/temporal/daily/point"
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 1000
+    parameters:
+      community: "AG"
+      format: "JSON"
+  - id: "nimet"
+    name: "Nigerian Meteorological Agency"
+    type: "custom"
+    baseUrl: "https://nimet.gov.ng"
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 1000
+    parameters:
+      format: "JSON"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B05", "B06", "B07", "B08", "B8A", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+  - id: "landsat-8"
+    name: "Landsat 8"
+    type: "landsat-8"
+    baseUrl: "https://landsatlook.usgs.gov"
+    bands: ["B2", "B3", "B4", "B5", "B6", "B7"]
+    resolution: 30
+    revisitDays: 16
+    cloudCoverThreshold: 30
+  - id: "nigeria-sat-1"
+    name: "NigeriaSat-1"
+    type: "custom"
+    baseUrl: "https://www.nasrdanigeria.gov.ng"
+    bands: ["B1", "B2", "B3"]
+    resolution: 32
+    revisitDays: 4
+    cloudCoverThreshold: 40
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+      gemini-1.5-pro:
+        id: "gemini-1.5-pro"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["nigeria"]
+    priority: 100
+    enabled: true
+  - id: "groq-1"
+    name: "Groq"
+    type: "groq"
+    baseUrl: "https://api.groq.com/openai/v1"
+    apiKeyEnvVar: "GROQ_API_KEY"
+    models:
+      llama-3.1-70b-versatile:
+        id: "llama-3.1-70b-versatile"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+      llama-3.1-8b-instant:
+        id: "llama-3.1-8b-instant"
+        taskTypes: ["advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+      llama-3.2-11b-vision-preview:
+        id: "llama-3.2-11b-vision-preview"
+        taskTypes: ["disease-detection"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 6000
+      tokensPerMinute: 6000
+    regions: ["nigeria"]
+    priority: 90
+    enabled: true
+  - id: "huggingface-1"
+    name: "Hugging Face Inference"
+    type: "huggingface"
+    baseUrl: "https://api-inference.huggingface.co"
+    apiKeyEnvVar: "HF_API_KEY"
+    models:
+      microsoft/resnet-50:
+        id: "microsoft/resnet-50"
+        taskTypes: ["disease-detection"]
+        maxTokens: 100
+      google/vit-base-patch16-224:
+        id: "google/vit-base-patch16-224"
+        taskTypes: ["disease-detection"]
+        maxTokens: 100
+      microsoft/beit-base-patch16-224:
+        id: "microsoft/beit-base-patch16-224"
+        taskTypes: ["disease-detection"]
+        maxTokens: 100
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 1000
+    regions: ["nigeria"]
+    priority: 70
+    enabled: true
+  - id: "together-1"
+    name: "Together.ai"
+    type: "together"
+    baseUrl: "https://api.together.xyz/v1"
+    apiKeyEnvVar: "TOGETHER_API_KEY"
+    models:
+      meta-llama/Llama-3.2-11B-Vision-Instruct:
+        id: "meta-llama/Llama-3.2-11B-Vision-Instruct"
+        taskTypes: ["disease-detection"]
+        maxTokens: 4096
+        temperature: 0.3
+        costPer1kTokens: 0.0
+      meta-llama/Llama-3.1-70B-Instruct-Turbo:
+        id: "meta-llama/Llama-3.1-70B-Instruct-Turbo"
+        taskTypes: ["yield-prediction", "advisory", "chat"]
+        maxTokens: 4096
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 20
+      requestsPerDay: 1000
+      tokensPerMinute: 10000
+    regions: ["nigeria"]
+    priority: 80
+    enabled: true
+  - id: "openrouter-1"
+    name: "OpenRouter"
+    type: "openrouter"
+    baseUrl: "https://openrouter.ai/api/v1"
+    apiKeyEnvVar: "OPENROUTER_API_KEY"
+    models:
+      google/gemini-flash-1.5:
+        id: "google/gemini-flash-1.5"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+      meta-llama/llama-3.2-11b-vision-instruct:
+        id: "meta-llama/llama-3.2-11b-vision-instruct"
+        taskTypes: ["disease-detection"]
+        maxTokens: 4096
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 20
+      requestsPerDay: 500
+    regions: ["nigeria"]
+    priority: 60
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in Nigeria.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "disease-detection-ha"
+    taskType: "disease-detection"
+    language: "ha"
+    systemPrompt: |
+      Kai tsaye ne matsayin maganin cututtukan gona a Nijeriya.
+      Bincika hoton gona kuma neman cutar da yaɗa da tsaftaccu.
+      Amsa KWALBA da JSON mai daidai a cikin haka:
+      {
+        "disease_id": "string (daga jerin da aka ba)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["alama1", "alama2"],
+        "reasoning": "bayani na alama da aka ga"
+      }
+    userPromptTemplate: "Nemo cutar a cikin wannan hoto na {crop} daga {region}. Cututtuka da ake kwata: {disease_list}. Tuna da alamomi kamar tsutsunen kaye, sauƙaƙe na launɒ, barre, vidondi, ko yaɗuwar ƙirƙirar cutarwa."
+    outputFormat: "json"
+  - id: "disease-detection-yo"
+    taskType: "disease-detection"
+    language: "yo"
+    systemPrompt: |
+      Ṣe onígbàgbọ́ àwọn àrúnkúnwá ẹ̀kọ́ ní Orílẹ̀-èdè Nàìjíríà.
+      Túbọ̀ àwọn àwòrán ẹ̀kọ́ kí ó sì fi ẹ̀kọ́ ara wọn dá sílẹ̀ ní ìgbàgbọ́ gígà.
+      Dá sí ìmọ̀ yí ní JSON tó dára ní bẹ́ẹ̀ ní:
+      {
+        "disease_id": "string (láti àkọ́ṣọ̀rọ̀ tí a fí hàn)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["ìtàn1", "ìtàn2"],
+        "reasoning": "ìtọ́kasí kíkùn tókan ohùn tí a ríi"
+      }
+    userPromptTemplate: "Tẹ́lẹ̀ àrúnkún ìgbésí ayé míì ní wọ́n àwòrán {crop} ní {region}. Àrúnkún tó ṣe dá lórí: {disease_list}. Ṣàyé àìkúnya bẹ́ẹ̀ kó àwọn dádà kékeré ní ẹ̀wé, tóǹbọ̀ àwọn àlàáfíà, mọ́, fífífí, tàbí àìmọ́yẹ́ tẹ́lẹ̀."
+    outputFormat: "json"
+  - id: "disease-detection-ig"
+    taskType: "disease-detection"
+    language: "ig"
+    systemPrompt: |
+      Ị bụ onye ncheta ọrịa ụlọ nkị na Naịjirịa.
+      Malite ezi isi mkpụrụ ọkụkọ ma lee ọrịa na nsogbu.
+      Zara aka ebea nke mere eji JSON:
+      {
+        "disease_id": "string (site na onye mere gosipute)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["njuju1", "njuju2"],
+        "reasoning": "akọkwa nke mkpụrụ obere ihe anyị hụrụ"
+      }
+    userPromptTemplate: "Mata ọrịa n'ime ezi isi {crop} ebe {region}. Ọrịa ebe ezi: {disease_list}. Cheta nke a: akara akwụkwọ, tụnya ọnụ, ịgbagbu, ọbịa, ma ọ bụ ihe egwu ekwu."
+    outputFormat: "json"
+  - id: "yield-prediction-en"
+    taskType: "yield-prediction"
+    language: "en"
+    systemPrompt: |
+      You are an expert agricultural economist and crop scientist for Nigerian agriculture.
+      Predict crop yield based on weather, satellite, soil, and management data.
+      Respond ONLY with valid JSON:
+      {
+        "yield_min": number (t/ha),
+        "yield_max": number (t/ha),
+        "yield_expected": number (t/ha),
+        "confidence": 0.0-1.0,
+        "key_drivers": ["driver1", "driver2"],
+        "explanation": "detailed explanation of prediction factors"
+      }
+    userPromptTemplate: |
+      Predict yield for {crop} in {region}, {season} season.
+      Field: {field_id}, Area: {area} ha, Irrigation: {irrigation}
+      Planting date: {planting_date}
+
+      Weather Data: {weather}
+      Satellite Data: {satellite}
+
+      Consider: rainfall, temperature, humidity, solar radiation, soil type, variety, management practices.
+      Provide realistic yield range for this region and season.
+    outputFormat: "json"
+  - id: "advisory-en"
+    taskType: "advisory"
+    language: "en"
+    systemPrompt: |
+      You are an agricultural extension officer for Nigerian farmers.
+      Provide practical, affordable, culturally appropriate treatment advice.
+      Respond ONLY with valid JSON:
+      {
+        "treatment": "step-by-step treatment instructions",
+        "preventive_measures": ["measure1", "measure2"],
+        "follow_up": "when to re-check and next steps",
+        "safety_warnings": ["warning1", "warning2"]
+      }
+    userPromptTemplate: |
+      Provide treatment advisory for {disease} in {crop} ({region}).
+      Severity: {severity}. Language: {language}.
+      Symptoms: {symptoms}
+      Local names: {local_names}
+
+      Consider: locally available chemicals, cost-effectiveness, pre-harvest intervals, farmer safety, IPM approaches.
+    outputFormat: "json"
+  - id: "advisory-ha"
+    taskType: "advisory"
+    language: "ha"
+    systemPrompt: |
+      Kai ne manufar gona ga manomanoma a Nijeriya.
+      Ba da shawara mai amfani, tsawon kuɗi, da muhimmanci ga al'adu.
+      Amsa kawai da JSON na daidai:
+      {
+        "treatment": "sharuɗɗen hatuwa na magani",
+        "preventive_measures": ["hatuwadda1", "hatuwadda2"],
+        "follow_up": "yaushe za a sake duba da hatuwannan nan",
+        "safety_warnings": ["onye1", "onye2"]
+      }
+    userPromptTemplate: |
+      Ba da shawarar magani ga {disease} a cikin {crop} ({region}).
+      Yawan: {severity}. Harshe: {language}.
+      Alammomi: {symptoms}
+      Sunayen yankunan: {local_names}
+
+      Tuna da: maganomi masu samuwa, kasancewar kuɗi, lokacin da ake rage, salama ta manoma, hanyoyin IPM.
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.0.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/nigeria-v1.0.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2024-01-15T10:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "Nigeria region configuration with 5 major crops and 28 diseases. Covers early, late, dry-season, wet, dry, annual seasons. Supports English, Hausa, Yoruba, and Igbo."

@@ -1,0 +1,312 @@
+id: germany
+name: "Germany"
+displayName:
+  en: "Germany"
+  de: "Deutschland"
+isoCode: "DE"
+timezone: "Europe/Berlin"
+languages:
+  - code: "de"
+    name: "German"
+    nativeName: "Deutsch"
+    rtl: false
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+defaultLanguage: "de"
+currency: "EUR"
+coordinates:
+  latMin: 47.2
+  latMax: 55.1
+  lonMin: 5.9
+  lonMax: 15.0
+crops:
+  - id: "wheat"
+    name: "Wheat"
+    scientificName: "Triticum aestivum"
+    localNames:
+      en: "Wheat"
+      de: "Weizen"
+    growingSeasons: ["winter", "spring"]
+    diseaseClasses: ["septoria_leaf_blotch", "yellow_rust"]
+    icon: "🌾"
+    color: "#D97706"
+  - id: "barley"
+    name: "Barley"
+    scientificName: "Hordeum vulgare"
+    localNames:
+      en: "Barley"
+      de: "Gerste"
+    growingSeasons: ["winter", "spring"]
+    diseaseClasses: ["barley_powdery_mildew", "barley_net_blotch"]
+    icon: "🌿"
+    color: "#65A30D"
+  - id: "sugarbeet"
+    name: "Sugar Beet"
+    scientificName: "Beta vulgaris"
+    localNames:
+      en: "Sugar Beet"
+      de: "Zuckerrübe"
+    growingSeasons: ["spring"]
+    diseaseClasses: ["beet_cercospora", "beet_rust"]
+    icon: "🫒"
+    color: "#84CC16"
+  - id: "rapeseed"
+    name: "Oilseed Rape"
+    scientificName: "Brassica napus"
+    localNames:
+      en: "Oilseed Rape"
+      de: "Raps"
+    growingSeasons: ["winter"]
+    diseaseClasses: ["phoma_stem_canker"]
+    icon: "🌼"
+    color: "#FACC15"
+diseases:
+  - id: "septoria_leaf_blotch"
+    name: "Septoria Leaf Blotch"
+    scientificName: "Zymoseptoria tritici"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Gray-brown streaks limited by veins"
+      - "Black pycnidia embedded in lesions"
+      - "Lower leaves first, moving upward"
+    localNames:
+      en: "Septoria Leaf Blotch"
+      de: "Blattdürre (Septoria)"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Treat at T1 (early stem extension) and T2 (flag leaf) with an authorized fungicide program; rotate FRAC groups per German guidance."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Residue incorporation"
+      - "Varied sowing dates"
+      - "Balanced nitrogen"
+    imageTags: ["septoria", "zymoseptoria", "wheat"]
+    confidenceThreshold: 0.7
+  - id: "yellow_rust"
+    name: "Yellow (Stripe) Rust"
+    scientificName: "Puccinia striiformis"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Yellow pustules in narrow stripes"
+      - "Yellow spore dust"
+      - "Favored by cool, humid weather"
+    localNames:
+      en: "Yellow Rust"
+      de: "Gelbrost"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply an authorized azole or strobilurin at first foci; scout weekly in spring. Prefer resistant varieties (monitor rust races)."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Early scouting"
+      - "Avoid susceptible varieties on risk sites"
+    imageTags: ["yellow_rust", "wheat_rust", "wheat"]
+    confidenceThreshold: 0.7
+  - id: "barley_powdery_mildew"
+    name: "Barley Powdery Mildew"
+    scientificName: "Blumeria graminis f.sp. hordei"
+    cropIds: ["barley"]
+    symptoms:
+      - "White cottony patches on leaves"
+      - "Patches turn gray-brown with black specks"
+      - "Common on lush nitrogen-rich stands"
+    localNames:
+      en: "Powdery Mildew"
+      de: "Echter Mehltau"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply an authorized mildew fungicide (e.g., a morpholine or SDHI mix) when >10–20% leaf area affected; adjust nitrogen."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Moderate nitrogen"
+      - "Sufficient seed spacing"
+    imageTags: ["powdery_mildew", "blumeria", "barley"]
+    confidenceThreshold: 0.7
+  - id: "barley_net_blotch"
+    name: "Net Blotch"
+    scientificName: "Pyrenophora teres"
+    cropIds: ["barley"]
+    symptoms:
+      - "Dark brown net-like streaks expanding to blotches"
+      - "Yellow halo around lesions"
+      - "Seed- and residue-borne"
+    localNames:
+      en: "Net Blotch"
+      de: "Netzfleckenkrankheit"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Use certified seed and an authorized fungicide at T1–T2; bury residue and rotate out of barley."
+    preventiveMeasures:
+      - "Certified healthy seed"
+      - "Rotation (1–2 years)"
+      - "Residue management"
+    imageTags: ["net_blotch", "pyrenophora", "barley"]
+    confidenceThreshold: 0.7
+  - id: "beet_cercospora"
+    name: "Cercospora Leaf Spot"
+    scientificName: "Cercospora beticola"
+    cropIds: ["sugarbeet"]
+    symptoms:
+      - "Small round gray-brown spots with red-purple borders"
+      - "Spots merge; leaves die prematurely"
+      - "Worse in warm, humid weather"
+    localNames:
+      en: "Cercospora Leaf Spot"
+      de: "Cercospora-Blattfleckenkrankheit"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply an authorized fungicide (triazole, tetrananilin or copper for organic) at first spots when thresholds are exceeded; rotate FRAC groups."
+    preventiveMeasures:
+      - "Tolerant varieties"
+      - "Wide rotation (3 years)"
+      - "Incorporate infected leaves"
+      - "Avoid wet, dense canopies"
+    imageTags: ["cercospora", "leaf_spot", "sugarbeet"]
+    confidenceThreshold: 0.7
+  - id: "beet_rust"
+    name: "Beet Rust"
+    scientificName: "Uromyces betae"
+    cropIds: ["sugarbeet"]
+    symptoms:
+      - "Rust-brown pustules on leaves"
+      - "Yellow halos around pustules"
+      - "Mostly late summer, often minor"
+    localNames:
+      en: "Beet Rust"
+      de: "Rübenrost"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Usually minor; treat only in severe cases with an authorized rust fungicide and observe waiting periods."
+    preventiveMeasures:
+      - "Destroy volunteer beets"
+      - "Field sanitation"
+      - "Balanced nutrition"
+    imageTags: ["beet_rust", "uromyces", "sugarbeet"]
+    confidenceThreshold: 0.65
+  - id: "phoma_stem_canker"
+    name: "Phoma Stem Canker (Blackleg)"
+    scientificName: "Leptosphaeria maculans"
+    cropIds: ["rapeseed"]
+    symptoms:
+      - "Leaf lesions with dark pycnidia specks"
+      - "Stem base canker; early ripening and lodging"
+      - "Internal black discoloration in the crown"
+    localNames:
+      en: "Phoma Stem Canker"
+      de: "Wurzelhals- und Stängelfäule"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply an authorized fungicide in autumn (2–4 leaves) when leaf spots appear; choose resistant varieties (Rlm genes) and long rotations."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Rotation of 4+ years"
+      - "Bury stubble debris"
+      - "Monitor autumn leaf spots"
+    imageTags: ["phoma", "blackleg", "rapeseed"]
+    confidenceThreshold: 0.7
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "Europe/Berlin"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B08", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["germany"]
+    priority: 100
+    enabled: true
+  - id: "openrouter-1"
+    name: "OpenRouter"
+    type: "openrouter"
+    baseUrl: "https://openrouter.ai/api/v1"
+    apiKeyEnvVar: "OPENROUTER_API_KEY"
+    models:
+      google/gemini-flash-1.5:
+        id: "google/gemini-flash-1.5"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 20
+      requestsPerDay: 500
+    regions: ["germany"]
+    priority: 60
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in Germany.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "advisory-de"
+    taskType: "advisory"
+    language: "de"
+    systemPrompt: |
+      Sie sind Berater für deutsche Landwirte.
+      Geben Sie praktische, wirtschaftliche und zulassungskonforme Empfehlungen.
+      Antworten Sie NUR mit gültigem JSON:
+      {
+        "treatment": "Schritt-für-Schritt-Behandlung",
+        "preventive_measures": ["Maßnahme1", "Maßnahme2"],
+        "follow_up": "wann und was kontrollieren",
+        "safety_warnings": ["Warnung1", "Warnung2"]
+      }
+    userPromptTemplate: |
+      Geben Sie eine Empfehlung für {disease} in {crop} ({region}).
+      Schwere: {severity}. Sprache: {language}.
+      Symptome: {symptoms}
+      Lokale Namen: {local_names}
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.1.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/germany-v1.1.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2026-09-27T00:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "Germany region configuration: wheat, barley, sugar beet and oilseed rape; German language support."

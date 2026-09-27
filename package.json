@@ -1,0 +1,28 @@
+{
+  "name": "agrisense",
+  "version": "1.0.0",
+  "private": true,
+  "comment": "The working product lives in apps/web and is fully self-contained (its own package.json + lockfile). The legacy packages/* and apps/{coop-dashboard,farmer-app} are experimental scaffolding and are intentionally NOT npm workspaces, so `cd apps/web && npm install` installs only the web app.",
+  "scripts": {
+    "web": "npm --prefix apps/web run dev",
+    "web:build": "npm --prefix apps/web run build",
+    "web:install": "npm --prefix apps/web install",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "concurrently": "^8.2.2",
+    "husky": "^8.0.3",
+    "prettier": "^3.1.0",
+    "tsx": "^4.6.0",
+    "turbo": "^1.11.0",
+    "typescript": "^5.3.0",
+    "zod": "^3.22.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "npm@10.2.0"
+}

@@ -1,0 +1,334 @@
+id: mexico
+name: "Mexico"
+displayName:
+  en: "Mexico"
+  es: "México"
+isoCode: "MX"
+timezone: "America/Mexico_City"
+languages:
+  - code: "es"
+    name: "Spanish"
+    nativeName: "Español"
+    rtl: false
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+defaultLanguage: "es"
+currency: "MXN"
+coordinates:
+  latMin: 14.5
+  latMax: 32.7
+  lonMin: -118.4
+  lonMax: -86.7
+crops:
+  - id: "maize"
+    name: "Maize"
+    scientificName: "Zea mays"
+    localNames:
+      en: "Maize"
+      es: "Maíz"
+    growingSeasons: ["spring-summer", "fall-winter"]
+    diseaseClasses: ["tar_spot", "fall_armyworm", "common_rust"]
+    icon: "🌽"
+    color: "#F59E0B"
+  - id: "tomato"
+    name: "Tomato"
+    scientificName: "Solanum lycopersicum"
+    localNames:
+      en: "Tomato"
+      es: "Tomate"
+    growingSeasons: ["spring", "autumn"]
+    diseaseClasses: ["tomato_yellow_leaf_curl", "tomato_late_blight"]
+    icon: "🍅"
+    color: "#EF4444"
+  - id: "bean"
+    name: "Common Bean"
+    scientificName: "Phaseolus vulgaris"
+    localNames:
+      en: "Bean"
+      es: "Frijol"
+    growingSeasons: ["spring-summer"]
+    diseaseClasses: ["angular_leaf_spot", "bean_rust"]
+    icon: "🫘"
+    color: "#B45309"
+  - id: "avocado"
+    name: "Avocado"
+    scientificName: "Persea americana"
+    localNames:
+      en: "Avocado"
+      es: "Aguacate"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["avocado_root_rot"]
+    icon: "🥑"
+    color: "#4D7C0F"
+diseases:
+  - id: "tar_spot"
+    name: "Tar Spot Complex"
+    scientificName: "Phyllachora maydis (with Monographella/Coniothyrium in complex)"
+    cropIds: ["maize"]
+    symptoms:
+      - "Small black raised spots on leaves"
+      - "Fish-eye halos; necrotic strips in complex"
+      - "Yield loss when canopy infected early"
+    localNames:
+      en: "Tar Spot"
+      es: "Mancha de asfalto"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a labeled fungicide (triazole/strobilurin) at tasseling when spots spread past the lower canopy; manage residue and choose tolerant hybrids."
+    preventiveMeasures:
+      - "Tolerant hybrids"
+      - "Residue incorporation"
+      - "Rotation"
+      - "Scout during cool humid spells"
+    imageTags: ["tar_spot", "phyllachora", "maize"]
+    confidenceThreshold: 0.7
+  - id: "fall_armyworm"
+    name: "Fall Armyworm"
+    scientificName: "Spodoptera frugiperda"
+    cropIds: ["maize"]
+    symptoms:
+      - "Ragged whorl feeding with window-pane holes"
+      - "Sawdust-like frass in whorl"
+      - "Larvae with inverted Y head marking"
+    localNames:
+      en: "Fall Armyworm"
+      es: "Gusano cogollero"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Scout weekly; apply a labeled insecticide (e.g., emamectin benzoate or spinosad) into whorls in the evening; rotate modes of action."
+    preventiveMeasures:
+      - "Early uniform planting"
+      - "Conserve natural enemies"
+      - "Whorl scouting from emergence"
+      - "Spot-treat hotspots only"
+    imageTags: ["fall_armyworm", "spodoptera", "maize"]
+    confidenceThreshold: 0.75
+  - id: "common_rust"
+    name: "Common Rust"
+    scientificName: "Puccinia sorghi"
+    cropIds: ["maize"]
+    symptoms:
+      - "Cinnamon-brown pustules scattered on both leaf surfaces"
+      - "Powdery rust spores"
+      - "Favored by mild humid nights"
+    localNames:
+      en: "Common Rust"
+      es: "Roya común"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Usually minor; use a labeled fungicide only if pustules reach the ear leaf before grain fill on susceptible hybrids."
+    preventiveMeasures:
+      - "Resistant hybrids"
+      - "Balanced fertility"
+      - "Timely planting"
+    imageTags: ["common_rust", "puccinia", "maize"]
+    confidenceThreshold: 0.65
+  - id: "tomato_yellow_leaf_curl"
+    name: "Tomato Yellow Leaf Curl Virus"
+    scientificName: "TYLCV (begomovirus, whitefly-transmitted)"
+    cropIds: ["tomato"]
+    symptoms:
+      - "Yellow upward-cupped leaf margins"
+      - "Stunting, flower drop"
+      - "Severe yield loss on young infected plants"
+    localNames:
+      en: "Yellow Leaf Curl"
+      es: "Virus del enrollamiento amarillo"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — remove infected plants; control whitefly with approved insecticides, yellow sticky traps and 50-mesh screens; use resistant varieties."
+    preventiveMeasures:
+      - "Resistant hybrids"
+      - "Insect-proof nurseries"
+      - "Whitefly IPM program"
+      - "Remove and destroy infected plants"
+    imageTags: ["tylcv", "begomovirus", "tomato"]
+    confidenceThreshold: 0.75
+  - id: "tomato_late_blight"
+    name: "Tomato Late Blight"
+    scientificName: "Phytophthora infestans"
+    cropIds: ["tomato"]
+    symptoms:
+      - "Water-soaked blotches turning brown-black"
+      - "White mold ring on leaf underside"
+      - "Greasy brown fruit rot"
+    localNames:
+      en: "Late Blight"
+      es: "Tizón tardío"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a labeled protectant/systemic fungicide at first signs; repeat 7–10 days in cool humid weather; improve airflow."
+    preventiveMeasures:
+      - "Avoid overhead irrigation"
+      - "Staking and pruning"
+      - "Remove volunteer hosts"
+      - "Rotation"
+    imageTags: ["late_blight", "phytophthora", "tomato"]
+    confidenceThreshold: 0.7
+  - id: "angular_leaf_spot"
+    name: "Angular Leaf Spot"
+    scientificName: "Pseudocercospora griseola"
+    cropIds: ["bean"]
+    symptoms:
+      - "Angular brown lesions bounded by veins"
+      - "Gray centers with dark border"
+      - "Premature defoliation in severe cases"
+    localNames:
+      en: "Angular Leaf Spot"
+      es: "Mancha angular"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a labeled fungicide (mancozeb-type protectant or systemic) at first lesions; use resistant varieties and disease-free seed."
+    preventiveMeasures:
+      - "Certified seed"
+      - "Resistant varieties"
+      - "2-year rotation"
+      - "Avoid overhead irrigation"
+    imageTags: ["angular_leaf_spot", "pseudocercospora", "bean"]
+    confidenceThreshold: 0.7
+  - id: "bean_rust"
+    name: "Bean Rust"
+    scientificName: "Uromyces appendiculatus"
+    cropIds: ["bean"]
+    symptoms:
+      - "Small reddish-brown pustules on leaves and pods"
+      - "Yellow halos around pustules"
+      - "Defoliation when severe"
+    localNames:
+      en: "Bean Rust"
+      es: "Roya del frijol"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a labeled rust fungicide (triazole/strobilurin) at first pustules; repeat per label in humid weather."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Avoid dense planting"
+      - "Timely planting to escape peak rust"
+    imageTags: ["bean_rust", "uromyces", "bean"]
+    confidenceThreshold: 0.7
+  - id: "avocado_root_rot"
+    name: "Avocado Root Rot"
+    scientificName: "Phytophthora cinnamomi"
+    cropIds: ["avocado"]
+    symptoms:
+      - "Sparse, yellowing canopy with branch dieback"
+      - "Blackened, brittle feeder roots"
+      - "Small fruit set and tree decline"
+    localNames:
+      en: "Root Rot"
+      es: "Tristeza y secadera (Phytophthora)"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Improve drainage; apply registered phosphonate (phosphite) injections or soil drench per label; mulch with compost; never replant into infested wet soil."
+    preventiveMeasures:
+      - "Plant on raised beds / well-drained soils"
+      - "Use Phytophthora-free nursery trees"
+      - "Avoid moving infested soil on tools/boots"
+      - "Phosphite preventive program in risk zones"
+    imageTags: ["root_rot", "phytophthora_cinnamomi", "avocado"]
+    confidenceThreshold: 0.75
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "America/Mexico_City"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B08", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["mexico"]
+    priority: 100
+    enabled: true
+  - id: "openrouter-1"
+    name: "OpenRouter"
+    type: "openrouter"
+    baseUrl: "https://openrouter.ai/api/v1"
+    apiKeyEnvVar: "OPENROUTER_API_KEY"
+    models:
+      google/gemini-flash-1.5:
+        id: "google/gemini-flash-1.5"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 20
+      requestsPerDay: 500
+    regions: ["mexico"]
+    priority: 60
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in Mexico.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "advisory-es"
+    taskType: "advisory"
+    language: "es"
+    systemPrompt: |
+      Eres un técnico agrícola para productores de México.
+      Da consejos prácticos, económicos y ajustados al contexto local.
+      Responde SOLO con JSON válido:
+      {
+        "treatment": "instrucciones de tratamiento paso a paso",
+        "preventive_measures": ["medida1", "medida2"],
+        "follow_up": "cuándo y qué revisar",
+        "safety_warnings": ["advertencia1", "advertencia2"]
+      }
+    userPromptTemplate: |
+      Da un consejo para {disease} en {crop} ({region}).
+      Gravedad: {severity}. Idioma: {language}.
+      Síntomas: {symptoms}
+      Nombres locales: {local_names}
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.1.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/mexico-v1.1.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2026-09-27T00:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "Mexico region configuration: maize, tomato, bean and avocado; Spanish language support."

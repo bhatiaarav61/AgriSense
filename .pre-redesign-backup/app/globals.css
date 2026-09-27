@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Light theme */
+  --bg: 247 248 246;
+  --surface: 255 255 255;
+  --surface-2: 242 245 240;
+  --border: 224 228 220;
+  --fg: 20 28 22;
+  --muted: 96 108 98;
+  --brand: 22 163 74;      /* green-600 */
+  --brand-fg: 255 255 255;
+  --accent: 14 165 233;    /* sky-500 */
+  --warn: 217 119 6;       /* amber-600 */
+  --danger: 220 38 38;     /* red-600 */
+}
+
+.dark {
+  --bg: 9 13 11;
+  --surface: 18 24 20;
+  --surface-2: 26 33 28;
+  --border: 39 48 42;
+  --fg: 233 238 233;
+  --muted: 148 160 150;
+  --brand: 34 197 94;      /* green-500 */
+  --brand-fg: 6 20 12;
+  --accent: 56 189 248;    /* sky-400 */
+  --warn: 245 158 11;
+  --danger: 248 113 113;
+}
+
+* {
+  border-color: rgb(var(--border));
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--fg));
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Thin, theme-aware scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--border)) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgb(var(--border));
+  border-radius: 999px;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-border bg-surface shadow-card;
+  }
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/50 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-brand {
+    @apply btn bg-brand text-brand-fg hover:opacity-90;
+  }
+  .btn-ghost {
+    @apply btn border border-border bg-surface hover:bg-surface-2;
+  }
+  .input {
+    @apply w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm outline-none transition focus:border-brand/60 focus:ring-2 focus:ring-brand/30 placeholder:text-muted;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-fg;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-border bg-surface-2 px-2.5 py-1 text-xs font-medium text-muted;
+  }
+}

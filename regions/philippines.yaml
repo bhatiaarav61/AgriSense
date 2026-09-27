@@ -1,0 +1,394 @@
+id: philippines
+name: "Philippines"
+displayName:
+  en: "Philippines"
+  fil: "Pilipinas"
+isoCode: "PH"
+timezone: "Asia/Manila"
+languages:
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+  - code: "fil"
+    name: "Filipino"
+    nativeName: "Filipino"
+    rtl: false
+  - code: "ceb"
+    name: "Cebuano"
+    nativeName: "Cebuano"
+    rtl: false
+defaultLanguage: "en"
+currency: "PHP"
+coordinates:
+  latMin: 4.5
+  latMax: 18.6
+  lonMin: 116.9
+  lonMax: 126.6
+crops:
+  - id: "rice"
+    name: "Rice"
+    scientificName: "Oryza sativa"
+    localNames:
+      en: "Rice"
+      fil: "Palay"
+      ceb: "Humay"
+    growingSeasons: ["wet-season", "dry-season"]
+    diseaseClasses: ["rice_blast", "bacterial_leaf_blight", "tungro", "brown_spot"]
+    icon: "🍚"
+    color: "#10B981"
+  - id: "corn"
+    name: "Corn (Maize)"
+    scientificName: "Zea mays"
+    localNames:
+      en: "Corn"
+      fil: "Mais"
+      ceb: "Mais"
+    growingSeasons: ["wet-season", "dry-season"]
+    diseaseClasses: ["corn_downy_mildew", "fall_armyworm", "common_rust"]
+    icon: "🌽"
+    color: "#F59E0B"
+  - id: "banana"
+    name: "Banana"
+    scientificName: "Musa spp."
+    localNames:
+      en: "Banana"
+      fil: "Saging"
+      ceb: "Saging"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["black_sigatoka", "banana_bunchy_top"]
+    icon: "🍌"
+    color: "#EAB308"
+  - id: "coconut"
+    name: "Coconut"
+    scientificName: "Cocos nucifera"
+    localNames:
+      en: "Coconut"
+      fil: "Niyog"
+      ceb: "Lubi"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["coconut_rhinoceros_beetle"]
+    icon: "🥥"
+    color: "#78716C"
+diseases:
+  - id: "rice_blast"
+    name: "Rice Blast"
+    scientificName: "Magnaporthe oryzae"
+    cropIds: ["rice"]
+    symptoms:
+      - "Diamond-shaped gray lesions with brown margins"
+      - "Neck rot that empties the panicle (whiteheads)"
+      - "Collar rot at the leaf blade joint"
+    localNames:
+      en: "Rice Blast"
+      fil: "Bulik"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply tricyclazole 75% WP @ 0.6g/L at first lesions; re-apply at heading to protect the neck. Split nitrogen and maintain steady shallow flood."
+    preventiveMeasures:
+      - "Resistant varieties (e.g., NSIC Rc lines)"
+      - "Avoid excessive nitrogen"
+      - "Keep steady shallow flooding"
+      - "Remove infected stubble"
+    imageTags: ["rice_blast", "magnaporthe", "rice"]
+    confidenceThreshold: 0.7
+  - id: "bacterial_leaf_blight"
+    name: "Bacterial Leaf Blight"
+    scientificName: "Xanthomonas oryzae pv. oryzae"
+    cropIds: ["rice"]
+    symptoms:
+      - "Yellow, wavy lesions from leaf tips turning straw-colored"
+      - "Milky bacterial ooze that dries as beads"
+      - "Kresek wilting in very young plants"
+    localNames:
+      en: "Bacterial Leaf Blight"
+      fil: "Pag-dilaw ng Dahon"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No strong curative spray — focus on resistant varieties and balanced nutrition. Copper-based products may limit spread; drain briefly to slow progress."
+    preventiveMeasures:
+      - "Use resistant NSIC varieties"
+      - "Avoid over-fertilizing with nitrogen"
+      - "Clean seed and seedbed hygiene"
+      - "Avoid wounds during weeding"
+    imageTags: ["bacterial_leaf_blight", "xanthomonas", "rice"]
+    confidenceThreshold: 0.7
+  - id: "tungro"
+    name: "Rice Tungro"
+    scientificName: "Rice tungro bacilliform + spherical virus (green leafhopper vector)"
+    cropIds: ["rice"]
+    symptoms:
+      - "Yellow-orange leaf discoloration starting from tips"
+      - "Stunted plants with reduced tillering"
+      - "Rusty spots and hindering panicle emergence"
+    localNames:
+      en: "Tungro"
+      fil: "Tungro"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — rogue infected hills. Control green leafhopper with approved insecticide at early infection; coordinate synchronous planting across the area."
+    preventiveMeasures:
+      - "Synchronous planting with a fallow period"
+      - "Tungro-resistant varieties"
+      - "Control leafhopper vectors early"
+      - "Destroy stubble and ratoons after harvest"
+    imageTags: ["tungro", "virus", "rice"]
+    confidenceThreshold: 0.75
+  - id: "brown_spot"
+    name: "Brown Spot"
+    scientificName: "Bipolaris oryzae"
+    cropIds: ["rice"]
+    symptoms:
+      - "Brown oval spots with gray centers"
+      - "Discolored, pecky grains"
+      - "More severe in nutrient-poor soils"
+    localNames:
+      en: "Brown Spot"
+      fil: "Mantsang Kayumanggi"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L at flag leaf. Correct soil fertility — brown spot thrives in poor soils, especially lacking potassium."
+    preventiveMeasures:
+      - "Balanced fertilization"
+      - "Certified seed"
+      - "Avoid drought stress"
+      - "Field sanitation"
+    imageTags: ["brown_spot", "bipolaris", "rice"]
+    confidenceThreshold: 0.65
+  - id: "corn_downy_mildew"
+    name: "Corn Downy Mildew"
+    scientificName: "Peronosclerospora spp."
+    cropIds: ["corn"]
+    symptoms:
+      - "Chlorotic striping of young leaves"
+      - "White downy growth on leaf undersides"
+      - "Tassel malformation and barren plants"
+    localNames:
+      en: "Downy Mildew"
+      fil: "An-bukay"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply metalaxyl-based seed treatment or foliar spray early. Rogue infected plants; plant resistant varieties and avoid overlapping planting calendars."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Metalaxyl seed treatment"
+      - "Synchronous planting; remove ratoons"
+      - "Rogue systemically infected plants"
+    imageTags: ["downy_mildew", "peronosclerospora", "corn"]
+    confidenceThreshold: 0.7
+  - id: "fall_armyworm"
+    name: "Fall Armyworm"
+    scientificName: "Spodoptera frugiperda"
+    cropIds: ["corn"]
+    symptoms:
+      - "Ragged whorl feeding with window-pane holes"
+      - "Sawdust-like frass in the whorl"
+      - "Larvae with inverted Y on the head"
+    localNames:
+      en: "Fall Armyworm"
+      fil: "Armyworm"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply emamectin benzoate 5% SG @ 0.4g/L directed into whorls in the evening. Scout weekly; use pheromone traps and native enemies."
+    preventiveMeasures:
+      - "Early uniform planting"
+      - "Weekly whorl scouting"
+      - "Conserve earwigs and other biocontrol"
+      - "Spot-spray only hotspots"
+    imageTags: ["fall_armyworm", "spodoptera", "corn"]
+    confidenceThreshold: 0.75
+  - id: "common_rust"
+    name: "Common Rust"
+    scientificName: "Puccinia sorghi"
+    cropIds: ["corn"]
+    symptoms:
+      - "Cinnamon-brown pustules scattered on leaves"
+      - "Spores rub off as powder"
+      - "Premature leaf drying in severe cases"
+    localNames:
+      en: "Common Rust"
+      fil: "Kalawang"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L at early infection. Favor resistant hybrids; avoid heavy late nitrogen."
+    preventiveMeasures:
+      - "Resistant hybrids"
+      - "Timely planting"
+      - "Balanced nutrition"
+    imageTags: ["common_rust", "puccinia", "corn"]
+    confidenceThreshold: 0.65
+  - id: "black_sigatoka"
+    name: "Black Sigatoka"
+    scientificName: "Pseudocercospora fijiensis"
+    cropIds: ["banana"]
+    symptoms:
+      - "Dark streaks turning black with yellow halos"
+      - "Extensive leaf necrosis and early leaf death"
+      - "Underweight, prematurely ripening bunches"
+    localNames:
+      en: "Black Sigatoka"
+      fil: "Sigatoka"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Remove infected leaves; apply systemic fungicides (triazole/strobilurin rotation) per disease cycle. Improve drainage and plant spacing."
+    preventiveMeasures:
+      - "Leaf removal and sanitation"
+      - "Proper spacing and drainage"
+      - "Fungicide rotation"
+      - "Good nutrition"
+    imageTags: ["black_sigatoka", "cercospora", "banana"]
+    confidenceThreshold: 0.7
+  - id: "banana_bunchy_top"
+    name: "Banana Bunchy Top Virus"
+    scientificName: "Banana bunchy top virus (aphid-transmitted)"
+    cropIds: ["banana"]
+    symptoms:
+      - "Dark green hook-shaped streaks along leaf veins"
+      - "Bunched, stunted leaves at the crown"
+      - "Infected plants produce no fruit"
+    localNames:
+      en: "Bunchy Top"
+      fil: "Bunchy-top"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — destroy infected mats (inject herbicide or uproot and chop). Control banana aphids; use virus-free tissue-cultured planting material."
+    preventiveMeasures:
+      - "Tissue-cultured clean suckers"
+      - "Aphid control"
+      - "Prompt destruction of infected mats"
+      - "Quarantine movement of suckers"
+    imageTags: ["bunchy_top", "virus", "banana"]
+    confidenceThreshold: 0.8
+  - id: "coconut_rhinoceros_beetle"
+    name: "Coconut Rhinoceros Beetle"
+    scientificName: "Oryctes rhinoceros"
+    cropIds: ["coconut"]
+    symptoms:
+      - "V- or diamond-shaped cut in unfolded fronds"
+      - "Holes chewed in the bud region"
+      - "Weakened crowns and reduced nut set"
+    localNames:
+      en: "Rhinoceros Beetle"
+      fil: "Uod/Bukbok ng Niyog"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Hook out beetles from breeding sites (dead logs, manure piles). Use pheromone traps, biological control (Oryctes baculovirus, Metarhizium) and fill crown axils with sand/naphthalene balls."
+    preventiveMeasures:
+      - "Sanitation — destroy breeding sites"
+      - "Pheromone (oryctalure) trapping"
+      - "Green-manure cover to deter egg laying"
+      - "Crown axil protection in young palms"
+    imageTags: ["rhinoceros_beetle", "oryctes", "coconut"]
+    confidenceThreshold: 0.75
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "Asia/Manila"
+  - id: "nasa-power"
+    name: "NASA POWER"
+    type: "nasa-power"
+    baseUrl: "https://power.larc.nasa.gov/api/temporal/daily/point"
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 1000
+    parameters:
+      community: "AG"
+      format: "JSON"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B08", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["philippines"]
+    priority: 100
+    enabled: true
+  - id: "groq-1"
+    name: "Groq"
+    type: "groq"
+    baseUrl: "https://api.groq.com/openai/v1"
+    apiKeyEnvVar: "GROQ_API_KEY"
+    models:
+      llama-3.1-70b-versatile:
+        id: "llama-3.1-70b-versatile"
+        taskTypes: ["advisory", "chat", "yield-prediction"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 6000
+      tokensPerMinute: 6000
+    regions: ["philippines"]
+    priority: 90
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in the Philippines.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "advisory-fil"
+    taskType: "advisory"
+    language: "fil"
+    systemPrompt: |
+      Ikaw ay isang agricultural extension officer para sa mga magsasaka sa Pilipinas.
+      Magbigay ng praktikal at abot-kayang payo sa paggamot.
+      Sumagot SA VALID JSON lamang:
+      {
+        "treatment": "hakbang-hakbang na paggamot",
+        "preventive_measures": ["hakbang1", "hakbang2"],
+        "follow_up": "kailan muling suriin",
+        "safety_warnings": ["babala1", "babala2"]
+      }
+    userPromptTemplate: |
+      Magbigay ng payo para sa {disease} sa {crop} ({region}).
+      Kalubhaan: {severity}. Wika: {language}.
+      Mga sintomas: {symptoms}
+      Lokal na pangalan: {local_names}
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.1.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/philippines-v1.1.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2026-09-27T00:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "Philippines region configuration: rice, corn, banana and coconut; English, Filipino and Cebuano support."

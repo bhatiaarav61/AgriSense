@@ -1,0 +1,971 @@
+id: brazil
+name: "Brazil"
+displayName:
+  en: "Brazil"
+  pt: "Brasil"
+isoCode: "BR"
+timezone: "America/Sao_Paulo"
+languages:
+  - code: "pt"
+    name: "Portuguese"
+    nativeName: "Português"
+    rtl: false
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+defaultLanguage: "pt"
+currency: "BRL"
+coordinates:
+  latMin: -33.8
+  latMax: 5.3
+  lonMin: -74.0
+  lonMax: -34.8
+crops:
+  - id: "soybean"
+    name: "Soybean"
+    scientificName: "Glycine max"
+    localNames:
+      pt: "Soja"
+      en: "Soybean"
+    growingSeasons: ["summer", "winter-safra"]
+    diseaseClasses: ["asian_rust", "frog_eye_leaf_spot", "target_spot", "stem_canker", "pod_blight", "root_rot"]
+    icon: "🫘"
+    color: "#10B981"
+  - id: "maize"
+    name: "Maize"
+    scientificName: "Zea mays"
+    localNames:
+      pt: "Milho"
+      en: "Maize"
+    growingSeasons: ["summer", "safrinha"]
+    diseaseClasses: ["common_rust", "southern_rust", "gray_leaf_spot", "northern_leaf_blight", "ear_rot", "stalk_rot"]
+    icon: "🌽"
+    color: "#F59E0B"
+  - id: "coffee"
+    name: "Coffee"
+    scientificName: "Coffea arabica"
+    localNames:
+      pt: "Café"
+      en: "Coffee"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["coffee_leaf_rust", "coffee_berry_borer", "coffee_leaf_miner", "cercospora_leaf_spot", "root_rot"]
+    icon: "☕"
+    color: "#6B4226"
+  - id: "sugarcane"
+    name: "Sugarcane"
+    scientificName: "Saccharum officinarum"
+    localNames:
+      pt: "Cana-de-açúcar"
+      en: "Sugarcane"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["red_rot", "smut", "leaf_scald", "mosaic", "pokkah_boeng", "ratoon_stunting"]
+    icon: "🎋"
+    color: "#06B6D4"
+  - id: "cotton"
+    name: "Cotton"
+    scientificName: "Gossypium hirsutum"
+    localNames:
+      pt: "Algodão"
+      en: "Cotton"
+    growingSeasons: ["summer"]
+    diseaseClasses: ["cotton_leaf_curl", "bacterial_blight", "target_spot", "verticillium_wilt", "root_knot_nematode", "boll_rot"]
+    icon: "🌱"
+    color: "#EC4899"
+diseases:
+  - id: "asian_rust"
+    name: "Asian Soybean Rust"
+    scientificName: "Phakopsora pachyrhizi"
+    cropIds: ["soybean"]
+    symptoms:
+      - "Small tan lesions on lower leaves"
+      - "Lesions develop into pustules (uredinia)"
+      - "Rust-colored spores on underside"
+      - "Premature defoliation"
+      - "Severe yield loss if early infection"
+    localNames:
+      pt: "Ferrugem Asiática da Soja"
+      en: "Asian Soybean Rust"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Aplique fungicidas triazóis (epoxiconazol, ciproconazol) + estrobilurinas (azoxistrobina, piraclostrobina) no estádio R1-R3. Monitoramento semanal com armadilhas de esporos. Use cultivares resistentes (ex: TMG 7062 RR, BRS 1010 IPRO)."
+    preventiveMeasures:
+      - "Plantio precoce (janela de plantio)"
+      - "Cultivares com resistência genética (Rpp genes)"
+      - "Rotação de culturas (milho, algodão)"
+      - "Eliminação de plantas voluntárias (tigueras)"
+      - "Vazio sanitário obrigatório (60-90 dias)"
+    imageTags: ["asian_rust", "phakopsora", "soybean"]
+    confidenceThreshold: 0.85
+  - id: "frog_eye_leaf_spot"
+    name: "Frog Eye Leaf Spot"
+    scientificName: "Cercospora sojina"
+    cropIds: ["soybean"]
+    symptoms:
+      - "Circular gray lesions with dark red-brown margins"
+      - "Gray center with tiny black dots (pseudostromata)"
+      - "Lesions on leaves, pods, stems"
+      - "Premature defoliation"
+    localNames:
+      pt: "Mancha Olho-de-Rã"
+      en: "Frog Eye Leaf Spot"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Aplique fungicidas SDHI (fluxapiroxade, bixafeno) + triazóis no estádio R3-R5. Rotação com milho reduz inóculo. Sementes tratadas com carboxina + tiram."
+    preventiveMeasures:
+      - "Cultivares resistentes"
+      - "Rotação de culturas (2+ anos)"
+      - "Tratamento de sementes"
+      - "Destruição de restos culturais"
+    imageTags: ["frog_eye_leaf_spot", "cercospora", "soybean"]
+    confidenceThreshold: 0.75
+  - id: "target_spot"
+    name: "Target Spot"
+    scientificName: "Corynespora cassiicola"
+    cropIds: ["soybean", "cotton"]
+    symptoms:
+      - "Concentric ring lesions (target-like)"
+      - "Large lesions with defined margins"
+      - "Gray center with dark borders"
+      - "Premature defoliation"
+    localNames:
+      pt: "Mancha Alvo"
+      en: "Target Spot"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Aplique fungicidas multissítio (mancozeb, clorotalonil) + sítio específico (azoxistrobina, bixafeno) no fechamento de entrelinhas. Evite irrigação por aspersão."
+    preventiveMeasures:
+      - "Cultivares tolerantes"
+      - "Espaçamento adequado"
+      - "Rotação com gramíneas"
+      - "Manejo de irrigação"
+    imageTags: ["target_spot", "corynespora", "soybean", "cotton"]
+    confidenceThreshold: 0.7
+  - id: "stem_canker"
+    name: "Stem Canker"
+    scientificName: "Diaporthe phaseolorum var. meridionalis"
+    cropIds: ["soybean"]
+    symptoms:
+      - "Reddish-brown cankers on lower stem"
+      - "Cankers girdle stem, causing wilting"
+      - "Black fruiting bodies (pycnidia) on cankers"
+      - "Premature plant death"
+    localNames:
+      pt: "Cancro da Haste"
+      en: "Stem Canker"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Não há controle químico curativo. Use cultivares resistentes. Tratamento de sementes com fungicidas sistêmicos. Rotação com milho (2+ anos). Evite ferimentos durante operações."
+    preventiveMeasures:
+      - "Cultivares resistentes (genes Rdc)"
+      - "Rotação com milho (2+ anos)"
+      - "Tratamento de sementes"
+      - "Plantio em solo bem drenado"
+    imageTags: ["stem_canker", "diaporthe", "soybean"]
+    confidenceThreshold: 0.75
+  - id: "pod_blight"
+    name: "Pod and Stem Blight"
+    scientificName: "Diaporthe longicolla / Phomopsis longicolla"
+    cropIds: ["soybean"]
+    symptoms:
+      - "Black pycnidia in rows on mature stems"
+      - "Shriveled, moldy seeds"
+      - "Poor seed quality and germination"
+      - "Delayed harvest increases severity"
+    localNames:
+      pt: "Podridão de Vagem e Haste"
+      en: "Pod and Stem Blight"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Colheita na época correta (umidade 13-14%). Fungicidas no estádio R5-R6 (azoxistrobina + ciproconazol). Secagem rápida pós-colheita. Armazenamento arejado."
+    preventiveMeasures:
+      - "Colheita no ponto"
+      - "Secagem rápida"
+      - "Cultivares de ciclo adequado"
+      - "Rotação de culturas"
+    imageTags: ["pod_blight", "diaporthe", "phomopsis", "soybean"]
+    confidenceThreshold: 0.7
+  - id: "root_rot_soybean"
+    name: "Root Rot"
+    scientificName: "Phytophthora sojae / Pythium spp. / Rhizoctonia solani"
+    cropIds: ["soybean"]
+    symptoms:
+      - "Damping-off de plântulas"
+      - "Lesões marrom-avermelhadas nas raízes"
+      - "Plantas murcham em dias quentes"
+      - "Morte de plantas em áreas baixas"
+    localNames:
+      pt: "Podridão de Raiz"
+      en: "Root Rot"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Tratamento de sementes com metalaxil + fluxapiroxade ou etaboxam. Cultivares com genes Rps (resistência a Phytophthora). Drenagem adequada. Evite plantio profundo."
+    preventiveMeasures:
+      - "Tratamento de sementes obrigatório"
+      - "Cultivares com genes Rps"
+      - "Drenagem do solo"
+      - "Rotação com gramíneas"
+    imageTags: ["root_rot", "phytophthora", "pythium", "rhizoctonia", "soybean"]
+    confidenceThreshold: 0.7
+  - id: "common_rust_maize"
+    name: "Common Rust"
+    scientificName: "Puccinia sorghi"
+    cropIds: ["maize"]
+    symptoms:
+      - "Pústulas cinamomo em ambas superfícies foliares"
+      - "Pústulas dispersas, não em faixas"
+      - "Teliósporos pretos no final da safra"
+    localNames:
+      pt: "Ferrugem Comum"
+      en: "Common Rust"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Aplique mancozeb 75% WP @ 2.5g/L ou propiconazol 25% EC @ 1ml/L no início da infecção. Use híbridos resistentes."
+    preventiveMeasures:
+      - "Híbridos resistentes"
+      - "Plantio precoce"
+      - "Nutrição balanceada"
+    imageTags: ["common_rust", "puccinia", "maize"]
+    confidenceThreshold: 0.65
+  - id: "southern_rust"
+    name: "Southern Rust"
+    scientificName: "Puccinia polysora"
+    cropIds: ["maize"]
+    symptoms:
+      - "Pústulas alaranjadas claras (superfície superior)"
+      - "Pústulas mais densas que ferrugem comum"
+      - "Desenvolvimento rápido em clima quente/úmido"
+      - "Pode causar perda severa"
+    localNames:
+      pt: "Ferrugem Polysora"
+      en: "Southern Rust"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Aplique fungicidas triazóis + estrobilurinas (epoxiconazol + piraclostrobina) no estádio VT-R1. Monitoramento constante. Híbridos tolerantes."
+    preventiveMeasures:
+      - "Híbridos tolerantes"
+      - "Plantio na época recomendada"
+      - "Monitoramento intensivo"
+    imageTags: ["southern_rust", "puccinia_polysora", "maize"]
+    confidenceThreshold: 0.8
+  - id: "gray_leaf_spot_maize"
+    name: "Gray Leaf Spot"
+    scientificName: "Cercospora zeae-maydis"
+    cropIds: ["maize"]
+    symptoms:
+      - "Lesões retangulares cinza-claro"
+      - "Lesões paralelas às nervuras"
+      - "Margens distintas com halo amarelo"
+      - "Folhas basais afetadas primeiro"
+    localNames:
+      pt: "Mancha Cinzenta"
+      en: "Gray Leaf Spot"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Aplique azoxistrobina 23% SC @ 1ml/L ou piraclostrobina 20% WG @ 0.6g/L ou propiconazol 25% EC @ 1ml/L no estádio VT. Repita se necessário."
+    preventiveMeasures:
+      - "Híbridos resistentes"
+      - "Rotação de culturas (2+ anos)"
+      - "Manejo de restos culturais"
+      - "Adubação balanceada"
+    imageTags: ["gray_leaf_spot", "cercospora", "maize"]
+    confidenceThreshold: 0.7
+  - id: "northern_leaf_blight"
+    name: "Northern Corn Leaf Blight"
+    scientificName: "Exserohilum turcicum"
+    cropIds: ["maize"]
+    symptoms:
+      - "Lesões elípticas longas cinza-esverdeadas"
+      - "Lesões tornam-se marrom-claro com margens escuras"
+      - "Começa nas folhas inferiores, sobe"
+      - "Queima severa das folhas"
+    localNames:
+      pt: "Helmintosporiose"
+      en: "Northern Corn Leaf Blight"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Aplique mancozeb 75% WP @ 2.5g/L ou azoxistrobina 23% SC @ 1ml/L ou propiconazol 25% EC @ 1ml/L no primeiro sinal. Repita em intervalos de 15 dias."
+    preventiveMeasures:
+      - "Híbridos resistentes"
+      - "Rotação com não-hospedeiras"
+      - "Enterrar restos culturais"
+      - "Evite irrigação por aspersão"
+    imageTags: ["northern_leaf_blight", "exserohilum", "maize"]
+    confidenceThreshold: 0.7
+  - id: "ear_rot_maize"
+    name: "Ear Rot"
+    scientificName: "Fusarium verticillioides / Aspergillus flavus"
+    cropIds: ["maize"]
+    symptoms:
+      - "Mofo branco a rosa nos grãos"
+      - "Apodrecimento dos grãos a partir do ápice"
+      - "Risco de contaminação por micotoxinas"
+      - "Palha aderindo firmemente à espiga"
+    localNames:
+      pt: "Podridão de Espiga"
+      en: "Ear Rot"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Colheita na umidade correta (20-25%). Secagem rápida <14% umidade. Armazenamento arejado. Nenhuma pulverização eficaz no campo; prevenção crítica. Use híbridos resistentes."
+    preventiveMeasures:
+      - "Híbridos resistentes"
+      - "Evite plantio tardio"
+      - "Controle de insetos da espiga"
+      - "Colheita na umidade correta"
+      - "Secagem e armazenamento adequados"
+    imageTags: ["ear_rot", "fusarium", "aspergillus", "maize"]
+    confidenceThreshold: 0.7
+  - id: "stalk_rot"
+    name: "Stalk Rot"
+    scientificName: "Fusarium moniliforme / Colletotrichum graminicola / Gibberella zeae"
+    cropIds: ["maize"]
+    symptoms:
+      - "Apodrecimento interno do colmo"
+      - "Plantas acamam facilmente"
+      - "Descoloração interna (rosa, vermelho, preto)"
+      - "Grãos mal formados (grãos chochos)"
+    localNames:
+      pt: "Podridão de Colmo"
+      en: "Stalk Rot"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Manejo de estresse hídrico. Evite adubação nitrogenada excessiva. Colheita antecipada de áreas com acamamento. Híbridos com boa permanência de planta."
+    preventiveMeasures:
+      - "Manejo de água adequado"
+      - "Nitrogênio balanceado"
+      - "Controle de insetos do colmo"
+      - "Híbridos com stay-green"
+    imageTags: ["stalk_rot", "fusarium", "colletotrichum", "maize"]
+    confidenceThreshold: 0.7
+  - id: "coffee_leaf_rust_br"
+    name: "Coffee Leaf Rust"
+    scientificName: "Hemileia vastatrix"
+    cropIds: ["coffee"]
+    symptoms:
+      - "Manchas amarela-alaranjadas na face inferior das folhas"
+      - "Desfolha precoce"
+      - "Redução fotossíntese e produção"
+      - "Severo no terço inferior da copa"
+    localNames:
+      pt: "Ferrugem do Cafeeiro"
+      en: "Coffee Leaf Rust"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Aplique fungicidas triazóis (epoxiconazol, ciproconazol) ou estrobilurinas. Poda para arejamento. Use cultivares resistentes (Catuaí Vermelho IAC 144, Obatã IAC 1669-20)."
+    preventiveMeasures:
+      - "Cultivares resistentes (Catuaí, Obatã, Catucaí)"
+      - "Manejo de sombreamento"
+      - "Poda regular"
+      - "Nutrição balanceada"
+    imageTags: ["coffee_leaf_rust", "hemileia", "coffee"]
+    confidenceThreshold: 0.75
+  - id: "coffee_berry_borer"
+    name: "Coffee Berry Borer"
+    scientificName: "Hypothenemus hampei"
+    cropIds: ["coffee"]
+    symptoms:
+      - "Pequeno orifício de entrada no fruto"
+      - "Galerias internas com serragem"
+      - "Grãos danificados, furados"
+      - "Queda prematura de frutos"
+    localNames:
+      pt: "Broca do Café"
+      en: "Coffee Berry Borer"
+    severityLevels: ["high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Controle integrado: armadilhas com etanol+metanol (1:1), liberação de parasitoides (Cephalonomia stephanoderis, Prorops nasuta), fungos entomopatogênicos (Beauveria bassiana). Colheita total (varrição)."
+    preventiveMeasures:
+      - "Colheita total (zero fruto residual)"
+      - "Armadilhas de monitoramento"
+      - "Controle biológico (parasitoides, fungos)"
+      - "Manejo de sombreamento"
+    imageTags: ["coffee_berry_borer", "hypothenemus", "coffee"]
+    confidenceThreshold: 0.8
+  - id: "coffee_leaf_miner"
+    name: "Coffee Leaf Miner"
+    scientificName: "Leucoptera coffeella"
+    cropIds: ["coffee"]
+    symptoms:
+      - "Minas serpentinas nas folhas"
+      - "Folhas ficam marrons e secas"
+      - "Desfolha intensa"
+      - "Redução da área fotossintética"
+    localNames:
+      pt: "Bicho Mineiro"
+      en: "Coffee Leaf Miner"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Aplique inseticidas sistêmicos (tiometoxam, imidacloprid) via solo ou foliar. Controle biológico com vespas parasitoides. Poda de limpeza."
+    preventiveMeasures:
+      - "Monitoramento com armadilhas adesivas"
+      - "Controle biológico (parasitoides)"
+      - "Poda de limpeza"
+      - "Evite estresse hídrico"
+    imageTags: ["coffee_leaf_miner", "leucoptera", "coffee"]
+    confidenceThreshold: 0.7
+  - id: "cercospora_leaf_spot_coffee"
+    name: "Cercospora Leaf Spot (Coffee)"
+    scientificName: "Cercospora coffeicola"
+    cropIds: ["coffee"]
+    symptoms:
+      - "Manchas circulares marrom-claras com halo amarelo"
+      - "Centro cinza com pontuações escuras"
+      - "Desfolha precoce"
+      - "Lesões também em frutos verdes"
+    localNames:
+      pt: "Cercosporiose do Cafeeiro"
+      en: "Cercospora Leaf Spot"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Aplique mancozeb 75% WP @ 2.5g/L ou clorotalonil 75% WP @ 2g/L ou propiconazol 25% EC @ 1ml/L. Poda para ventilação. Remova folhas caídas."
+    preventiveMeasures:
+      - "Poda para arejamento"
+      - "Remoção de folhas caídas"
+      - "Adubação balanceada (K adequado)"
+      - "Evite irrigação por aspersão"
+    imageTags: ["cercospora_leaf_spot", "cercospora", "coffee"]
+    confidenceThreshold: 0.7
+  - id: "coffee_root_rot"
+    name: "Coffee Root Rot"
+    scientificName: "Rhizoctonia solani / Fusarium spp. / Phytophthora spp."
+    cropIds: ["coffee"]
+    symptoms:
+      - "Amarelecimento e murcha da planta"
+      - "Raízes apodrecidas, marrom-escuros"
+      - "Morte súbita de plantas novas"
+      - "Falhas no plantio"
+    localNames:
+      pt: "Podridão Radicular do Cafeeiro"
+      en: "Coffee Root Rot"
+    severityLevels: ["high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Mudas sadias de viveiros certificados. Tratamento de mudas com fungicidas (carboxina + tiram). Drenagem eficiente. Solarização do solo. Cultivares tolerantes."
+    preventiveMeasures:
+      - "Mudas certificadas"
+      - "Tratamento de mudas"
+      - "Drenagem eficiente"
+      - "Evite replantio em área doente"
+    imageTags: ["coffee_root_rot", "rhizoctonia", "fusarium", "phytophthora", "coffee"]
+    confidenceThreshold: 0.8
+  - id: "red_rot_sugarcane"
+    name: "Red Rot"
+    scientificName: "Colletotrichum falcatum"
+    cropIds: ["sugarcane"]
+    symptoms:
+      - "Descoloração avermelhada dos tecidos internos"
+      - "Manchas brancas nos nós (acérvulos)"
+      - "Cheiro alcoólico ao fender a cana"
+      - "Medula oca e fibrosa"
+      - "Folhas do topo amareladas e secas"
+    localNames:
+      pt: "Podridão Vermelha"
+      en: "Red Rot"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Não há controle químico curativo. Elimine toletes doentes. Tratamento de toletes com carbendazim 50% WP @ 1g/L por 10 min. Use variedades resistentes (RB 867515, RB 92579, CTC 4)."
+    preventiveMeasures:
+      - "Toletes sadios certificados"
+      - "Tratamento de toletes obrigatório"
+      - "Rotação de culturas (2-3 anos com soja/feijão)"
+      - "Eliminação imediata de toceiras doentes"
+      - "Evite soqueira em área contaminada"
+    imageTags: ["red_rot", "colletotrichum", "sugarcane"]
+    confidenceThreshold: 0.75
+  - id: "smut_sugarcane"
+    name: "Smut"
+    scientificName: "Sporisorium scitamineum"
+    cropIds: ["sugarcane"]
+    symptoms:
+      - "Chicote negro (soro) saindo do ápice"
+      - "Soro coberto por membrana branca fina"
+      - "Crescimento atrofiado, aspecto 'capim' (capimeira)"
+      - "Sem formação de cana em casos severos"
+    localNames:
+      pt: "Carvão da Cana"
+      en: "Smut"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Tratamento de toletes com propiconazol 25% EC @ 0.1% ou carbendazim 50% WP @ 0.1% por 10 min. Elimine toceiras carbonosas imediatamente. Use variedades resistentes (RB 867515, CTC 4)."
+    preventiveMeasures:
+      - "Tratamento de toletes com fungicida"
+      - "Variedades resistentes"
+      - "Eliminação de toceiras carbonosas"
+      - "Evite soqueira de cana doente"
+    imageTags: ["smut", "sporisorium", "sugarcane"]
+    confidenceThreshold: 0.7
+  - id: "leaf_scald_sugarcane"
+    name: "Leaf Scald"
+    scientificName: "Xanthomonas albilineans"
+    cropIds: ["sugarcane"]
+    symptoms:
+      - "Riscos brancos finos (lápis) nas folhas"
+      - "Riscos expandem para áreas brancas grandes"
+      - "Pontas das folhas secam e murcham"
+      - "Feixes vasculares com descoloração avermelhada"
+    localNames:
+      pt: "Escaldadura das Folhas"
+      en: "Leaf Scald"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Use toletes livres da doença. Tratamento térmico (50°C por 2 horas). Elimine toceiras doentes. Desinfete ferramentas de corte."
+    preventiveMeasures:
+      - "Toletes certificados livres"
+      - "Tratamento térmico (50°C, 2 horas)"
+      - "Desinfecção de ferramentas de colheita"
+      - "Eliminação de plantas doentes"
+    imageTags: ["leaf_scald", "xanthomonas", "sugarcane"]
+    confidenceThreshold: 0.7
+  - id: "mosaic_sugarcane"
+    name: "Sugarcane Mosaic Virus"
+    scientificName: "Sugarcane mosaic virus (SCMV) / Sorghum mosaic virus (SrMV)"
+    cropIds: ["sugarcane"]
+    symptoms:
+      - "Mosaico verde-claro/escuro nas folhas"
+      - "Estrias cloróticas nas folhas jovens"
+      - "Atraso no crescimento"
+      - "Redução de perfilhamento"
+    localNames:
+      pt: "Mosaico da Cana"
+      en: "Sugarcane Mosaic"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Use toletes livres de vírus. Controle de vetores (pulgões) com inseticidas sistêmicos. Elimine plantas voluntárias e hospedeiras alternativas. Variedades resistentes."
+    preventiveMeasures:
+      - "Toletes sadios"
+      - "Controle de pulgões"
+      - "Eliminação de plantas voluntárias"
+      - "Variedades resistentes"
+    imageTags: ["sugarcane_mosaic", "virus", "aphid", "sugarcane"]
+    confidenceThreshold: 0.65
+  - id: "pokkah_boeng_sugarcane"
+    name: "Pokkah Boeng"
+    scientificName: "Fusarium moniliforme"
+    cropIds: ["sugarcane"]
+    symptoms:
+      - "Folhas do topo torcidas e deformadas"
+      - "Estrias cloróticas e necróticas nas folhas"
+      - "Crescimento atrofiado, aspecto 'leque'"
+      - "Descoloração avermelhada interna do colmo"
+    localNames:
+      pt: "Pokkah Boeng"
+      en: "Pokkah Boeng"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Geralmente autolimitante. Remova topos severamente afetados. Tratamento de toletes com carbendazim 50% WP @ 1g/L. Nutrição balanceada reduz severidade."
+    preventiveMeasures:
+      - "Toletes sadios"
+      - "Adubação balanceada"
+      - "Evite encharcamento"
+    imageTags: ["pokkah_boeng", "fusarium", "sugarcane"]
+    confidenceThreshold: 0.6
+  - id: "ratoon_stunting"
+    name: "Ratoon Stunting Disease"
+    scientificName: "Leifsonia xyli subsp. xyli"
+    cropIds: ["sugarcane"]
+    symptoms:
+      - "Crescimento atrofiado na soqueira"
+      - "Encurtamento de entrenós"
+      - "Folhas amarelas, finas"
+      - "Sem sintomas externos óbvios na cana-planta"
+    localNames:
+      pt: "Raquitismo da Soqueira"
+      en: "Ratoon Stunting Disease"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Tratamento térmico de toletes (50°C por 2-3 horas). Desinfecção de ferramentas de corte. Use variedades resistentes. Renovação do canavial."
+    preventiveMeasures:
+      - "Tratamento térmico de toletes"
+      - "Desinfecção de ferramentas"
+      - "Variedades resistentes"
+      - "Renovação periódica"
+    imageTags: ["ratoon_stunting", "leifsonia", "sugarcane"]
+    confidenceThreshold: 0.75
+  - id: "cotton_leaf_curl_br"
+    name: "Cotton Leaf Curl Disease"
+    scientificName: "Cotton leaf curl virus (CLCuV) complex"
+    cropIds: ["cotton"]
+    symptoms:
+      - "Enrolamento das folhas (para cima/baixo)"
+      - "Espessamento e inchamento das nervuras"
+      - "Enções (crescimentos foliares) nas nervuras"
+      - "Crescimento atrofiado, maçãs reduzidas"
+      - "Transmitido por mosca-branca (Bemisia tabaci)"
+    localNames:
+      pt: "Enrolamento Foliar do Algodoeiro"
+      en: "Cotton Leaf Curl Disease"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Manejo de mosca-branca com diafenthiuron 50% WP @ 0.6g/L ou spiromesifeno 22.9% SC @ 1ml/L. Elimine plantas doentes precocemente. Use variedades tolerantes (Bt resistentes)."
+    preventiveMeasures:
+      - "Variedades Bt tolerantes"
+      - "Plantio precoce (evita pico de mosca-branca)"
+      - "Eliminação de hospedeiras alternativas"
+      - "Armadilhas adesivas amarelas"
+      - "Rotação com não-hospedeiras"
+    imageTags: ["cotton_leaf_curl", "clcuv", "whitefly", "cotton"]
+    confidenceThreshold: 0.75
+  - id: "bacterial_blight_cotton"
+    name: "Bacterial Blight (Cotton)"
+    scientificName: "Xanthomonas citri pv. malvacearum"
+    cropIds: ["cotton"]
+    symptoms:
+      - "Manchas angulares aquosas nas folhas"
+      - "Manchas tornam-se marrons com bordas vermelhas"
+      - "Cancros negros nas hastes (black arm)"
+      - "Podridão de maçã com lesões aquosas"
+    localNames:
+      pt: "Bacteriose do Algodoeiro"
+      en: "Bacterial Blight"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Aplique oxicloreto de cobre 50% WP @ 2.5g/L ou estreptomicina + tetraciclina @ 1g/L. Pulverize em intervalos de 10-15 dias. Evite irrigação por aspersão."
+    preventiveMeasures:
+      - "Sementes deslintadas com ácido"
+      - "Tratamento de sementes com estreptomicina"
+      - "Rotação de culturas (2-3 anos)"
+      - "Evite irrigação por aspersão"
+      - "Destruição de restos culturais"
+    imageTags: ["bacterial_blight", "xanthomonas", "cotton"]
+    confidenceThreshold: 0.7
+  - id: "target_spot_cotton"
+    name: "Target Spot"
+    scientificName: "Corynespora cassiicola"
+    cropIds: ["cotton"]
+    symptoms:
+      - "Manchas com anéis concêntricos (alvo)"
+      - "Lesões grandes com margens definidas"
+      - "Centro cinza com bordas escuras"
+      - "Desfolha precoce severa"
+    localNames:
+      pt: "Mancha Alvo do Algodoeiro"
+      en: "Target Spot"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Aplique fungicidas multissítio + sítio específico (azoxistrobina, bixafeno, piraclostrobina) no fechamento de entrelinhas. Manejo de irrigação. Variedades tolerantes."
+    preventiveMeasures:
+      - "Variedades tolerantes"
+      - "Espaçamento adequado"
+      - "Rotação com gramíneas"
+      - "Manejo de irrigação (evite aspersão)"
+    imageTags: ["target_spot", "corynespora", "cotton"]
+    confidenceThreshold: 0.7
+  - id: "verticillium_wilt"
+    name: "Verticillium Wilt"
+    scientificName: "Verticillium dahliae"
+    cropIds: ["cotton"]
+    symptoms:
+      - "Amarelecimento e murcha das folhas basais"
+      - "Descoloração vascular marrom no caule"
+      - "Plantas atrofiadas, morte precoce"
+      - "Mais severo em solos frios/úmidos"
+    localNames:
+      pt: "Murcha de Verticillium"
+      en: "Verticillium Wilt"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Não há controle químico eficaz. Solarização do solo no verão. Use variedades resistentes. Aplique Trichoderma viride @ 2.5kg/ha com esterco na semeadura."
+    preventiveMeasures:
+      - "Variedades resistentes"
+      - "Rotação de culturas (3-4 anos com não-hospedeiras)"
+      - "Solarização do solo"
+      - "Tratamento de sementes com Trichoderma"
+      - "Evite ferimento de raízes"
+    imageTags: ["verticillium_wilt", "verticillium", "cotton"]
+    confidenceThreshold: 0.7
+  - id: "root_knot_nematode"
+    name: "Root-Knot Nematode"
+    scientificName: "Meloidogyne incognita / M. javanica"
+    cropIds: ["cotton"]
+    symptoms:
+      - "Galhas nas raízes (nódulos)"
+      - "Plantas atrofiadas, amareladas"
+      - "Murcha em dias quentes"
+      - "Redução severa de produtividade"
+    localNames:
+      pt: "Nematóide-das-galhas"
+      en: "Root-Knot Nematode"
+    severityLevels: ["high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Tratamento de sementes com abamectina ou fluopiram. Rotação com culturas não-hospedeiras (gramíneas, braquiária). Adubação orgânica. Solarização."
+    preventiveMeasures:
+      - "Rotação com gramíneas/braquiária"
+      - "Tratamento de sementes nematicida"
+      - "Adubação orgânica"
+      - "Solarização do solo"
+      - "Variedades resistentes"
+    imageTags: ["root_knot_nematode", "meloidogyne", "cotton"]
+    confidenceThreshold: 0.8
+  - id: "boll_rot"
+    name: "Boll Rot"
+    scientificName: "Fusarium spp. / Colletotrichum spp. / Aspergillus spp."
+    cropIds: ["cotton"]
+    symptoms:
+      - "Manchas aquosas nas maçãs jovens"
+      - "Maçãs tornam-se marrons/pretas"
+      - "Fibras manchadas, qualidade reduzida"
+      - "Queda de maçãs"
+    localNames:
+      pt: "Podridão de Maçã"
+      en: "Boll Rot"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "Para {disease} em {crop} ({region}): Controle de insetos sugadores (percevejos). Fungicidas no florescimento (azoxistrobina + ciproconazol). Colheita na época. Evite excesso de nitrogênio tardio."
+    preventiveMeasures:
+      - "Controle de percevejos"
+      - "Fungicidas no florescimento"
+      - "Colheita na época"
+      - "Nitrogênio balanceado"
+    imageTags: ["boll_rot", "fusarium", "colletotrichum", "cotton"]
+    confidenceThreshold: 0.7
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "America/Sao_Paulo"
+  - id: "nasa-power"
+    name: "NASA POWER"
+    type: "nasa-power"
+    baseUrl: "https://power.larc.nasa.gov/api/temporal/daily/point"
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 1000
+    parameters:
+      community: "AG"
+      format: "JSON"
+  - id: "inmet"
+    name: "INMET (Brasil)"
+    type: "custom"
+    baseUrl: "https://apitempo.inmet.gov.br"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 5000
+    parameters:
+      format: "JSON"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B05", "B06", "B07", "B08", "B8A", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+  - id: "landsat-8"
+    name: "Landsat 8"
+    type: "landsat-8"
+    baseUrl: "https://landsatlook.usgs.gov"
+    bands: ["B2", "B3", "B4", "B5", "B6", "B7"]
+    resolution: 30
+    revisitDays: 16
+    cloudCoverThreshold: 30
+  - id: "cbers-4a"
+    name: "CBERS-4A (Brasil/China)"
+    type: "custom"
+    baseUrl: "https://www.dgi.inpe.br/cbers4a"
+    bands: ["B2", "B3", "B4", "B5"]
+    resolution: 20
+    revisitDays: 26
+    cloudCoverThreshold: 30
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+      gemini-1.5-pro:
+        id: "gemini-1.5-pro"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["brazil"]
+    priority: 100
+    enabled: true
+  - id: "groq-1"
+    name: "Groq"
+    type: "groq"
+    baseUrl: "https://api.groq.com/openai/v1"
+    apiKeyEnvVar: "GROQ_API_KEY"
+    models:
+      llama-3.1-70b-versatile:
+        id: "llama-3.1-70b-versatile"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+      llama-3.1-8b-instant:
+        id: "llama-3.1-8b-instant"
+        taskTypes: ["advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+      llama-3.2-11b-vision-preview:
+        id: "llama-3.2-11b-vision-preview"
+        taskTypes: ["disease-detection"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 6000
+      tokensPerMinute: 6000
+    regions: ["brazil"]
+    priority: 90
+    enabled: true
+  - id: "huggingface-1"
+    name: "Hugging Face Inference"
+    type: "huggingface"
+    baseUrl: "https://api-inference.huggingface.co"
+    apiKeyEnvVar: "HF_API_KEY"
+    models:
+      microsoft/resnet-50:
+        id: "microsoft/resnet-50"
+        taskTypes: ["disease-detection"]
+        maxTokens: 100
+      google/vit-base-patch16-224:
+        id: "google/vit-base-patch16-224"
+        taskTypes: ["disease-detection"]
+        maxTokens: 100
+      microsoft/beit-base-patch16-224:
+        id: "microsoft/beit-base-patch16-224"
+        taskTypes: ["disease-detection"]
+        maxTokens: 100
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 1000
+    regions: ["brazil"]
+    priority: 70
+    enabled: true
+  - id: "together-1"
+    name: "Together.ai"
+    type: "together"
+    baseUrl: "https://api.together.xyz/v1"
+    apiKeyEnvVar: "TOGETHER_API_KEY"
+    models:
+      meta-llama/Llama-3.2-11B-Vision-Instruct:
+        id: "meta-llama/Llama-3.2-11B-Vision-Instruct"
+        taskTypes: ["disease-detection"]
+        maxTokens: 4096
+        temperature: 0.3
+        costPer1kTokens: 0.0
+      meta-llama/Llama-3.1-70B-Instruct-Turbo:
+        id: "meta-llama/Llama-3.1-70B-Instruct-Turbo"
+        taskTypes: ["yield-prediction", "advisory", "chat"]
+        maxTokens: 4096
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 20
+      requestsPerDay: 1000
+      tokensPerMinute: 10000
+    regions: ["brazil"]
+    priority: 80
+    enabled: true
+  - id: "openrouter-1"
+    name: "OpenRouter"
+    type: "openrouter"
+    baseUrl: "https://openrouter.ai/api/v1"
+    apiKeyEnvVar: "OPENROUTER_API_KEY"
+    models:
+      google/gemini-flash-1.5:
+        id: "google/gemini-flash-1.5"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+      meta-llama/llama-3.2-11b-vision-instruct:
+        id: "meta-llama/llama-3.2-11b-vision-instruct"
+        taskTypes: ["disease-detection"]
+        maxTokens: 4096
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 20
+      requestsPerDay: 500
+    regions: ["brazil"]
+    priority: 60
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-pt"
+    taskType: "disease-detection"
+    language: "pt"
+    systemPrompt: |
+      Você é um fitopatologista especialista em doenças de culturas no Brasil.
+      Analise a imagem da cultura e identifique a doença com alta precisão.
+      Responda APENAS com JSON válido neste formato exato:
+      {
+        "disease_id": "string (da lista fornecida)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["sintoma1", "sintoma2"],
+        "reasoning": "breve explicação da evidência visual"
+      }
+    userPromptTemplate: "Identifique a doença nesta imagem de {crop} do {region}. Doenças possíveis: {disease_list}. Considere sintomas como manchas foliares, descoloração, murcha, lesões ou danos de pragas."
+    outputFormat: "json"
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in Brazil.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "yield-prediction-pt"
+    taskType: "yield-prediction"
+    language: "pt"
+    systemPrompt: |
+      Você é um especialista em economia agrícola e ciência de culturas para a agricultura brasileira.
+      Preveja a produtividade da cultura com base em dados climáticos, satélite, solo e manejo.
+      Responda APENAS com JSON válido:
+      {
+        "yield_min": number (sc/ha ou t/ha),
+        "yield_max": number (sc/ha ou t/ha),
+        "yield_expected": number (sc/ha ou t/ha),
+        "confidence": 0.0-1.0,
+        "key_drivers": ["fator1", "fator2"],
+        "explanation": "explicação detalhada dos fatores de previsão"
+      }
+    userPromptTemplate: |
+      Preveja a produtividade para {crop} em {região}, safra {season}.
+      Talhão: {field_id}, Área: {area} ha, Irrigação: {irrigation}
+      Data de plantio: {planting_date}
+
+      Dados Climáticos: {weather}
+      Dados de Satélite: {satellite}
+
+      Considere: precipitação, temperatura, umidade, radiação solar, tipo de solo, variedade, práticas de manejo.
+      Forneça faixa de produtividade realista para esta região e safra.
+    outputFormat: "json"
+  - id: "advisory-pt"
+    taskType: "advisory"
+    language: "pt"
+    systemPrompt: |
+      Você é um engenheiro agrônomo extensionista para agricultores brasileiros.
+      Forneça orientação prática, economicamente viável e adequada à realidade local.
+      Responda APENAS com JSON válido:
+      {
+        "treatment": "instruções passo a passo de tratamento",
+        "preventive_measures": ["medida1", "medida2"],
+        "follow_up": "quando reavaliar e próximos passos",
+        "safety_warnings": ["aviso1", "aviso2"]
+      }
+    userPromptTemplate: |
+      Forneça recomendação de manejo para {disease} em {crop} ({region}).
+      Severidade: {severity}. Idioma: {language}.
+      Sintomas: {symptoms}
+      Nomes locais: {local_names}
+
+      Considere: produtos registrados no Brasil, custo-benefício, intervalos de carência, segurança do trabalhador, MIP.
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.0.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/brazil-v1.0.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2024-01-15T10:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "Brazil region configuration with 5 major crops and 20+ diseases. Covers summer, safrinha, and annual seasons. Supports Portuguese and English."

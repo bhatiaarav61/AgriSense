@@ -1,0 +1,412 @@
+id: ghana
+name: "Ghana"
+displayName:
+  en: "Ghana"
+  tw: "Ghana"
+isoCode: "GH"
+timezone: "Africa/Accra"
+languages:
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+  - code: "tw"
+    name: "Twi"
+    nativeName: "Twi"
+    rtl: false
+  - code: "ee"
+    name: "Ewe"
+    nativeName: "Eʋegbe"
+    rtl: false
+defaultLanguage: "en"
+currency: "GHS"
+coordinates:
+  latMin: 4.5
+  latMax: 11.2
+  lonMin: -3.3
+  lonMax: 1.3
+crops:
+  - id: "maize"
+    name: "Maize"
+    scientificName: "Zea mays"
+    localNames:
+      en: "Maize"
+      tw: "Aburo"
+      ee: "Aburo"
+    growingSeasons: ["major", "minor"]
+    diseaseClasses: ["fall_armyworm", "maize_streak", "common_rust"]
+    icon: "🌽"
+    color: "#F59E0B"
+  - id: "cassava"
+    name: "Cassava"
+    scientificName: "Manihot esculenta"
+    localNames:
+      en: "Cassava"
+      tw: "Bankye"
+      ee: "Agbeli"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["cassava_mosaic", "cassava_brown_streak", "cassava_anthracnose"]
+    icon: "🍠"
+    color: "#84CC16"
+  - id: "cocoa"
+    name: "Cocoa"
+    scientificName: "Theobroma cacao"
+    localNames:
+      en: "Cocoa"
+      tw: "Kokoo"
+      ee: "Kokoo"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["black_pod", "swollen_shoot"]
+    icon: "🍫"
+    color: "#7C3AED"
+  - id: "tomato"
+    name: "Tomato"
+    scientificName: "Solanum lycopersicum"
+    localNames:
+      en: "Tomato"
+      tw: "Tomatoes"
+      ee: "Tomato"
+    growingSeasons: ["major", "minor"]
+    diseaseClasses: ["tomato_late_blight", "tomato_bacterial_wilt", "tomato_yellow_leaf_curl"]
+    icon: "🍅"
+    color: "#EF4444"
+diseases:
+  - id: "fall_armyworm"
+    name: "Fall Armyworm"
+    scientificName: "Spodoptera frugiperda"
+    cropIds: ["maize"]
+    symptoms:
+      - "Ragged holes and window-paning on leaves"
+      - "Sawdust-like frass in the whorl"
+      - "Larvae with inverted Y on the head capsule"
+    localNames:
+      en: "Fall Armyworm"
+      tw: "Aburo mmoa"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply emamectin benzoate 5% SG @ 0.4g/L in the evening, targeting the whorl. Use push-pull intercropping and pheromone traps @ 5/ha for monitoring."
+    preventiveMeasures:
+      - "Early, synchronous planting at onset of rains"
+      - "Intercrop with cassava/legumes (push-pull)"
+      - "Conserve natural enemies; spot-spray only"
+      - "Handpick and crush egg masses in small fields"
+    imageTags: ["fall_armyworm", "spodoptera", "maize"]
+    confidenceThreshold: 0.75
+  - id: "maize_streak"
+    name: "Maize Streak Virus"
+    scientificName: "Maize streak virus (MSV)"
+    cropIds: ["maize"]
+    symptoms:
+      - "Chlorotic streaks parallel to veins"
+      - "Stunted plants with narrow yellow leaves"
+      - "Poor cob set and grain filling"
+    localNames:
+      en: "Maize Streak"
+      tw: "Aburo ntontom"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — rogue infected plants. Control leafhopper vector early and plant resistant varieties approved by extension."
+    preventiveMeasures:
+      - "Use MSV-resistant varieties"
+      - "Plant early in the season"
+      - "Remove volunteer cereals and grass weeds"
+      - "Avoid late planting near older maize"
+    imageTags: ["maize_streak", "virus", "maize"]
+    confidenceThreshold: 0.7
+  - id: "common_rust"
+    name: "Common Rust"
+    scientificName: "Puccinia sorghi"
+    cropIds: ["maize"]
+    symptoms:
+      - "Cinnamon-brown pustules scattered on leaves"
+      - "Powdery spores rub off on hands"
+      - "Black pustules late in the season"
+    localNames:
+      en: "Common Rust"
+      tw: "Aburo zeng"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole 25% EC @ 1ml/L at early infection. Favor resistant hybrids and balanced fertility."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Timely planting"
+      - "Remove volunteer maize"
+      - "Avoid heavy late nitrogen"
+    imageTags: ["common_rust", "puccinia", "maize"]
+    confidenceThreshold: 0.65
+  - id: "cassava_mosaic"
+    name: "Cassava Mosaic Disease"
+    scientificName: "Cassava mosaic geminiviruses (whitefly-transmitted)"
+    cropIds: ["cassava"]
+    symptoms:
+      - "Chlorotic mosaic and mottling on leaves"
+      - "Asymmetrical, twisted leaflets"
+      - "Stunted plants with poor root fill"
+    localNames:
+      en: "Cassava Mosaic"
+      tw: "Bankye mmoawa"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — uproot and burn infected plants. Plant certified disease-free stakes of resistant varieties (e.g., Ampong, IFAD series) and control whiteflies."
+    preventiveMeasures:
+      - "Use disease-free, resistant planting material"
+      - "Select cuttings only from healthy plants"
+      - "Rogue infected plants weekly early on"
+      - "Control whitefly vectors"
+    imageTags: ["cassava_mosaic", "cmd", "cassava"]
+    confidenceThreshold: 0.75
+  - id: "cassava_brown_streak"
+    name: "Cassava Brown Streak Disease"
+    scientificName: "Cassava brown streak ipomoviruses"
+    cropIds: ["cassava"]
+    symptoms:
+      - "Yellow chlorosis along leaf veins (feathery)"
+      - "Dry brown rot bands in roots (radial)"
+      - "Brown streaks on green stems"
+    localNames:
+      en: "Cassava Brown Streak"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — destroy infected plants. Use CBSD-free planting material and tolerant varieties; test roots soon after harvest as rot advances in storage."
+    preventiveMeasures:
+      - "Certified clean cuttings"
+      - "Tolerant varieties where released"
+      - "Avoid virus-carrying cuttings between farms"
+      - "Harvest in time; do not leave roots in ground"
+    imageTags: ["cassava_brown_streak", "cbsd", "cassava"]
+    confidenceThreshold: 0.75
+  - id: "cassava_anthracnose"
+    name: "Cassava Anthracnose"
+    scientificName: "Colletotrichum gloeosporioides"
+    cropIds: ["cassava"]
+    symptoms:
+      - "Cankers on stems and branch junctions"
+      - "Drooping twisted young shoots (tip dieback)"
+      - "Dark lesions on leaf petioles"
+    localNames:
+      en: "Cassava Anthracnose"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply copper-based fungicide on young shoots in nursery. Select canker-free planting material and prune infected tips."
+    preventiveMeasures:
+      - "Healthy cuttings from clean fields"
+      - "Wider spacing for airflow"
+      - "Sanitation of tools and debris"
+      - "Avoid stressed, nutrient-poor stands"
+    imageTags: ["cassava_anthracnose", "colletotrichum", "cassava"]
+    confidenceThreshold: 0.65
+  - id: "black_pod"
+    name: "Cocoa Black Pod"
+    scientificName: "Phytophthora megakarya / P. palmivora"
+    cropIds: ["cocoa"]
+    symptoms:
+      - "Brown-black water-soaked lesions on pods"
+      - "White sporulation on pod surface in humid weather"
+      - "Mummified pods; rapid loss near harvest"
+    localNames:
+      en: "Black Pod"
+      tw: "Kokoo tuntum"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply recommended copper fungicide or metalaxyl-based product every 2–3 weeks in the wet season; remove infected pods weekly and bury. Kola/ shade management to reduce humidity."
+    preventiveMeasures:
+      - "Weekly removal of infected pods (sanitation)"
+      - "Timed fungicide calendar in rains"
+      - "Canopy pruning for airflow"
+      - "Harvest promptly at maturity"
+    imageTags: ["black_pod", "phytophthora", "cocoa"]
+    confidenceThreshold: 0.75
+  - id: "swollen_shoot"
+    name: "Cocoa Swollen Shoot Virus"
+    scientificName: "Cacao swollen shoot virus (mealybug-transmitted)"
+    cropIds: ["cocoa"]
+    symptoms:
+      - "Swelling of shoots and roots with reddening"
+      - "Chlorotic vein-banding and flecking on leaves"
+      - "Decline and dieback; young trees die within years"
+    localNames:
+      en: "Swollen Shoot"
+      tw: "Kokoo akokoduru"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — cut out and destroy infected trees per COCOBOD policy. Replant with certified virus-free planting material; control mealybug vectors."
+    preventiveMeasures:
+      - "Plant certified virus-free seedlings"
+      - "Remove infected trees promptly"
+      - "Barrier crops around new plantings"
+      - "Manage mealybugs and ants"
+    imageTags: ["swollen_shoot", "cssv", "cocoa"]
+    confidenceThreshold: 0.8
+  - id: "tomato_late_blight"
+    name: "Tomato Late Blight"
+    scientificName: "Phytophthora infestans"
+    cropIds: ["tomato"]
+    symptoms:
+      - "Water-soaked gray-green blotches turning brown-black"
+      - "White mold ring on leaf underside in humid mornings"
+      - "Greasy brown fruit lesions"
+    localNames:
+      en: "Late Blight"
+      tw: "Tomato tuntum yare"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or metalaxyl-M based product at first sign; repeat every 7–10 days in cool, wet spells. Stake plants and improve airflow."
+    preventiveMeasures:
+      - "Resistant/tolerant varieties"
+      - "Staking and mulching"
+      - "Avoid overhead irrigation"
+      - "Remove volunteer solanaceous weeds"
+    imageTags: ["late_blight", "phytophthora", "tomato"]
+    confidenceThreshold: 0.7
+  - id: "tomato_bacterial_wilt"
+    name: "Bacterial Wilt"
+    scientificName: "Ralstonia solanacearum"
+    cropIds: ["tomato"]
+    symptoms:
+      - "Sudden wilting without leaf yellowing"
+      - "Brown vascular ring in split stems with milky ooze"
+      - "Rapid plant collapse in warm, wet soils"
+    localNames:
+      en: "Bacterial Wilt"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No effective chemical cure — uproot and destroy wilted plants. Use tolerant rootstocks/varieties, grafting onto resistant eggplant rootstock, and long rotation with cereals."
+    preventiveMeasures:
+      - "Graft onto resistant rootstock"
+      - "Rotate 2–3 seasons out of solanaceae"
+      - "Disinfect tools and stakes"
+      - "Raise soil pH and improve drainage"
+    imageTags: ["bacterial_wilt", "ralstonia", "tomato"]
+    confidenceThreshold: 0.75
+  - id: "tomato_yellow_leaf_curl"
+    name: "Tomato Yellow Leaf Curl Virus"
+    scientificName: "Tomato yellow leaf curl begomovirus (whitefly-transmitted)"
+    cropIds: ["tomato"]
+    symptoms:
+      - "Upward-cupped, pale yellow leaf margins"
+      - "Severe stunting and flower drop"
+      - "Little to no fruit set on infected plants"
+    localNames:
+      en: "Yellow Leaf Curl"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — remove infected plants. Control whitefly with yellow sticky traps and approved insecticide rotations; use resistant hybrids and net nurseries."
+    preventiveMeasures:
+      - "Resistant hybrids"
+      - "Insect-proof nursery netting"
+      - "Whitefly monitoring and control"
+      - "Remove infected plants and weeds"
+    imageTags: ["yellow_leaf_curl", "begomovirus", "tomato"]
+    confidenceThreshold: 0.7
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "Africa/Accra"
+  - id: "nasa-power"
+    name: "NASA POWER"
+    type: "nasa-power"
+    baseUrl: "https://power.larc.nasa.gov/api/temporal/daily/point"
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 1000
+    parameters:
+      community: "AG"
+      format: "JSON"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B08", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["ghana"]
+    priority: 100
+    enabled: true
+  - id: "groq-1"
+    name: "Groq"
+    type: "groq"
+    baseUrl: "https://api.groq.com/openai/v1"
+    apiKeyEnvVar: "GROQ_API_KEY"
+    models:
+      llama-3.1-70b-versatile:
+        id: "llama-3.1-70b-versatile"
+        taskTypes: ["advisory", "chat", "yield-prediction"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 6000
+      tokensPerMinute: 6000
+    regions: ["ghana"]
+    priority: 90
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in Ghana.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "advisory-en"
+    taskType: "advisory"
+    language: "en"
+    systemPrompt: |
+      You are an agricultural extension officer for Ghanaian farmers.
+      Provide practical, affordable, culturally appropriate treatment advice.
+      Respond ONLY with valid JSON:
+      {
+        "treatment": "step-by-step treatment instructions",
+        "preventive_measures": ["measure1", "measure2"],
+        "follow_up": "when to re-check and next steps",
+        "safety_warnings": ["warning1", "warning2"]
+      }
+    userPromptTemplate: |
+      Provide treatment advisory for {disease} in {crop} ({region}).
+      Severity: {severity}. Language: {language}.
+      Symptoms: {symptoms}
+      Local names: {local_names}
+      Consider: locally available chemicals, cost-effectiveness, pre-harvest intervals, farmer safety, IPM approaches.
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.1.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/ghana-v1.1.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2026-09-27T00:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "Ghana region configuration: maize, cassava, cocoa and tomato; English, Twi and Ewe support."

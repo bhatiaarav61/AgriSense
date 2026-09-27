@@ -1,0 +1,30 @@
+{
+  "name": "@agrisense/api-router",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "test": "vitest run",
+    "lint": "eslint src --ext .ts"
+  },
+  "dependencies": {
+    "@agrisense/region-config": "^1.0.0",
+    "@agrisense/shared-sdk": "^1.0.0",
+    "fastify": "^4.24.0",
+    "pino": "^8.16.0",
+    "pino-pretty": "^10.2.0",
+    "ioredis": "^5.3.0",
+    "axios": "^1.6.0",
+    "js-yaml": "^4.1.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/js-yaml": "^4.0.9",
+    "typescript": "^5.3.0",
+    "tsx": "^4.6.0",
+    "vitest": "^1.0.0"
+  }
+}

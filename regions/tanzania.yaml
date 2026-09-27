@@ -1,0 +1,416 @@
+id: tanzania
+name: "Tanzania"
+displayName:
+  en: "Tanzania"
+  sw: "Tanzania"
+isoCode: "TZ"
+timezone: "Africa/Dar_es_Salaam"
+languages:
+  - code: "sw"
+    name: "Swahili"
+    nativeName: "Kiswahili"
+    rtl: false
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+defaultLanguage: "sw"
+currency: "TZS"
+coordinates:
+  latMin: -11.8
+  latMax: -0.9
+  lonMin: 29.2
+  lonMax: 40.6
+crops:
+  - id: "maize"
+    name: "Maize"
+    scientificName: "Zea mays"
+    localNames:
+      en: "Maize"
+      sw: "Mahindi"
+    growingSeasons: ["msimu-wa-vuli", "msimu-wa-masika"]
+    diseaseClasses: ["fall_armyworm", "turcicum_leaf_blight", "common_rust"]
+    icon: "🌽"
+    color: "#F59E0B"
+  - id: "cassava"
+    name: "Cassava"
+    scientificName: "Manihot esculenta"
+    localNames:
+      en: "Cassava"
+      sw: "Muhogo"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["cassava_mosaic", "cassava_brown_streak"]
+    icon: "🍠"
+    color: "#84CC16"
+  - id: "banana"
+    name: "Banana"
+    scientificName: "Musa spp."
+    localNames:
+      en: "Banana"
+      sw: "Ndizi"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["banana_xanthomonas_wilt", "black_sigatoka"]
+    icon: "🍌"
+    color: "#EAB308"
+  - id: "rice"
+    name: "Rice"
+    scientificName: "Oryza sativa"
+    localNames:
+      en: "Rice"
+      sw: "Mchele / Mpunga"
+    growingSeasons: ["msimu-wa-masika"]
+    diseaseClasses: ["rice_blast", "rice_yellow_mottle", "brown_spot"]
+    icon: "🍚"
+    color: "#10B981"
+  - id: "coffee"
+    name: "Coffee"
+    scientificName: "Coffea arabica / Coffea canephora"
+    localNames:
+      en: "Coffee"
+      sw: "Kahawa"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["coffee_leaf_rust"]
+    icon: "☕"
+    color: "#6B4226"
+diseases:
+  - id: "fall_armyworm"
+    name: "Fall Armyworm"
+    scientificName: "Spodoptera frugiperda"
+    cropIds: ["maize"]
+    symptoms:
+      - "Ragged holes and window-paning on leaves"
+      - "Sawdust-like frass in the whorl"
+      - "Larvae with inverted Y on the head"
+    localNames:
+      en: "Fall Armyworm"
+      sw: "Menyeto wa Mapema"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply emamectin benzoate 5% SG @ 0.4g/L targeting the whorl in evening. Use push-pull intercropping and pheromone traps @ 5/ha."
+    preventiveMeasures:
+      - "Early planting at onset of rains"
+      - "Push-pull intercropping with desmodium"
+      - "Scout weekly; spot-treat hotspots"
+      - "Conserve natural enemies"
+    imageTags: ["fall_armyworm", "spodoptera", "maize"]
+    confidenceThreshold: 0.75
+  - id: "turcicum_leaf_blight"
+    name: "Turcicum Leaf Blight"
+    scientificName: "Exserohilum turcicum"
+    cropIds: ["maize"]
+    symptoms:
+      - "Long, elliptical gray-green lesions"
+      - "Lesions turn tan with dark margins"
+      - "Starts on lower leaves and moves upward"
+    localNames:
+      en: "Turcicum Leaf Blight"
+      sw: "Ua wa Majani ya Mahindi"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole 25% EC @ 1ml/L at first sign; repeat at 15-day intervals. Use resistant hybrids."
+    preventiveMeasures:
+      - "Resistant hybrids"
+      - "Rotate with non-host crops"
+      - "Bury crop residue"
+      - "Avoid overhead irrigation"
+    imageTags: ["turcicum_leaf_blight", "exserohilum", "maize"]
+    confidenceThreshold: 0.7
+  - id: "common_rust"
+    name: "Common Rust"
+    scientificName: "Puccinia sorghi"
+    cropIds: ["maize"]
+    symptoms:
+      - "Cinnamon-brown pustules scattered on both leaf surfaces"
+      - "Powdery spores that rub off"
+      - "Black telia late in season"
+    localNames:
+      en: "Common Rust"
+      sw: "Kungu ya Kawaida"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole 25% EC @ 1ml/L early. Plant resistant hybrids."
+    preventiveMeasures:
+      - "Resistant hybrids"
+      - "Timely planting"
+      - "Balanced fertility"
+    imageTags: ["common_rust", "puccinia", "maize"]
+    confidenceThreshold: 0.65
+  - id: "cassava_mosaic"
+    name: "Cassava Mosaic Disease"
+    scientificName: "Cassava mosaic geminiviruses"
+    cropIds: ["cassava"]
+    symptoms:
+      - "Yellow-green mosaic and mottling of leaves"
+      - "Twisted, asymmetrical leaflets"
+      - "Stunted plants, poor root development"
+    localNames:
+      en: "Cassava Mosaic"
+      sw: "Ugonjwa wa Mosaic wa Muhogo"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — uproot and destroy infected plants. Plant certified clean stakes of tolerant varieties and control whiteflies."
+    preventiveMeasures:
+      - "Clean, resistant planting material"
+      - "Rogue infected plants early"
+      - "Control whitefly vectors"
+      - "Source cuttings from inspected fields"
+    imageTags: ["cassava_mosaic", "cmd", "cassava"]
+    confidenceThreshold: 0.75
+  - id: "cassava_brown_streak"
+    name: "Cassava Brown Streak Disease"
+    scientificName: "Cassava brown streak ipomoviruses"
+    cropIds: ["cassava"]
+    symptoms:
+      - "Yellow chlorosis along leaf veins"
+      - "Dry brown rot in roots"
+      - "Brown streaks on stems"
+    localNames:
+      en: "Cassava Brown Streak"
+      sw: "Mishonga ya Kahawia ya Muhogo"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — destroy infected plants. Use CBSD-tolerant varieties (e.g., Mkuranga1, Kiroba) and clean cuttings; harvest promptly."
+    preventiveMeasures:
+      - "Tolerant varieties (Kiroba, Mkuranga1)"
+      - "Clean cuttings from healthy mother plants"
+      - "Timely harvest"
+      - "Field scouting and rouging"
+    imageTags: ["cassava_brown_streak", "cbsd", "cassava"]
+    confidenceThreshold: 0.75
+  - id: "banana_xanthomonas_wilt"
+    name: "Banana Xanthomonas Wilt (BXW)"
+    scientificName: "Xanthomonas vasicola pv. musacearum"
+    cropIds: ["banana"]
+    symptoms:
+      - "Yellowish wilting of leaves from the crown"
+      - "Brownish-gray fruit with oozing yellow bacterial sap"
+      - "Yellow-brown vascular streaks in pseudostem"
+    localNames:
+      en: "Banana Xanthomonas Wilt"
+      sw: "Ugonjwa wa Xanthomonas wa Ndizi"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — uproot and destroy infected mats. De-bud male flowers with a forked stick dipped in disinfectant; disinfect tools between plants."
+    preventiveMeasures:
+      - "Single-stem de-budding to remove male bracts"
+      - "Tool disinfection (sodium hypochlorite)"
+      - "Early rouging and burial of infected mats"
+      - "Do not move suckers from infected fields"
+    imageTags: ["bxw", "xanthomonas", "banana"]
+    confidenceThreshold: 0.8
+  - id: "black_sigatoka"
+    name: "Black Sigatoka (Black Leaf Streak)"
+    scientificName: "Pseudocercospora fijiensis"
+    cropIds: ["banana"]
+    symptoms:
+      - "Dark streaks on leaves turning black with yellow halos"
+      - "Leaf necrosis; premature leaf death"
+      - "Smaller, premature ripening bunches"
+    localNames:
+      en: "Black Sigatoka"
+      sw: "Madoa Meusi ya Majani"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Remove heavily infected leaves; apply systemic fungicide (triazole/strobilurin rotation) in high-pressure zones. Improve drainage and spacing."
+    preventiveMeasures:
+      - "Proper spacing and drainage"
+      - "Remove old infected leaves regularly"
+      - "Fungicide rotation to avoid resistance"
+      - "Fertilize well to maintain leaf cover"
+    imageTags: ["black_sigatoka", "cercospora", "banana"]
+    confidenceThreshold: 0.7
+  - id: "rice_blast"
+    name: "Rice Blast"
+    scientificName: "Magnaporthe oryzae"
+    cropIds: ["rice"]
+    symptoms:
+      - "Diamond-shaped lesions with gray centers"
+      - "Neck infection cuts off grain filling (whiteheads)"
+      - "Patchy wilting of hills"
+    localNames:
+      en: "Rice Blast"
+      sw: "Ugonjwa wa Mchele"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply tricyclazole 75% WP @ 0.6g/L at first lesions and protect the neck at heading. Split nitrogen and keep steady flood where possible."
+    preventiveMeasures:
+      - "Resistant varieties (e.g., TXD lines)"
+      - "Avoid excess nitrogen"
+      - "Steady shallow flooding"
+      - "Seed treatment and stubble management"
+    imageTags: ["rice_blast", "magnaporthe", "rice"]
+    confidenceThreshold: 0.7
+  - id: "rice_yellow_mottle"
+    name: "Rice Yellow Mottle Virus"
+    scientificName: "Rice yellow mottle virus (RYMV, beetle-transmitted)"
+    cropIds: ["rice"]
+    symptoms:
+      - "Yellow-green mottling of young leaves"
+      - "Stunting and reduced tillering"
+      - "Sterile spikelets and poor panicle fill"
+    localNames:
+      en: "Rice Yellow Mottle"
+      sw: "Madoa ya Njano ya Mchele"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — remove infected hills. Control beetles with approved insecticide at transplanting; avoid wounding plants during weeding."
+    preventiveMeasures:
+      - "Avoid mechanical injury during weeding"
+      - "Control beetle vectors early"
+      - "Use tolerant varieties where available"
+      - "Remove volunteer rice after harvest"
+    imageTags: ["rymv", "virus", "rice"]
+    confidenceThreshold: 0.7
+  - id: "brown_spot"
+    name: "Brown Spot"
+    scientificName: "Bipolaris oryzae"
+    cropIds: ["rice"]
+    symptoms:
+      - "Small brown oval spots with gray centers on leaves"
+      - "Black discoloration of glumes"
+      - "Pecky, discolored grain"
+    localNames:
+      en: "Brown Spot"
+      sw: "Madoa ya Kahawia"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole @ 1ml/L at flag-leaf stage. Correct soil nutrition, especially potassium and silicon deficiency."
+    preventiveMeasures:
+      - "Balanced fertilization"
+      - "Certified seed"
+      - "Avoid water stress"
+      - "Clean seed and stubble management"
+    imageTags: ["brown_spot", "bipolaris", "rice"]
+    confidenceThreshold: 0.65
+  - id: "coffee_leaf_rust"
+    name: "Coffee Leaf Rust"
+    scientificName: "Hemileia vastatrix"
+    cropIds: ["coffee"]
+    symptoms:
+      - "Yellow-orange powdery spots under leaves"
+      - "Premature defoliation from lower canopy"
+      - "Reduced yield next season"
+    localNames:
+      en: "Coffee Leaf Rust"
+      sw: "Kungu ya Majani ya Kahawa"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply copper-based fungicide or systemic triazole before the rains and repeat as advised. Prune for airflow; use resistant varieties."
+    preventiveMeasures:
+      - "Resistant varieties (e.g., in new plantings)"
+      - "Pre-rains protective copper sprays"
+      - "Regular pruning and shade management"
+      - "Balanced nutrition"
+    imageTags: ["coffee_leaf_rust", "hemileia", "coffee"]
+    confidenceThreshold: 0.75
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "Africa/Dar_es_Salaam"
+  - id: "nasa-power"
+    name: "NASA POWER"
+    type: "nasa-power"
+    baseUrl: "https://power.larc.nasa.gov/api/temporal/daily/point"
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 1000
+    parameters:
+      community: "AG"
+      format: "JSON"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B08", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["tanzania"]
+    priority: 100
+    enabled: true
+  - id: "groq-1"
+    name: "Groq"
+    type: "groq"
+    baseUrl: "https://api.groq.com/openai/v1"
+    apiKeyEnvVar: "GROQ_API_KEY"
+    models:
+      llama-3.1-70b-versatile:
+        id: "llama-3.1-70b-versatile"
+        taskTypes: ["advisory", "chat", "yield-prediction"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 6000
+      tokensPerMinute: 6000
+    regions: ["tanzania"]
+    priority: 90
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in Tanzania.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "advisory-sw"
+    taskType: "advisory"
+    language: "sw"
+    systemPrompt: |
+      Wewe ni afisa maendeleo ya kilimo kwa wakulima wa Tanzania.
+      Toa ushauri wa matibabu unaofaa, bei nafuu, na ukilizana na utamaduni.
+      Jibu TU na JSON halali:
+      {
+        "treatment": "maagizo ya hatua kwa hatua",
+        "preventive_measures": ["hatua1", "hatua2"],
+        "follow_up": "wakati wa kurudia kuangalia",
+        "safety_warnings": ["onya1", "onya2"]
+      }
+    userPromptTemplate: |
+      Toa ushauri wa matibabu kwa {disease} kwenye {crop} ({region}).
+      Shiddah: {severity}. Lugha: {language}.
+      Dalili: {symptoms}
+      Majina ya eneo: {local_names}
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.1.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/tanzania-v1.1.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2026-09-27T00:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "Tanzania region configuration: maize, cassava, banana, rice and coffee; Swahili-first language support."

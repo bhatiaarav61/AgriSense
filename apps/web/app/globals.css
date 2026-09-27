@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+
+  /* Light theme — warm paper with emerald brand */
+  --bg: 249 251 248;
+  --surface: 255 255 255;
+  --surface-2: 241 245 240;
+  --border: 226 232 224;
+  --fg: 15 23 19;
+  --muted: 90 102 94;
+  --brand: 5 150 105;      /* emerald-600 */
+  --brand-fg: 255 255 255;
+  --accent: 2 132 199;     /* sky-600 */
+  --warn: 217 119 6;       /* amber-600 */
+  --danger: 220 38 38;     /* red-600 */
+}
+
+.dark {
+  --bg: 7 11 9;
+  --surface: 15 21 18;
+  --surface-2: 23 31 27;
+  --border: 37 48 42;
+  --fg: 235 241 236;
+  --muted: 148 161 151;
+  --brand: 16 185 129;     /* emerald-500 */
+  --brand-fg: 4 22 15;
+  --accent: 56 189 248;    /* sky-400 */
+  --warn: 251 191 36;
+  --danger: 248 113 113;
+}
+
+* {
+  border-color: rgb(var(--border));
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--fg));
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: rgb(var(--brand) / 0.25);
+}
+
+/* Thin, theme-aware scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--border)) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgb(var(--border));
+  border-radius: 999px;
+}
+
+@layer components {
+  /* ---- Surfaces ---- */
+  .card {
+    @apply rounded-2xl border border-border bg-surface shadow-card;
+  }
+  .card-hover {
+    @apply transition-all duration-200 hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lift;
+  }
+
+  /* ---- Buttons ---- */
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:cursor-not-allowed disabled:opacity-50 enabled:active:scale-[0.98];
+  }
+  .btn-brand {
+    @apply btn bg-brand text-brand-fg shadow-glow hover:brightness-110;
+  }
+  .btn-soft {
+    @apply btn bg-brand/10 text-brand hover:bg-brand/15;
+  }
+  .btn-ghost {
+    @apply btn border border-border bg-surface hover:bg-surface-2;
+  }
+
+  /* ---- Forms ---- */
+  .input {
+    @apply w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm outline-none transition focus:border-brand/60 focus:ring-2 focus:ring-brand/25 placeholder:text-muted;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-fg;
+  }
+
+  /* ---- Chips & badges ---- */
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-border bg-surface px-2.5 py-1 text-xs font-medium text-muted;
+  }
+  .chip-brand {
+    @apply chip border-brand/30 bg-brand/10 text-brand;
+  }
+
+  /* ---- Icon tile (feature cards, chat avatar) ---- */
+  .icon-tile {
+    @apply grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand to-accent text-white shadow-glow;
+  }
+
+  /* ---- Nav ---- */
+  .nav-link {
+    @apply flex items-center gap-2 whitespace-nowrap rounded-xl px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface-2 hover:text-fg;
+  }
+  .nav-link-active {
+    @apply bg-brand/10 text-brand hover:bg-brand/15 hover:text-brand;
+  }
+
+  /* ---- Segmented control ---- */
+  .segment {
+    @apply inline-flex rounded-xl border border-border bg-surface p-1;
+  }
+  .segment-item {
+    @apply btn border-0 bg-transparent px-3 py-1.5 text-muted shadow-none hover:text-fg;
+  }
+  .segment-item-active {
+    @apply bg-brand text-brand-fg shadow-glow hover:text-brand-fg;
+  }
+
+  /* ---- Skeleton loading ---- */
+  .skeleton {
+    @apply relative overflow-hidden rounded-xl bg-surface-2;
+  }
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-black/5 to-transparent dark:via-white/10;
+  }
+}
+
+@layer utilities {
+  /* Soft radial mesh used behind heroes and panels */
+  .mesh {
+    background-image:
+      radial-gradient(38rem 20rem at 85% -10%, rgb(var(--brand) / 0.14), transparent 60%),
+      radial-gradient(30rem 18rem at -10% 30%, rgb(var(--accent) / 0.10), transparent 60%),
+      radial-gradient(24rem 16rem at 60% 110%, rgb(var(--brand) / 0.08), transparent 60%);
+  }
+  .text-gradient {
+    background-image: linear-gradient(100deg, rgb(var(--brand)), rgb(var(--accent)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .tabbar-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

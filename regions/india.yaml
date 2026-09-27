@@ -1,0 +1,1382 @@
+id: india
+name: "India"
+displayName:
+  en: "India"
+  hi: "भारत"
+  ta: "இந்தியா"
+  te: "భారతదేశం"
+  bn: "ভারত"
+  mr: "भारत"
+  gu: "ભારત"
+  kn: "ಭಾರತ"
+  ml: "ഇന്ത്യ"
+  pa: "ਭਾਰਤ"
+isoCode: "IN"
+timezone: "Asia/Kolkata"
+languages:
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+  - code: "hi"
+    name: "Hindi"
+    nativeName: "हिन्दी"
+    rtl: false
+  - code: "ta"
+    name: "Tamil"
+    nativeName: "தமிழ்"
+    rtl: false
+  - code: "te"
+    name: "Telugu"
+    nativeName: "తెలుగు"
+    rtl: false
+  - code: "bn"
+    name: "Bengali"
+    nativeName: "বাংলা"
+    rtl: false
+  - code: "mr"
+    name: "Marathi"
+    nativeName: "मराठी"
+    rtl: false
+  - code: "gu"
+    name: "Gujarati"
+    nativeName: "ગુજરાતી"
+    rtl: false
+  - code: "kn"
+    name: "Kannada"
+    nativeName: "ಕನ್ನಡ"
+    rtl: false
+  - code: "ml"
+    name: "Malayalam"
+    nativeName: "മലയാളം"
+    rtl: false
+  - code: "pa"
+    name: "Punjabi"
+    nativeName: "ਪੰਜਾਬੀ"
+    rtl: false
+defaultLanguage: "en"
+currency: "INR"
+coordinates:
+  latMin: 6.5
+  latMax: 37.5
+  lonMin: 68.0
+  lonMax: 97.5
+crops:
+  - id: "rice"
+    name: "Rice"
+    scientificName: "Oryza sativa"
+    localNames:
+      en: "Rice"
+      hi: "चावल"
+      ta: "அரிசி"
+      te: "వరి"
+      bn: "চাল"
+      mr: "तांदूळ"
+      gu: "ચોખા"
+      kn: "ಅಕ್ಕಿ"
+      ml: "അരി"
+      pa: "ਚਾਵਲ"
+    growingSeasons: ["kharif", "rabi"]
+    diseaseClasses: ["bacterial_leaf_blight", "blast", "brown_spot", "tungro", "sheath_blight"]
+    icon: "🌾"
+    color: "#10B981"
+  - id: "wheat"
+    name: "Wheat"
+    scientificName: "Triticum aestivum"
+    localNames:
+      en: "Wheat"
+      hi: "गेहूं"
+      ta: "கோதுமை"
+      te: "గోధుమ"
+      bn: "গম"
+      mr: "गहू"
+      gu: "ઘઉ"
+      kn: "ಗೋಧಿ"
+      ml: "ഗോതമ്പ്"
+      pa: "ਕਣਕ"
+    growingSeasons: ["rabi"]
+    diseaseClasses: ["yellow_rust", "brown_rust", "powdery_mildew", "loose_smut", "karnal_bunt"]
+    icon: "🌾"
+    color: "#F59E0B"
+  - id: "maize"
+    name: "Maize"
+    scientificName: "Zea mays"
+    localNames:
+      en: "Maize"
+      hi: "मक्का"
+      ta: "மக்காச் சோளம்"
+      te: "మొక్కజొన్న"
+      bn: "ভুট্টা"
+      mr: "मका"
+      gu: "મકાઈ"
+      kn: "ಮೆಕ್ಕೆ ಜೋಳ"
+      ml: "ചോളം"
+      pa: "ਮੱਕੀ"
+    growingSeasons: ["kharif", "rabi", "zaid"]
+    diseaseClasses: ["fall_armyworm", "maize_streak", "turcicum_leaf_blight", "common_rust", "ear_rot"]
+    icon: "🌽"
+    color: "#8B5CF6"
+  - id: "cotton"
+    name: "Cotton"
+    scientificName: "Gossypium hirsutum"
+    localNames:
+      en: "Cotton"
+      hi: "कपास"
+      ta: "பருத்தி"
+      te: "పత్తి"
+      bn: "তুলা"
+      mr: "कापूस"
+      gu: "કપાસ"
+      kn: "ಹತ್ತಿ"
+      ml: "കറുപ്പ്"
+      pa: "ਕਪਾਹ"
+    growingSeasons: ["kharif"]
+    diseaseClasses: ["cotton_leaf_curl", "bacterial_blight", "alternaria_leaf_spot", "fusarium_wilt", "root_rot"]
+    icon: "🌱"
+    color: "#EC4899"
+  - id: "sugarcane"
+    name: "Sugarcane"
+    scientificName: "Saccharum officinarum"
+    localNames:
+      en: "Sugarcane"
+      hi: "गन्ना"
+      ta: "கரும்பு"
+      te: "చెరకు"
+      bn: "আখ"
+      mr: "ऊस"
+      gu: "શેરડી"
+      kn: "ಕಬ್ಬು"
+      ml: "കരുമ്പ്"
+      pa: "ਗണ്ണਾ"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["red_rot", "smut", "wilt", "pokkah_boeng", "leaf_scald"]
+    icon: "🎋"
+    color: "#06B6D4"
+  - id: "potato"
+    name: "Potato"
+    scientificName: "Solanum tuberosum"
+    localNames:
+      en: "Potato"
+      hi: "आलू"
+      ta: "உருளைக்கிழங்கு"
+      te: "బంగాళాదుంప"
+      bn: "আলু"
+      mr: "बटाटा"
+      gu: "બટાકા"
+      kn: "ಆಲೂಗಡ್ಡೆ"
+      ml: "ഉരുളക്കിഴങ്ങ്"
+      pa: "ਆਲੂ"
+    growingSeasons: ["rabi"]
+    diseaseClasses: ["late_blight", "early_blight", "bacterial_wilt", "virus_y", "common_scab"]
+    icon: "🥔"
+    color: "#F97316"
+diseases:
+  - id: "bacterial_leaf_blight"
+    name: "Bacterial Leaf Blight"
+    scientificName: "Xanthomonas oryzae pv. oryzae"
+    cropIds: ["rice"]
+    symptoms:
+      - "Water-soaked lesions on leaves"
+      - "Yellow to white stripes along leaf veins"
+      - "Leaves drying from tip to base"
+      - "Wilting of seedlings (kresek phase)"
+    localNames:
+      en: "Bacterial Leaf Blight"
+      hi: "जीवाणु पत्ती झुलसा"
+      ta: "பாக்டீரியா இலை வெறிப்பு"
+      te: "బాక్టీరియల్ లీఫ్ బ్లైట్"
+      bn: "ব্যাকটেরিয়াল লিফ ব্লাইট"
+      mr: "जीवाणू पान झुलसा"
+      gu: "બેક્ટેરિયલ પાત્ર અવનमन"
+      kn: "ಬ್ಯಾಕ್ಟೀರಿಯಲ್ ಲೀಫ್ ಬ್ಲೈಟ್"
+      ml: "ബാക്ടീരിയൽ ലീഫ് ബ്ലൈറ്റ്"
+      pa: "ਬੈਕਟੇਰിയਲ ਲੀਫ ਬਲਾਈਟ"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply copper-based bactericides (copper oxychloride 50% WP @ 2.5g/L) at first sign. Repeat at 10-15 day intervals. Ensure field drainage. Use resistant varieties like Swarna Sub1, Improved Samba Mahsuri. Avoid excess nitrogen."
+    preventiveMeasures:
+      - "Use certified disease-free seeds"
+      - "Treat seeds with streptomycin sulphate (1g/kg seed)"
+      - "Maintain proper field sanitation"
+      - "Avoid continuous rice cultivation"
+      - "Balance fertilizer application (avoid excess N)"
+    imageTags: ["bacterial_leaf_blight", "rice", "xanthomonas"]
+    confidenceThreshold: 0.75
+
+  - id: "blast"
+    name: "Rice Blast"
+    scientificName: "Magnaporthe oryzae"
+    cropIds: ["rice"]
+    symptoms:
+      - "Diamond-shaped lesions with gray centers"
+      - "Dark brown margins on lesions"
+      - "Neck blast causing panicle breakage"
+      - "Node blast causing stem breakage"
+    localNames:
+      en: "Rice Blast"
+      hi: "चावल ब्लास्ट"
+      ta: "அரிசி பிளாஸ்ட்"
+      te: "వరి బ్లాస్ట్"
+      bn: "ধান ব্লাস্ট"
+      mr: "तांदूळ ब्लास्ट"
+      gu: "ચોખા બ્લાસ્ટ"
+      kn: "ಅಕ್ಕಿ ಬ್ಲಾಸ್ಟ್"
+      ml: "നെൽ ബ്ലാസ്റ്റ്"
+      pa: "ਚਾਵਲ ਬਲਾਸਟ"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply tricyclazole 75% WP @ 0.6g/L or isoprothiolane 40% EC @ 1.5ml/L. Spray at tillering and panicle initiation stages. Avoid excess nitrogen. Ensure proper water management."
+    preventiveMeasures:
+      - "Use resistant varieties (e.g., Tetep, IR64)"
+      - "Treat seeds with carbendazim (2g/kg)"
+      - "Split nitrogen application"
+      - "Maintain shallow water (2-3 cm)"
+      - "Remove collateral weed hosts"
+    imageTags: ["rice_blast", "magnaporthe", "diamond_lesions"]
+    confidenceThreshold: 0.7
+
+  - id: "brown_spot"
+    name: "Brown Spot"
+    scientificName: "Cochliobolus miyabeanus"
+    cropIds: ["rice"]
+    symptoms:
+      - "Small circular brown spots on leaves"
+      - "Yellow halo around spots"
+      - "Spots on glumes causing 'pecky rice'"
+      - "Seedling blight in nursery"
+    localNames:
+      en: "Brown Spot"
+      hi: "भूरा धब्बा"
+      ta: "பருக்கு bıṇ"
+      te: "బ్రౌన్ స్పాట్"
+      bn: "ভূরা দাগ"
+      mr: "तपकिरी डाग"
+      gu: "ભૂરો ડાઘ"
+      kn: "ಕಂದು ಪುಳಕ"
+      ml: "തവിട്ട് പാടുകൾ"
+      pa: "ਭੂਰਾ ਦਾਗ਼"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole 25% EC @ 1ml/L. Spray at early tillering and boot leaf stage. Improve soil fertility (especially Si and K)."
+    preventiveMeasures:
+      - "Use balanced fertilization (adequate K and Si)"
+      - "Treat seeds with thiram (3g/kg)"
+      - "Remove infected plant debris"
+      - "Avoid water stress"
+    imageTags: ["brown_spot", "cochliobolus", "rice"]
+    confidenceThreshold: 0.65
+
+  - id: "tungro"
+    name: "Rice Tungro Disease"
+    scientificName: "Rice tungro bacilliform virus (RTBV) + Rice tungro spherical virus (RTSV)"
+    cropIds: ["rice"]
+    symptoms:
+      - "Stunted growth with yellow/orange leaves"
+      - "Reduced tillering"
+      - "Small panicles with incomplete grain filling"
+      - "Transmitted by green leafhopper"
+    localNames:
+      en: "Tungro"
+      hi: "तुंगरो"
+      ta: "துங்கரோ"
+      te: "తంగ్రో"
+      bn: "টাংগরো"
+      mr: "तुंगरो"
+      gu: "તુંગરો"
+      kn: "ತುಂಗ್ರೋ"
+      ml: "തങ്ഗ്രോ"
+      pa: "ਟੰਗਰੋ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Control green leafhopper vector with imidacloprid 17.8% SL @ 0.3ml/L or thiamethoxam 25% WG @ 0.4g/L. Remove infected plants. Use resistant varieties (e.g., Vikramarya, IR64)."
+    preventiveMeasures:
+      - "Early planting to avoid vector peak"
+      - "Use resistant/tolerant varieties"
+      - "Control grassy weeds in bunds"
+      - "Synchronous planting in area"
+    imageTags: ["tungro", "rice", "virus", "leafhopper"]
+    confidenceThreshold: 0.7
+
+  - id: "sheath_blight"
+    name: "Sheath Blight"
+    scientificName: "Rhizoctonia solani"
+    cropIds: ["rice"]
+    symptoms:
+      - "Oval lesions on leaf sheaths near water level"
+      - "Gray-green centers with dark brown borders"
+      - "Sclerotia (white to brown) on lesions"
+      - "Flag leaf sheath infection reduces grain filling"
+    localNames:
+      en: "Sheath Blight"
+      hi: "म्यान झुलसा"
+      ta: "ச الوحيدة வெறிப்பு"
+      te: "ష Mereka బ్లైట్"
+      bn: "শিয়থ ব্লাইট"
+      mr: "शेथ ब्लाइट"
+      gu: "શીથ બ્લાઇટ"
+      kn: "ಶೀಥ್ ಬ್ಲೈಟ್"
+      ml: "ഷീത്ത് ബ്ലൈറ്റ്"
+      pa: "ਸ਼ੀਥ ਬਲਾਈਟ"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply validamycin A 3% L @ 2.5ml/L or hexaconazole 5% SC @ 1ml/L or propiconazole 25% EC @ 1ml/L. Spray at maximum tillering and boot leaf stage. Avoid dense planting and excess nitrogen."
+    preventiveMeasures:
+      - "Avoid dense planting (proper spacing)"
+      - "Balance nitrogen with K and Si"
+      - "Drain field at late tillering"
+      - "Remove crop residue after harvest"
+    imageTags: ["sheath_blight", "rhizoctonia", "rice"]
+    confidenceThreshold: 0.7
+
+  - id: "yellow_rust"
+    name: "Yellow Rust (Stripe Rust)"
+    scientificName: "Puccinia striiformis f.sp. tritici"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Yellow-orange pustules in stripes on leaves"
+      - "Pustules parallel to leaf veins"
+      - "Premature leaf drying"
+      - "Shriveled grains"
+    localNames:
+      en: "Yellow Rust"
+      hi: "पीला रतुआ"
+      ta: "மஞ்சள் ரஸ்ட்"
+      te: "పసుపు రస్ట్"
+      bn: "হলদে রাস্ট"
+      mr: "पिवळा रस्ट"
+      gu: "પીલો રસ્ટ"
+      kn: "ಹಳದಿ ರಸ್ಟು"
+      ml: "മഞ്ഞള്‍ റസ്റ്റ്"
+      pa: "ਪੀਲਾ ਰਸਟ"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply propiconazole 25% EC @ 1ml/L or tebuconazole 25% EC @ 1ml/L or triadimefon 25% WP @ 1g/L at first appearance. Repeat after 15 days if needed. Use resistant varieties (e.g., HD 3086, DBW 187)."
+    preventiveMeasures:
+      - "Use resistant varieties"
+      - "Timely sowing (avoid late sowing)"
+      - "Balanced fertilization (avoid excess N)"
+      - "Monitor weather for rust-favorable conditions"
+    imageTags: ["yellow_rust", "stripe_rust", "puccinia", "wheat"]
+    confidenceThreshold: 0.75
+
+  - id: "brown_rust"
+    name: "Brown Rust (Leaf Rust)"
+    scientificName: "Puccinia triticina"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Brown circular pustules scattered on leaves"
+      - "Pustules on both leaf surfaces"
+      - "Black teliospores late in season"
+    localNames:
+      en: "Brown Rust"
+      hi: "भूरा रतुआ"
+      ta: "பருக்கு ரஸ்ட்"
+      te: "బ్రౌన్ రస్ట్"
+      bn: "ভূরা রাস্ট"
+      mr: "तपकिरी रस्ट"
+      gu: "ભૂરો રસ્ટ"
+      kn: "ಕಂದು ರಸ್ಟು"
+      ml: "തവിട്ട് റസ്റ്റ്"
+      pa: "ਭੂਰਾ ਰਸਟ"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply propiconazole 25% EC @ 1ml/L or tebuconazole 25% EC @ 1ml/L at flag leaf emergence. Use resistant varieties (e.g., HD 2967, DBW 90)."
+    preventiveMeasures:
+      - "Use resistant varieties"
+      - "Avoid late sowing"
+      - "Destroy volunteer wheat plants"
+    imageTags: ["brown_rust", "leaf_rust", "puccinia", "wheat"]
+    confidenceThreshold: 0.7
+
+  - id: "powdery_mildew"
+    name: "Powdery Mildew"
+    scientificName: "Blumeria graminis f.sp. tritici"
+    cropIds: ["wheat"]
+    symptoms:
+      - "White powdery patches on leaves and stems"
+      - "Patches turn gray-brown with age"
+      - "Reduced photosynthesis and yield"
+    localNames:
+      en: "Powdery Mildew"
+      hi: "पाउडरी मिल्ड्यू"
+      ta: "பౌடரி மில்ட்யூ"
+      te: "పౌడరీ మిల్డ్యూ"
+      bn: "পাউডারি মিলডিউ"
+      mr: "पावडरी मिल्ड्यू"
+      gu: "પાઉડરી માઈલ્ડ્યુ"
+      kn: "ಪೌಡರಿ ಮಿಲ್ಡ್ಯು"
+      ml: "പൗഡറി മിൽഡ്യൂ"
+      pa: "ਪਾਊਡਰੀ ਮਿਲਡਿਊ"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply sulfur 80% WP @ 3g/L or triadimefon 25% WP @ 1g/L at first sign. Ensure good air circulation."
+    preventiveMeasures:
+      - "Avoid dense canopy"
+      - "Use resistant varieties"
+      - "Balanced nitrogen application"
+    imageTags: ["powdery_mildew", "blumeria", "wheat"]
+    confidenceThreshold: 0.7
+
+  - id: "loose_smut"
+    name: "Loose Smut"
+    scientificName: "Ustilago nuda f.sp. tritici"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Black spore masses replace entire grain"
+      - "Only bare rachis remains at maturity"
+      - "Infected heads emerge earlier than healthy"
+    localNames:
+      en: "Loose Smut"
+      hi: "ढीला कंडुआ"
+      ta: "தேய் குட்டு"
+      te: "దీర్ఘ స్మట్"
+      bn: "শিথিল স্মাট"
+      mr: "ढीला स्मट"
+      gu: "ઢીલો સ્મટ"
+      kn: "ಡಿಲ್ಲ ಸ್ಮಟ್"
+      ml: "വെള്ള സ്മട്ട്"
+      pa: "ਢਿੱਲਾ ਸਮਟ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Seed treatment essential - carboxin 75% WP @ 2g/kg or tebuconazole 2% DS @ 1.25g/kg. No foliar control possible."
+    preventiveMeasures:
+      - "Seed treatment mandatory every season"
+      - "Use certified smut-free seed"
+      - "Rogue out infected heads before spore release"
+    imageTags: ["loose_smut", "ustilago", "wheat"]
+    confidenceThreshold: 0.8
+
+  - id: "karnal_bunt"
+    name: "Karnal Bunt"
+    scientificName: "Tilletia indica"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Partial grain infection (not whole grain)"
+      - "Black powdery spores in grain crease"
+      - "Fishy odor from infected grain"
+    localNames:
+      en: "Karnal Bunt"
+      hi: "करनाल बंट"
+      ta: "கர்நால் பண்ட்"
+      te: "కర్నాల్ బంట్"
+      bn: "করনাল বান্ট"
+      mr: "करनाल बंट"
+      gu: "કરનાલ બન્ટ"
+      kn: "ಕರ್ನಾಲ್ ಬಂಟ್"
+      ml: "കര്‍നാല്‍ ബണ്ട്"
+      pa: "ਕਰਨਾਲ ਬੰਟ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply propiconazole 25% EC @ 1ml/L at boot leaf to heading stage. Seed treatment with carboxin 75% WP @ 2g/kg. Quarantine restrictions apply for export."
+    preventiveMeasures:
+      - "Use disease-free seed"
+      - "Seed treatment mandatory"
+      - "Crop rotation with non-host crops"
+      - "Deep plowing to bury spores"
+    imageTags: ["karnal_bunt", "tilletia", "wheat"]
+    confidenceThreshold: 0.75
+
+  - id: "fall_armyworm"
+    name: "Fall Armyworm"
+    scientificName: "Spodoptera frugiperda"
+    cropIds: ["maize"]
+    symptoms:
+      - "Ragged holes in leaves (window-paning)"
+      - "Frass (sawdust-like) in whorl"
+      - "Larvae with inverted Y on head"
+      - "Severe defoliation in young plants"
+    localNames:
+      en: "Fall Armyworm"
+      hi: "फॉल आर्मीवर्म"
+      ta: "ஃபால் ஆர்மிவாரம்"
+      te: "ఫాల్ ఆర్మీవారం"
+      bn: "ফল আর্মিওয়ার্ম"
+      mr: "फॉल आर्मिवॉर्म"
+      gu: "ફોલ આર્મિવોર્મ"
+      kn: "ಫಾಲ್ ಆರ್ಮಿವರ್ಮ್"
+      ml: "ഫോൾ ആര്‍മിവേം"
+      pa: "ਫਾਲ ਆਰਮੀਵਰਮ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply emamectin benzoate 5% SG @ 0.4g/L or spinetoram 11.7% SC @ 0.5ml/L or chlorantraniliprole 18.5% SC @ 0.3ml/L. Target early instar larvae (1-3rd). Apply in evening. Use pheromone traps @ 5/ha for monitoring."
+    preventiveMeasures:
+      - "Early planting to avoid peak population"
+      - "Intercrop with legumes/desmodium"
+      - "Release Trichogramma @ 50,000/ha weekly"
+      - "Apply neem-based formulations preventively"
+      - "Deep summer plowing to expose pupae"
+    imageTags: ["fall_armyworm", "spodoptera", "maize", "caterpillar"]
+    confidenceThreshold: 0.8
+
+  - id: "maize_streak"
+    name: "Maize Streak Virus"
+    scientificName: "Maize streak virus (MSV)"
+    cropIds: ["maize"]
+    symptoms:
+      - "Yellow-white streaks parallel to leaf veins"
+      - "Streaks coalesce into larger chlorotic areas"
+      - "Stunted growth, poor cob formation"
+      - "Transmitted by leafhoppers (Cicadulina mbila)"
+    localNames:
+      en: "Maize Streak"
+      hi: "मक्का स्ट्रीक"
+      ta: "மக்காச் ஸ்ட்ரீக்"
+      te: "మొక్కజొన్న స్ట్రీక్"
+      bn: "মক্কা স্ট্রিক"
+      mr: "मका स्ट्रीक"
+      gu: "મકાઈ સ્ટ્રીક"
+      kn: "ಮೆಕ್ಕೆ ಸ್ಟ್ರೀಕ್"
+      ml: "ചോളം സ്ട്രീക്ക്"
+      pa: "ਮੱਕੀ ਸਟਰੀਕ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Control leafhopper vector with imidacloprid 17.8% SL @ 0.3ml/L as seed treatment or soil application. Use resistant varieties (e.g., CM 501, CM 502). Remove infected plants early."
+    preventiveMeasures:
+      - "Use resistant/tolerant varieties"
+      - "Early planting to avoid vector"
+      - "Remove grassy weeds (alternate hosts)"
+      - "Seed treatment with imidacloprid"
+    imageTags: ["maize_streak", "virus", "leafhopper", "maize"]
+    confidenceThreshold: 0.75
+
+  - id: "turcicum_leaf_blight"
+    name: "Turcicum Leaf Blight (Northern Corn Leaf Blight)"
+    scientificName: "Exserohilum turcicum"
+    cropIds: ["maize"]
+    symptoms:
+      - "Long elliptical gray-green lesions"
+      - "Lesions turn tan with dark margins"
+      - "Starts on lower leaves, moves up"
+      - "Severe blighting of leaves"
+    localNames:
+      en: "Turcicum Leaf Blight"
+      hi: "टर्सिकम लीफ ब्लाइट"
+      ta: "டர்சிஸம் இலை வேறிப்பு"
+      te: "టెర్సికم లీఫ్ బ్లైట్"
+      bn: "টার্সিকাম লিফ ব্লাইট"
+      mr: "टर्सिकम पान ब्लाइट"
+      gu: "ટર્સિકમ પાત્ર અવનमन"
+      kn: "ಟರ್ಸಿಕಮ್ ಲೀಫ್ ಬ್ಲೈಟ್"
+      ml: "ടര്‍സിക്കം ലീഫ് ബ്ലൈറ്റ്"
+      pa: "ਟਰਸਿਕਮ ਲੀਫ ਬਲਾਈਟ"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or azoxystrobin 23% SC @ 1ml/L or propiconazole 25% EC @ 1ml/L at first sign. Repeat at 15-day intervals."
+    preventiveMeasures:
+      - "Use resistant hybrids"
+      - "Crop rotation with non-hosts"
+      - "Bury crop residue"
+      - "Avoid overhead irrigation"
+    imageTags: ["turcicum_leaf_blight", "exserohilum", "maize"]
+    confidenceThreshold: 0.7
+
+  - id: "common_rust"
+    name: "Common Rust"
+    scientificName: "Puccinia sorghi"
+    cropIds: ["maize"]
+    symptoms:
+      - "Small cinnamon-brown pustules on both leaf surfaces"
+      - "Pustules scattered, not in stripes"
+      - "Black teliospores late season"
+    localNames:
+      en: "Common Rust"
+      hi: "साधारण रतुआ"
+      ta: "பொது ரஸ்ட்"
+      te: "సాధారణ రస్ట్"
+      bn: "সাধারণ রাস্ট"
+      mr: "साधारण रस्ट"
+      gu: "સામાન્ય રસ્ટ"
+      kn: "ಸಾಮಾನ್ಯ ರಸ್ಟು"
+      ml: "സാധാരണ റസ്റ്റ്"
+      pa: "ਸਾਮਾਨਕ ਰਸਟ"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole 25% EC @ 1ml/L at early infection. Use resistant hybrids."
+    preventiveMeasures:
+      - "Use resistant hybrids"
+      - "Early planting"
+      - "Balanced nutrition"
+    imageTags: ["common_rust", "puccinia", "maize"]
+    confidenceThreshold: 0.65
+
+  - id: "ear_rot"
+    name: "Ear Rot"
+    scientificName: "Fusarium verticillioides / Aspergillus flavus"
+    cropIds: ["maize"]
+    symptoms:
+      - "White to pink mold on kernels"
+      - "Kernel rotting starting from tip"
+      - "Mycotoxin contamination risk"
+      - "Husk tightly adhering to ear"
+    localNames:
+      en: "Ear Rot"
+      hi: "कान सड़न"
+      ta: "காது புதை"
+      te: "ఈర్ ರੋట్"
+      bn: "ইয়ার রট"
+      mr: "कान सडणे"
+      gu: "kaan સડન"
+      kn: "ಕಿವಿ ಪೂತಾರಿಕೆ"
+      ml: "ചيفي സഡനം"
+      pa: "ਕਾਣ ਸੜਾਣ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Harvest at proper moisture (20-25%). Dry quickly to <14% moisture. Store in aerated conditions. No effective field spray; prevention critical. Use resistant hybrids."
+    preventiveMeasures:
+      - "Use resistant hybrids"
+      - "Avoid late planting"
+      - "Control ear-feeding insects"
+      - "Harvest at correct moisture"
+      - "Proper drying and storage"
+    imageTags: ["ear_rot", "fusarium", "aspergillus", "maize"]
+    confidenceThreshold: 0.7
+
+  - id: "cotton_leaf_curl"
+    name: "Cotton Leaf Curl Disease"
+    scientificName: "Cotton leaf curl virus (CLCuV) complex"
+    cropIds: ["cotton"]
+    symptoms:
+      - "Upward/downward leaf curling"
+      - "Vein thickening and swelling"
+      - "Enations (leaf-like outgrowths) on veins"
+      - "Stunted growth, reduced bolls"
+      - "Transmitted by whitefly (Bemisia tabaci)"
+    localNames:
+      en: "Cotton Leaf Curl"
+      hi: "कपास पत्ता कर्ल"
+      ta: "பருத்தி இலை வலைவு"
+      te: "పత్తి ఆకు వలைவு"
+      bn: "তুলা পাতা কার্ল"
+      mr: "कापूस पान कर्ल"
+      gu: "કપાસ પતરા કર્લ"
+      kn: "ಹತ್ತಿ ಎಲೆ ಕರ್ಲ್"
+      ml: "കരുപ്പ് ഇല കര്‍ൾ"
+      pa: "ਕਪਾਹ ਪੱਤਾ ਕਰਲ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Manage whitefly vector with diafenthiuron 50% WP @ 0.6g/L or spiromesifen 22.9% SC @ 1ml/L. Remove infected plants early. Use resistant/tolerant varieties (e.g., RCH 659, Bt cotton hybrids)."
+    preventiveMeasures:
+      - "Use resistant/tolerant Bt hybrids"
+      - "Early sowing to avoid whitefly peak"
+      - "Remove alternate weed hosts"
+      - "Yellow sticky traps for monitoring"
+      - "Crop rotation with non-hosts"
+    imageTags: ["cotton_leaf_curl", "clcuv", "whitefly", "cotton"]
+    confidenceThreshold: 0.75
+
+  - id: "bacterial_blight_cotton"
+    name: "Bacterial Blight (Cotton)"
+    scientificName: "Xanthomonas citri pv. malvacearum"
+    cropIds: ["cotton"]
+    symptoms:
+      - "Angular water-soaked spots on leaves"
+      - "Spots turn brown with red margins"
+      - "Black cankers on stems (black arm)"
+      - "Boll rot with water-soaked lesions"
+    localNames:
+      en: "Bacterial Blight"
+      hi: "जीवाणु अंगमारी"
+      ta: "பாக்டீரியா ப்ளைட்"
+      te: "బాక్టీరియల్ బ్లైట్"
+      bn: "ব্যাকটেরিয়াল ব্লাইট"
+      mr: "जीवाणू ब्लाइट"
+      gu: "બેક્ટેરિયલ બ્લાઇટ"
+      kn: "ಬ್ಯಾಕ್ಟೀರಿಯಲ್ ಬ್ಲೈಟ್"
+      ml: "ബാക്ടീരിയൽ ബ്ലൈറ്റ്"
+      pa: "ਬੈਕਟੇਰിയਲ ਬਲਾਈਟ"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply copper oxychloride 50% WP @ 2.5g/L or streptomycin sulphate + tetracycline @ 1g/L. Spray at 10-15 day intervals. Avoid overhead irrigation."
+    preventiveMeasures:
+      - "Use acid-delinted certified seed"
+      - "Seed treatment with streptomycin (1g/kg)"
+      - "Crop rotation (2-3 years)"
+      - "Avoid overhead irrigation"
+      - "Destroy crop residue"
+    imageTags: ["bacterial_blight", "xanthomonas", "cotton"]
+    confidenceThreshold: 0.7
+
+  - id: "alternaria_leaf_spot"
+    name: "Alternaria Leaf Spot"
+    scientificName: "Alternaria macrospora"
+    cropIds: ["cotton"]
+    symptoms:
+      - "Concentric ring spots on leaves"
+      - "Dark brown to black lesions"
+      - "Shot-hole appearance when centers fall out"
+      - "Premature defoliation"
+    localNames:
+      en: "Alternaria Leaf Spot"
+      hi: "अल्टरनेरिया पत्ती धब्बा"
+      ta: "ஆல்டெர்னேரியா இலை புள்ளி"
+      te: "ఆల్టెర్నేರಿಯా లీఫ్ స్పాట్"
+      bn: "আল্টারন্যারিয়া লিফ স্পট"
+      mr: "अल्टरनेरिया पान डाग"
+      gu: "અલ્ટરનેરિયા પાત્ર ડાઘ"
+      kn: "ಆಲ್ಟರ್ನೇರಿಯಾ ಲೀಫ್ ಸ್ಪಾಟ್"
+      ml: "അല്‍ടെര്‍നേറിയ ലീഫ് സ്പോട്ട്"
+      pa: "ਅਲਟਰਨੇਰੀਆ ਲੀਫ ਸਪਾਟ"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole 25% EC @ 1ml/L or azoxystrobin 23% SC @ 1ml/L. Spray at 15-day intervals from 45 DAS."
+    preventiveMeasures:
+      - "Use certified disease-free seed"
+      - "Balanced fertilization (adequate K)"
+      - "Avoid dense canopy"
+      - "Remove crop debris"
+    imageTags: ["alternaria_leaf_spot", "alternaria", "cotton"]
+    confidenceThreshold: 0.65
+
+  - id: "fusarium_wilt_cotton"
+    name: "Fusarium Wilt"
+    scientificName: "Fusarium oxysporum f.sp. vasinfectum"
+    cropIds: ["cotton"]
+    symptoms:
+      - "Yellowing and wilting of lower leaves"
+      - "Vascular browning in stem cross-section"
+      - "Stunted plants, early death"
+      - "More severe in sandy soils"
+    localNames:
+      en: "Fusarium Wilt"
+      hi: "फ्यूजेरियम विल्ट"
+      ta: "ஃப்யூஜேரியம் வில்ட்"
+      te: "ఫ్యూజెరియం విల్ట్"
+      bn: "ফিউজেরিয়াম উইল্ট"
+      mr: "फ्यूजेरियम विल्ट"
+      gu: "ફ્યુઝેરિયમ વેલ્ટ"
+      kn: "ಫ್ಯೂಜೆರಿಯಮ್ ವಿಲ್ಟ್"
+      ml: "ഫ്യൂസெரിയം വിൽട്ട്"
+      pa: "ਫਿਊਜ਼ੇರಿಯਮ ਵਿਲਟ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No effective chemical control. Soil solarization in summer. Use resistant varieties. Apply Trichoderma viride @ 2.5kg/ha with FYM at sowing."
+    preventiveMeasures:
+      - "Use resistant varieties"
+      - "Crop rotation (3-4 years with non-hosts)"
+      - "Soil solarization"
+      - "Seed treatment with Trichoderma"
+      - "Avoid root injury during interculture"
+    imageTags: ["fusarium_wilt", "fusarium", "cotton"]
+    confidenceThreshold: 0.7
+
+  - id: "root_rot_cotton"
+    name: "Root Rot"
+    scientificName: "Rhizoctonia solani / Pythium spp."
+    cropIds: ["cotton"]
+    symptoms:
+      - "Seedling damping-off"
+      - "Reddish-brown lesions on roots/hypocotyl"
+      - "Poor stand establishment"
+      - "Surviving plants stunted"
+    localNames:
+      en: "Root Rot"
+      hi: "जड़ सड़न"
+      ta: "வேர் புதை"
+      te: "రూట్ రోట్"
+      bn: "রুট রট"
+      mr: "रूट रॉट"
+      gu: "રુટ રોટ"
+      kn: "ರೂಟ್ ರಾಟ್"
+      ml: "റൂട്ട് റോട്ട്"
+      pa: "ਰੂਟ ਰੋਟ"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Seed treatment with carbendazim + thiram (1:1) @ 3g/kg or Trichoderma viride @ 4g/kg. Ensure good drainage. Avoid deep sowing."
+    preventiveMeasures:
+      - "Seed treatment mandatory"
+      - "Ensure proper drainage"
+      - "Avoid waterlogging"
+      - "Shallow sowing (3-4 cm)"
+      - "Use raised beds in heavy soils"
+    imageTags: ["root_rot", "rhizoctonia", "pythium", "cotton"]
+    confidenceThreshold: 0.65
+
+  - id: "red_rot"
+    name: "Red Rot"
+    scientificName: "Colletotrichum falcatum"
+    cropIds: ["sugarcane"]
+    symptoms:
+      - "Reddish discoloration of internal tissues"
+      - "White patches across nodes (acervuli)"
+      - "Alcohol-like smell from split cane"
+      - "Pith becomes hollow and shredded"
+      - "Top leaves yellow and dry"
+    localNames:
+      en: "Red Rot"
+      hi: "लाल सड़न"
+      ta: "சிவப்பு புதை"
+      te: "ఎర్ర ಪుట్ట"
+      bn: "লাল সড়ন"
+      mr: "लाल सडणे"
+      gu: "લાલ સડન"
+      kn: "ಕೆಂಪು ಪೂತಾರಿಕೆ"
+      ml: "ചുവപ്പ് സഡനം"
+      pa: "ਲਾਲ ਸੜਣ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No effective chemical control once established. Rogue out infected clumps. Treat setts with carbendazim 50% WP @ 1g/L for 10 min before planting. Use resistant varieties (e.g., Co 86032, Co 0238)."
+    preventiveMeasures:
+      - "Use healthy disease-free setts"
+      - "Sett treatment with fungicide mandatory"
+      - "Crop rotation (2-3 years with rice/legumes)"
+      - "Remove infected stools immediately"
+      - "Avoid ratooning in infected fields"
+    imageTags: ["red_rot", "colletotrichum", "sugarcane"]
+    confidenceThreshold: 0.75
+
+  - id: "smut_sugarcane"
+    name: "Smut"
+    scientificName: "Sporisorium scitamineum"
+    cropIds: ["sugarcane"]
+    symptoms:
+      - "Black whip-like structures (sori) from growing point"
+      - "Sori covered by thin white membrane"
+      - "Stunted, grassy growth (grassiness)"
+      - "No cane formation in severe cases"
+    localNames:
+      en: "Smut"
+      hi: "स्मट"
+      ta: "ஸ்மட்"
+      te: "స్మట్"
+      bn: "স্মাট"
+      mr: "स्मट"
+      gu: "સ્મટ"
+      kn: "ಸ್ಮಟ"
+      ml: "സ്മട്ട്"
+      pa: "ਸਮਟ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Sett treatment with propiconazole 25% EC @ 0.1% or carbendazim 50% WP @ 0.1% for 10 min. Rogue out smutted clumps immediately. Use resistant varieties (e.g., Co 86032, Co 0238)."
+    preventiveMeasures:
+      - "Sett treatment with fungicide"
+      - "Use resistant varieties"
+      - "Rogue out smutted clumps"
+      - "Avoid ratooning infected crop"
+    imageTags: ["smut", "sporisorium", "sugarcane"]
+    confidenceThreshold: 0.7
+
+  - id: "wilt_sugarcane"
+    name: "Wilt"
+    scientificName: "Fusarium moniliforme / Cephalosporium sacchari"
+    cropIds: ["sugarcane"]
+    symptoms:
+      - "Yellowing and drying of crown leaves"
+      - "Internal reddening of vascular bundles"
+      - "Stunted growth, poor tillering"
+      - "Cane easily pulled out (root rot)"
+    localNames:
+      en: "Wilt"
+      hi: "विल्ट"
+      ta: "வில்ட்"
+      te: "విల్ట్"
+      bn: "উইল্ট"
+      mr: "विल्ट"
+      gu: "વિલ્ટ"
+      kn: "ವಿಲ್ಟ್"
+      ml: "വിൽട്ട്"
+      pa: "ਵਿਲਟ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Sett treatment with carbendazim 50% WP @ 1g/L. Apply Trichoderma viride @ 10kg/ha with FYM. Improve drainage. Use resistant varieties."
+    preventiveMeasures:
+      - "Sett treatment with fungicide"
+      - "Improve field drainage"
+      - "Use resistant varieties"
+      - "Apply organic amendments"
+    imageTags: ["wilt", "fusarium", "cephalosporium", "sugarcane"]
+    confidenceThreshold: 0.7
+
+  - id: "pokkah_boeng"
+    name: "Pokkah Boeng"
+    scientificName: "Fusarium moniliforme"
+    cropIds: ["sugarcane"]
+    symptoms:
+      - "Twisted and deformed top leaves"
+      - "Chlorotic and necrotic streaks on leaves"
+      - "Stunted growth, 'fan-like' appearance"
+      - "Internal stalk reddening"
+    localNames:
+      en: "Pokkah Boeng"
+      hi: "पोक्का बोइंग"
+      ta: "பொக்கா போயங்க்"
+      te: "పోక్ఖాబోయంగ్"
+      bn: "পোক্কা বোয়েং"
+      mr: "पोक्का बोइंग"
+      gu: "પોક્કા બોએંગ"
+      kn: "ಪೊಕ್ಕಾ ಬೋಯೆಂಗ್"
+      ml: "പോക്ക ബോയിംഗ്"
+      pa: "ਪੋਕਾ ਬੋਇੰਗ"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Usually self-limiting. Remove severely affected tops. Sett treatment with carbendazim 50% WP @ 1g/L. Balanced nutrition reduces severity."
+    preventiveMeasures:
+      - "Use healthy setts"
+      - "Balanced fertilization"
+      - "Avoid waterlogging"
+    imageTags: ["pokkah_boeng", "fusarium", "sugarcane"]
+    confidenceThreshold: 0.6
+
+  - id: "leaf_scald"
+    name: "Leaf Scald"
+    scientificName: "Xanthomonas albilineans"
+    cropIds: ["sugarcane"]
+    symptoms:
+      - "White pencil-line streaks on leaves"
+      - "Streaks expand to large white areas"
+      - "Leaf tips wither and dry"
+      - "Vascular bundles show red discoloration"
+    localNames:
+      en: "Leaf Scald"
+      hi: "पत्ती झुलसा"
+      ta: "இலை வெறிப்பு"
+      te: "లీఫ్ స్కాల్డ్"
+      bn: "লিফ স্কেল্ড"
+      mr: "पान झुलसा"
+      gu: "પાત્ર સ્કાલ્ડ"
+      kn: "ಲೀಫ್ ಸ್ಕಾಲ್ಡ್"
+      ml: "ലീഫ് സ്കാൾഡ്"
+      pa: "ਲੀਫ ਸਕਾਲਡ"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Use disease-free setts. Hot water treatment (50°C for 2 hrs). Rogue out infected stools. Disinfect cutting tools."
+    preventiveMeasures:
+      - "Use certified disease-free setts"
+      - "Hot water treatment (50°C, 2 hours)"
+      - "Disinfect harvesting tools"
+      - "Rogue out infected plants"
+    imageTags: ["leaf_scald", "xanthomonas", "sugarcane"]
+    confidenceThreshold: 0.7
+
+  - id: "late_blight"
+    name: "Late Blight"
+    scientificName: "Phytophthora infestans"
+    cropIds: ["potato"]
+    symptoms:
+      - "Water-soaked lesions on leaves/stems"
+      - "White sporulation on underside (humid)"
+      - "Lesions turn brown-black rapidly"
+      - "Tuber rot: reddish-brown granular rot"
+      - "Foul odor from infected tubers"
+    localNames:
+      en: "Late Blight"
+      hi: "देर से झुलसा"
+      ta: "தாமதமாக இலை வெறிப்பு"
+      te: "లేట్ బ్లైట్"
+      bn: "লেট ব্লাইট"
+      mr: "उशिरा झुलसा"
+      gu: "લેટ બ્લાઇટ"
+      kn: "ಲೇಟ್ ಬ್ಲೈಟ್"
+      ml: "ലേറ്റ് ബ്ലൈറ്റ്"
+      pa: "ਲੇਟ ਬਲਾਈਟ"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply cymoxanil 8% + mancozeb 64% WP @ 2.5g/L or dimethomorph 50% WP @ 1g/L or mandipropamid 23.4% SC @ 0.8ml/L. Spray preventively at 7-10 day intervals in favorable weather. Destroy cull piles."
+    preventiveMeasures:
+      - "Use certified disease-free seed tubers"
+      - "Resistant varieties (e.g., Kufri Jyoti, Kufri Himalini)"
+      - "Earthing up to cover tubers"
+      - "Avoid overhead irrigation"
+      - "Forecast-based spray (Blightcast)"
+    imageTags: ["late_blight", "phytophthora", "potato"]
+    confidenceThreshold: 0.85
+
+  - id: "early_blight"
+    name: "Early Blight"
+    scientificName: "Alternaria solani"
+    cropIds: ["potato"]
+    symptoms:
+      - "Concentric ring spots (target board)"
+      - "Dark brown lesions with yellow halo"
+      - "Lesions on older leaves first"
+      - "Stem lesions girdle stems"
+      - "Tuber lesions: sunken, dark, leathery"
+    localNames:
+      en: "Early Blight"
+      hi: "जल्दी झुलसा"
+      ta: "வேகமாக இலை வெறிப்பு"
+      te: "అર્લీ బ్లైట్"
+      bn: "আর্লি ব্লাইট"
+      mr: "लवकर झुलसा"
+      gu: "અર્લી બ્લાઇટ"
+      kn: "ಅರ್ಲಿ ಬ್ಲೈಟ್"
+      ml: "അര്‍ലി ബ്ലൈറ്റ്"
+      pa: "ਅਰਲੀ ਬਲਾਈਟ"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or azoxystrobin 23% SC @ 1ml/L or difenoconazole 25% EC @ 0.5ml/L. Spray at 10-14 day intervals from flowering."
+    preventiveMeasures:
+      - "Crop rotation (2-3 years)"
+      - "Balanced fertilization (adequate K)"
+      - "Remove crop debris"
+      - "Avoid overhead irrigation late day"
+    imageTags: ["early_blight", "alternaria", "potato"]
+    confidenceThreshold: 0.7
+
+  - id: "bacterial_wilt_potato"
+    name: "Bacterial Wilt"
+    scientificName: "Ralstonia solanacearum"
+    cropIds: ["potato"]
+    symptoms:
+      - "Wilting of youngest leaves (hot days)"
+      - "Recovery at night initially"
+      - "Brown vascular ring in stem cross-section"
+      - "Ooze from cut stem (bacterial streaming)"
+      - "Tuber eyes show gray-brown discoloration"
+    localNames:
+      en: "Bacterial Wilt"
+      hi: "जीवाणु विल्ट"
+      ta: "பாக்டீரியா வில்ட்"
+      te: "బాక్టీరియల్ విల్ట్"
+      bn: "ব্যাকটেরিয়াল উইল্ট"
+      mr: "जीवाणू विल्ट"
+      gu: "બેક્ટેરિયલ વિલ્ટ"
+      kn: "ಬ್ಯಾಕ್ಟೀರಿಯಲ್ ವಿಲ್ಟ್"
+      ml: "ബാക്ടീരിയൽ വിൽട്ട്"
+      pa: "ਬੈਕਟੇరിയਲ ਵਿਲਟ"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No effective chemical control. Rogue out infected plants immediately. Soil fumigation with formaldehyde. Long rotation (4-5 years) with non-solanaceous crops. Use resistant varieties (e.g., Kufri Jyoti)."
+    preventiveMeasures:
+      - "Use certified disease-free seed"
+      - "Long crop rotation (4-5 years)"
+      - "Soil solarization"
+      - "Avoid contaminated water/equipment"
+      - "Rogue out infected plants promptly"
+    imageTags: ["bacterial_wilt", "ralstonia", "potato"]
+    confidenceThreshold: 0.8
+
+  - id: "virus_y"
+    name: "Potato Virus Y (PVY)"
+    scientificName: "Potyvirus"
+    cropIds: ["potato"]
+    symptoms:
+      - "Mosaic/mottling on leaves"
+      - "Leaf rolling and rugosity"
+      - "Stunted growth"
+      - "Necrotic spots on tubers (PVY-NTN)"
+      - "Transmitted by aphids (non-persistent)"
+    localNames:
+      en: "Potato Virus Y"
+      hi: "आलू वायरस वाई"
+      ta: "உருளை வைரஸ் வை"
+      te: "బంగాళాదుంప వైరస్ వై"
+      bn: "পটেটো ভাইরাস وай"
+      mr: "बटाटा व्हायरस वाय"
+      gu: "બટાકા વાયરસ વાય"
+      kn: "ಆಲೂಗಡ್ಡೆ ವೈರಸ್ ವೈ"
+      ml: "ഉരുള വൈറസ് വൈ"
+      pa: "ਆਲੂ ਵਾਇਰਸ ਵਾਈ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Control aphid vectors with imidacloprid 17.8% SL @ 0.3ml/L as seed treatment or flonicamid 50% WG @ 0.2g/L. Use certified virus-free seed. Remove infected plants. Reflective mulches reduce aphid landing."
+    preventiveMeasures:
+      - "Use certified virus-free seed tubers"
+      - "Control aphid vectors early"
+      - "Remove volunteer potatoes and solanaceous weeds"
+      - "Reflective mulches"
+      - "Resistant varieties (e.g., Kufri Chipsona)"
+    imageTags: ["potato_virus_y", "pvy", "aphid", "potato"]
+    confidenceThreshold: 0.7
+
+  - id: "common_scab"
+    name: "Common Scab"
+    scientificName: "Streptomyces scabies"
+    cropIds: ["potato"]
+    symptoms:
+      - "Corky lesions on tuber surface"
+      - "Lesions: raised (russet), sunken (pitted), or superficial"
+      - "No above-ground symptoms"
+      - "Reduces market quality"
+    localNames:
+      en: "Common Scab"
+      hi: "सामान्य स्कैब"
+      ta: "பொதுவான ஸ்காப்"
+      te: "సాధారణ స్కాబ్"
+      bn: "সাধারণ স্ক্যাব"
+      mr: "सामान्य स्कॅब"
+      gu: "સામાન્ય સ્કેબ"
+      kn: "ಸಾಮಾನ್ಯ ಸ್ಕಾಬ್"
+      ml: "സാമാന്യ സ്കാബ്"
+      pa: "ਸਾਮਾਨਕ ਸਕੈਬ"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Maintain soil pH 5.0-5.2 (acidic). Adequate soil moisture during tuber initiation (6-8 weeks after planting). Use resistant varieties (e.g., Kufri Jyoti, Kufri Chipsona). Apply organic matter."
+    preventiveMeasures:
+      - "Maintain acidic soil pH (5.0-5.2)"
+      - "Adequate irrigation during tuber bulking"
+      - "Use resistant varieties"
+      - "Crop rotation with non-hosts"
+      - "Avoid fresh manure application"
+    imageTags: ["common_scab", "streptomyces", "potato"]
+    confidenceThreshold: 0.65
+
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "Asia/Kolkata"
+
+  - id: "nasa-power"
+    name: "NASA POWER"
+    type: "nasa-power"
+    baseUrl: "https://power.larc.nasa.gov/api/temporal/daily/point"
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 1000
+    parameters:
+      community: "AG"
+      format: "JSON"
+
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B05", "B06", "B07", "B08", "B8A", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+
+  - id: "landsat-8"
+    name: "Landsat 8"
+    type: "landsat-8"
+    baseUrl: "https://landsatlook.usgs.gov"
+    bands: ["B2", "B3", "B4", "B5", "B6", "B7"]
+    resolution: 30
+    revisitDays: 16
+    cloudCoverThreshold: 30
+
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+      gemini-1.5-pro:
+        id: "gemini-1.5-pro"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["india", "kenya", "brazil"]
+    priority: 100
+    enabled: true
+
+  - id: "groq-1"
+    name: "Groq"
+    type: "groq"
+    baseUrl: "https://api.groq.com/openai/v1"
+    apiKeyEnvVar: "GROQ_API_KEY"
+    models:
+      llama-3.1-70b-versatile:
+        id: "llama-3.1-70b-versatile"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+      llama-3.1-8b-instant:
+        id: "llama-3.1-8b-instant"
+        taskTypes: ["advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+      llama-3.2-11b-vision-preview:
+        id: "llama-3.2-11b-vision-preview"
+        taskTypes: ["disease-detection"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 6000
+      tokensPerMinute: 6000
+    regions: ["india", "kenya", "brazil"]
+    priority: 90
+    enabled: true
+
+  - id: "huggingface-1"
+    name: "Hugging Face Inference"
+    type: "huggingface"
+    baseUrl: "https://api-inference.huggingface.co"
+    apiKeyEnvVar: "HF_API_KEY"
+    models:
+      microsoft/resnet-50:
+        id: "microsoft/resnet-50"
+        taskTypes: ["disease-detection"]
+        maxTokens: 100
+      google/vit-base-patch16-224:
+        id: "google/vit-base-patch16-224"
+        taskTypes: ["disease-detection"]
+        maxTokens: 100
+      microsoft/beit-base-patch16-224:
+        id: "microsoft/beit-base-patch16-224"
+        taskTypes: ["disease-detection"]
+        maxTokens: 100
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 1000
+    regions: ["india", "kenya", "brazil"]
+    priority: 70
+    enabled: true
+
+  - id: "together-1"
+    name: "Together.ai"
+    type: "together"
+    baseUrl: "https://api.together.xyz/v1"
+    apiKeyEnvVar: "TOGETHER_API_KEY"
+    models:
+      meta-llama/Llama-3.2-11B-Vision-Instruct:
+        id: "meta-llama/Llama-3.2-11B-Vision-Instruct"
+        taskTypes: ["disease-detection"]
+        maxTokens: 4096
+        temperature: 0.3
+        costPer1kTokens: 0.0
+      meta-llama/Llama-3.1-70B-Instruct-Turbo:
+        id: "meta-llama/Llama-3.1-70B-Instruct-Turbo"
+        taskTypes: ["yield-prediction", "advisory", "chat"]
+        maxTokens: 4096
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 20
+      requestsPerDay: 1000
+      tokensPerMinute: 10000
+    regions: ["india", "kenya", "brazil"]
+    priority: 80
+    enabled: true
+
+  - id: "openrouter-1"
+    name: "OpenRouter"
+    type: "openrouter"
+    baseUrl: "https://openrouter.ai/api/v1"
+    apiKeyEnvVar: "OPENROUTER_API_KEY"
+    models:
+      google/gemini-flash-1.5:
+        id: "google/gemini-flash-1.5"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+      meta-llama/llama-3.2-11b-vision-instruct:
+        id: "meta-llama/llama-3.2-11b-vision-instruct"
+        taskTypes: ["disease-detection"]
+        maxTokens: 4096
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 20
+      requestsPerDay: 500
+    regions: ["india", "kenya", "brazil"]
+    priority: 60
+    enabled: true
+
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in India.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+
+  - id: "disease-detection-hi"
+    taskType: "disease-detection"
+    language: "hi"
+    systemPrompt: |
+      आप भारत में फसल रोगों के विशेषज्ञ पादप रोगविज्ञानी हैं।
+      फसल की छवि का विश्लेषण करें और रोग की पहचान करें।
+      केवल वैध JSON में उत्तर दें:
+      {
+        "disease_id": "string (प्रदान की गई सूची से)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["लक्षण1", "लक्षण2"],
+        "reasoning": "दृश्य साक्ष्य का संक्षिप्त विवरण"
+      }
+    userPromptTemplate: "{region} में इस {crop} की छवि में रोग की पहचान करें। संभावित रोग: {disease_list}। पत्ती के धब्बे, मलिनकिरण, मुरझाना, घाव, या कीट क्षति जैसे लक्षणों पर विचार करें।"
+    outputFormat: "json"
+
+  - id: "yield-prediction-en"
+    taskType: "yield-prediction"
+    language: "en"
+    systemPrompt: |
+      You are an expert agricultural economist and crop scientist for Indian agriculture.
+      Predict crop yield based on weather, satellite, soil, and management data.
+      Respond ONLY with valid JSON:
+      {
+        "yield_min": number (t/ha),
+        "yield_max": number (t/ha),
+        "yield_expected": number (t/ha),
+        "confidence": 0.0-1.0,
+        "key_drivers": ["driver1", "driver2"],
+        "explanation": "detailed explanation of prediction factors"
+      }
+    userPromptTemplate: |
+      Predict yield for {crop} in {region}, {season} season.
+      Field: {field_id}, Area: {area} ha, Irrigation: {irrigation}
+      Planting date: {planting_date}
+
+      Weather Data: {weather}
+
+      Consider: rainfall, temperature, humidity, solar radiation, soil type, variety, management practices.
+      Provide realistic yield range for this region and season.
+    outputFormat: "json"
+
+  - id: "advisory-en"
+    taskType: "advisory"
+    language: "en"
+    systemPrompt: |
+      You are an agricultural extension officer for Indian farmers.
+      Provide practical, affordable, culturally appropriate treatment advice.
+      Respond ONLY with valid JSON:
+      {
+        "treatment": "step-by-step treatment instructions",
+        "preventive_measures": ["measure1", "measure2"],
+        "follow_up": "when to re-check and next steps",
+        "safety_warnings": ["warning1", "warning2"]
+      }
+    userPromptTemplate: |
+      Provide treatment advisory for {disease} in {crop} ({region}).
+      Severity: {severity}. Language: {language}.
+      Symptoms: {symptoms}
+      Local names: {local_names}
+
+      Consider: locally available chemicals, cost-effectiveness, pre-harvest intervals, farmer safety, IPM approaches.
+    outputFormat: "json"
+
+  - id: "advisory-hi"
+    taskType: "advisory"
+    language: "hi"
+    systemPrompt: |
+      आप भारतीय किसानों के लिए कृषि विस्तार अधिकारी हैं।
+      व्यावहारिक, किफायती, सांस्कृतिक रूप से उपयुक्त उपचार सलाह दें।
+      केवल वैध JSON में उत्तर दें:
+      {
+        "treatment": "चरण-दर-चरण उपचार निर्देश",
+        "preventive_measures": ["उपाय1", "उपाय2"],
+        "follow_up": "कब पुनः जांचें और अगले कदम",
+        "safety_warnings": ["चेतावनी1", "चेतावनी2"]
+      }
+    userPromptTemplate: |
+      {region} में {crop} में {disease} के लिए उपचार सलाह दें।
+      गंभीरता: {severity}। भाषा: {language}।
+      लक्षण: {symptoms}
+      स्थानीय नाम: {local_names}
+
+      विचार करें: स्थानीय रूप से उपलब्ध रसायन, लागत-प्रभावशीलता, फसल-पूर्व अंतराल, किसान सुरक्षा, IPM दृष्टिकोण।
+    outputFormat: "json"
+
+modelConfig:
+  edgeModelVersion: "v1.2.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/india-v1.2.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2024-01-15T10:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "India region configuration with 6 major crops and 21 diseases. Covers Kharif, Rabi, and Zaid seasons. Supports 10 languages."

@@ -1,0 +1,15 @@
+{
+  "name": "AgriSense — AI Crop Assistant",
+  "short_name": "AgriSense",
+  "description": "Free AI crop disease detection, live-camera scanner, voice assistant, weather and yield tools. Works offline with no API key.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#090d0b",
+  "theme_color": "#16a34a",
+  "orientation": "portrait-primary",
+  "categories": ["agriculture", "productivity", "utilities"],
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

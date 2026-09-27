@@ -1,0 +1,741 @@
+id: kenya
+name: "Kenya"
+displayName:
+  en: "Kenya"
+  sw: "Kenya"
+isoCode: "KE"
+timezone: "Africa/Nairobi"
+languages:
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+  - code: "sw"
+    name: "Swahili"
+    nativeName: "Kiswahili"
+    rtl: false
+defaultLanguage: "en"
+currency: "KES"
+coordinates:
+  latMin: -4.7
+  latMax: 4.5
+  lonMin: 33.9
+  lonMax: 41.9
+crops:
+  - id: "maize"
+    name: "Maize"
+    scientificName: "Zea mays"
+    localNames:
+      en: "Maize"
+      sw: "Mahindi"
+    growingSeasons: ["long-rains", "short-rains"]
+    diseaseClasses: ["fall_armyworm", "maize_streak", "turcicum_leaf_blight", "common_rust", "gray_leaf_spot", "ear_rot"]
+    icon: "🌽"
+    color: "#8B5CF6"
+  - id: "beans"
+    name: "Common Bean"
+    scientificName: "Phaseolus vulgaris"
+    localNames:
+      en: "Beans"
+      sw: "Maharage"
+    growingSeasons: ["long-rains", "short-rains"]
+    diseaseClasses: ["angular_leaf_spot", "bean_rust", "common_bacterial_blight", "halo_blight", "root_rot"]
+    icon: "🫘"
+    color: "#F59E0B"
+  - id: "coffee"
+    name: "Coffee"
+    scientificName: "Coffea arabica"
+    localNames:
+      en: "Coffee"
+      sw: "Kahawa"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["coffee_leaf_rust", "coffee_berry_disease", "coffee_wilt", "cbd"]
+    icon: "☕"
+    color: "#6B4226"
+  - id: "tea"
+    name: "Tea"
+    scientificName: "Camellia sinensis"
+    localNames:
+      en: "Tea"
+      sw: "Chai"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["tea_blister_blight", "tea_gray_blight", "tea_root_rot", "tea_mosquito_bug"]
+    icon: "🍵"
+    color: "#10B981"
+diseases:
+  - id: "fall_armyworm"
+    name: "Fall Armyworm"
+    scientificName: "Spodoptera frugiperda"
+    cropIds: ["maize"]
+    symptoms:
+      - "Ragged holes in leaves (window-paning)"
+      - "Frass (sawdust-like) in whorl"
+      - "Larvae with inverted Y on head"
+      - "Severe defoliation in young plants"
+    localNames:
+      en: "Fall Armyworm"
+      sw: "Menyeto wa Mapema"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply emamectin benzoate 5% SG @ 0.4g/L or spinetoram 11.7% SC @ 0.5ml/L. Target early instar larvae (1-3rd). Apply in evening. Use pheromone traps @ 5/ha for monitoring."
+    preventiveMeasures:
+      - "Early planting to avoid peak population"
+      - "Intercrop with legumes/desmodium (push-pull)"
+      - "Release Trichogramma @ 50,000/ha weekly"
+      - "Apply neem-based formulations preventively"
+      - "Deep summer plowing to expose pupae"
+    imageTags: ["fall_armyworm", "spodoptera", "maize", "caterpillar"]
+    confidenceThreshold: 0.8
+  - id: "maize_streak"
+    name: "Maize Streak Virus"
+    scientificName: "Maize streak virus (MSV)"
+    cropIds: ["maize"]
+    symptoms:
+      - "Yellow-white streaks parallel to leaf veins"
+      - "Streaks coalesce into larger chlorotic areas"
+      - "Stunted growth, poor cob formation"
+      - "Transmitted by leafhoppers (Cicadulina mbila)"
+    localNames:
+      en: "Maize Streak"
+      sw: "Ugonjwa wa Mwele wa Mahindi"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Control leafhopper vector with imidacloprid 17.8% SL @ 0.3ml/L as seed treatment or soil application. Use resistant varieties. Remove infected plants early."
+    preventiveMeasures:
+      - "Use resistant/tolerant varieties (e.g., KSTP 94, KH 500-21A)"
+      - "Early planting to avoid vector peak"
+      - "Remove grassy weeds (alternate hosts)"
+      - "Seed treatment with imidacloprid"
+    imageTags: ["maize_streak", "virus", "leafhopper", "maize"]
+    confidenceThreshold: 0.75
+  - id: "turcicum_leaf_blight"
+    name: "Turcicum Leaf Blight (Northern Corn Leaf Blight)"
+    scientificName: "Exserohilum turcicum"
+    cropIds: ["maize"]
+    symptoms:
+      - "Long elliptical gray-green lesions"
+      - "Lesions turn tan with dark margins"
+      - "Starts on lower leaves, moves up"
+      - "Severe blighting of leaves"
+    localNames:
+      en: "Turcicum Leaf Blight"
+      sw: "Ua wa Majani ya Mahindi"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or azoxystrobin 23% SC @ 1ml/L or propiconazole 25% EC @ 1ml/L at first sign. Repeat at 15-day intervals."
+    preventiveMeasures:
+      - "Use resistant hybrids (e.g., H614D, H6213)"
+      - "Crop rotation with non-hosts"
+      - "Bury crop residue"
+      - "Avoid overhead irrigation"
+    imageTags: ["turcicum_leaf_blight", "exserohilum", "maize"]
+    confidenceThreshold: 0.7
+  - id: "common_rust"
+    name: "Common Rust"
+    scientificName: "Puccinia sorghi"
+    cropIds: ["maize"]
+    symptoms:
+      - "Small cinnamon-brown pustules on both leaf surfaces"
+      - "Pustules scattered, not in stripes"
+      - "Black teliospores late season"
+    localNames:
+      en: "Common Rust"
+      sw: "Kungu ya Kawaida"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole 25% EC @ 1ml/L at early infection. Use resistant hybrids."
+    preventiveMeasures:
+      - "Use resistant hybrids"
+      - "Early planting"
+      - "Balanced nutrition"
+    imageTags: ["common_rust", "puccinia", "maize"]
+    confidenceThreshold: 0.65
+  - id: "gray_leaf_spot"
+    name: "Gray Leaf Spot"
+    scientificName: "Cercospora zeae-maydis"
+    cropIds: ["maize"]
+    symptoms:
+      - "Rectangular gray-tan lesions"
+      - "Lesions parallel to leaf veins"
+      - "Distinct margins with yellow halo"
+      - "Lower leaves affected first"
+    localNames:
+      en: "Gray Leaf Spot"
+      sw: "Vigezo vya Kijivu"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply azoxystrobin 23% SC @ 1ml/L or pyraclostrobin 20% WG @ 0.6g/L or propiconazole 25% EC @ 1ml/L at tasseling. Repeat if needed."
+    preventiveMeasures:
+      - "Use resistant hybrids"
+      - "Crop rotation (2+ years)"
+      - "Tillage to bury residue"
+      - "Balanced fertilization"
+    imageTags: ["gray_leaf_spot", "cercospora", "maize"]
+    confidenceThreshold: 0.7
+  - id: "ear_rot"
+    name: "Ear Rot"
+    scientificName: "Fusarium verticillioides / Aspergillus flavus"
+    cropIds: ["maize"]
+    symptoms:
+      - "White to pink mold on kernels"
+      - "Kernel rotting starting from tip"
+      - "Mycotoxin contamination risk"
+      - "Husk tightly adhering to ear"
+    localNames:
+      en: "Ear Rot"
+      sw: "Uavu wa Zao"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Harvest at proper moisture (20-25%). Dry quickly to <14% moisture. Store in aerated conditions. No effective field spray; prevention critical. Use resistant hybrids."
+    preventiveMeasures:
+      - "Use resistant hybrids"
+      - "Avoid late planting"
+      - "Control ear-feeding insects"
+      - "Harvest at correct moisture"
+      - "Proper drying and storage"
+    imageTags: ["ear_rot", "fusarium", "aspergillus", "maize"]
+    confidenceThreshold: 0.7
+  - id: "angular_leaf_spot"
+    name: "Angular Leaf Spot"
+    scientificName: "Phaeoisariopsis griseola"
+    cropIds: ["beans"]
+    symptoms:
+      - "Angular brown lesions on leaves"
+      - "Lesions bounded by leaf veins"
+      - "Gray sporulation on underside"
+      - "Premature defoliation"
+    localNames:
+      en: "Angular Leaf Spot"
+      sw: "Vigezo vya Pembetatu"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or chlorothalonil 75% WP @ 2g/L at first sign. Repeat at 10-14 day intervals."
+    preventiveMeasures:
+      - "Use resistant varieties (e.g., GLP 2, KK 8)"
+      - "Crop rotation (2 years)"
+      - "Avoid overhead irrigation"
+      - "Remove crop debris"
+    imageTags: ["angular_leaf_spot", "phaeoisariopsis", "beans"]
+    confidenceThreshold: 0.7
+  - id: "bean_rust"
+    name: "Bean Rust"
+    scientificName: "Uromyces appendiculatus"
+    cropIds: ["beans"]
+    symptoms:
+      - "Small reddish-brown pustules on leaves"
+      - "Pustules on both leaf surfaces"
+      - "Yellow halo around pustules"
+      - "Severe defoliation in susceptible varieties"
+    localNames:
+      en: "Bean Rust"
+      sw: "Kungu ya Maharage"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole 25% EC @ 1ml/L at first appearance. Repeat at 14-day intervals."
+    preventiveMeasures:
+      - "Use resistant varieties"
+      - "Early planting"
+      - "Avoid dense planting"
+      - "Crop rotation"
+    imageTags: ["bean_rust", "uromyces", "beans"]
+    confidenceThreshold: 0.65
+  - id: "common_bacterial_blight"
+    name: "Common Bacterial Blight"
+    scientificName: "Xanthomonas axonopodis pv. phaseoli"
+    cropIds: ["beans"]
+    symptoms:
+      - "Water-soaked lesions on leaves"
+      - "Lesions become brown with yellow halo"
+      - "Pod lesions: circular, sunken, reddish-brown"
+      - "Seed transmission"
+    localNames:
+      en: "Common Bacterial Blight"
+      sw: "Ugonjwa wa Baktiria wa Kawaida"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply copper-based bactericides (copper oxychloride 50% WP @ 2.5g/L). Use certified disease-free seed. Avoid overhead irrigation."
+    preventiveMeasures:
+      - "Use certified disease-free seed"
+      - "Seed treatment with streptomycin"
+      - "Crop rotation (2 years)"
+      - "Avoid overhead irrigation"
+      - "Remove volunteer plants"
+    imageTags: ["common_bacterial_blight", "xanthomonas", "beans"]
+    confidenceThreshold: 0.7
+  - id: "halo_blight"
+    name: "Halo Blight"
+    scientificName: "Pseudomonas syringae pv. phaseolicola"
+    cropIds: ["beans"]
+    symptoms:
+      - "Small water-soaked spots with wide yellow halo"
+      - "Lesions remain small (1-2 mm)"
+      - "Systemic infection causes stunting"
+      - "Cool, wet conditions favor development"
+    localNames:
+      en: "Halo Blight"
+      sw: "Ugonjwa wa Halo"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply copper-based bactericides at first sign. Use resistant varieties. Cool weather management critical."
+    preventiveMeasures:
+      - "Use resistant varieties"
+      - "Seed treatment"
+      - "Avoid cool, wet planting conditions"
+      - "Crop rotation"
+    imageTags: ["halo_blight", "pseudomonas", "beans"]
+    confidenceThreshold: 0.7
+  - id: "root_rot_beans"
+    name: "Root Rot"
+    scientificName: "Fusarium solani / Rhizoctonia solani / Pythium spp."
+    cropIds: ["beans"]
+    symptoms:
+      - "Stunting and yellowing of plants"
+      - "Reddish-brown lesions on roots"
+      - "Poor stand establishment"
+      - "Plants easily pulled from soil"
+    localNames:
+      en: "Root Rot"
+      sw: "Uavu wa Miguu"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Seed treatment with carboxin + thiram or Trichoderma. Ensure good drainage. Avoid deep planting."
+    preventiveMeasures:
+      - "Seed treatment mandatory"
+      - "Ensure proper drainage"
+      - "Raised beds in heavy soils"
+      - "Crop rotation with cereals"
+    imageTags: ["root_rot", "fusarium", "rhizoctonia", "beans"]
+    confidenceThreshold: 0.65
+  - id: "coffee_leaf_rust"
+    name: "Coffee Leaf Rust"
+    scientificName: "Hemileia vastatrix"
+    cropIds: ["coffee"]
+    symptoms:
+      - "Yellow-orange powdery spots on underside of leaves"
+      - "Premature defoliation"
+      - "Reduced photosynthesis and yield"
+      - "Severe on lower canopy first"
+    localNames:
+      en: "Coffee Leaf Rust"
+      sw: "Kungu ya Majani ya Kahawa"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply triazole fungicides (epoxiconazole, cyproconazole) or strobilurins. Prune for air circulation. Use resistant varieties (Ruiru 11, Batian)."
+    preventiveMeasures:
+      - "Use resistant varieties (Ruiru 11, Batian)"
+      - "Proper shade management"
+      - "Regular pruning"
+      - "Balanced nutrition"
+    imageTags: ["coffee_leaf_rust", "hemileia", "coffee"]
+    confidenceThreshold: 0.75
+  - id: "coffee_berry_disease"
+    name: "Coffee Berry Disease"
+    scientificName: "Colletotrichum kahawae"
+    cropIds: ["coffee"]
+    symptoms:
+      - "Dark sunken lesions on green berries"
+      - "Premature ripening and dropping"
+      - "Pink spore masses in humid conditions"
+      - "Severe yield loss (up to 80%)"
+    localNames:
+      en: "Coffee Berry Disease"
+      sw: "Ugonjwa wa Mabao ya Kahawa"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply copper-based fungicides or chlorothalonil at berry expansion stage. Remove infected berries. Use resistant varieties."
+    preventiveMeasures:
+      - "Use resistant varieties (Ruiru 11, Batian)"
+      - "Field sanitation (remove mummified berries)"
+      - "Proper pruning for air flow"
+      - "Copper sprays before flowering"
+    imageTags: ["coffee_berry_disease", "colletotrichum", "coffee"]
+    confidenceThreshold: 0.8
+  - id: "coffee_wilt"
+    name: "Coffee Wilt Disease"
+    scientificName: "Fusarium xylarioides"
+    cropIds: ["coffee"]
+    symptoms:
+      - "Yellowing and wilting of branches"
+      - "Blue-black staining of vascular tissue"
+      - "Tree death within weeks"
+      - "No effective chemical control"
+    localNames:
+      en: "Coffee Wilt Disease"
+      sw: "Ugonjwa wa Kuwama Kahawa"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No chemical control. Remove and burn infected trees. Use resistant varieties. Avoid wounding during pruning. Quarantine measures."
+    preventiveMeasures:
+      - "Use resistant varieties"
+      - "Avoid contamination from tools/soil"
+      - "Quarantine infected areas"
+      - "Burn infected material"
+    imageTags: ["coffee_wilt", "fusarium", "coffee"]
+    confidenceThreshold: 0.8
+  - id: "cbd"
+    name: "Coffee Berry Disease (CBD)"
+    scientificName: "Colletotrichum kahawae"
+    cropIds: ["coffee"]
+    symptoms:
+      - "Black lesions on young berries"
+      - "Berries mummify and remain attached"
+      - "Sporulation in wet conditions"
+      - "Spreads rapidly in rain"
+    localNames:
+      en: "Coffee Berry Disease"
+      sw: "Ugonjwa wa Mabao ya Kahawa"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Copper oxychloride 50% WP @ 2.5g/L or chlorothalonil 75% WP @ 2g/L at berry set. Repeat at 3-week intervals during wet season."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Remove infected berries"
+      - "Shade management"
+    imageTags: ["cbd", "colletotrichum", "coffee"]
+    confidenceThreshold: 0.8
+  - id: "tea_blister_blight"
+    name: "Tea Blister Blight"
+    scientificName: "Exobasidium vexans"
+    cropIds: ["tea"]
+    symptoms:
+      - "Small translucent blisters on young leaves"
+      - "Blisters become white and powdery"
+      - "Leaves curl and distort"
+      - "Severe in cool, misty conditions"
+    localNames:
+      en: "Blister Blight"
+      sw: "Ua wa Kisalasala"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply copper oxychloride 50% WP @ 2.5g/L or hexaconazole 5% EC @ 1ml/L weekly during susceptible period. Prune for ventilation."
+    preventiveMeasures:
+      - "Resistant clones (e.g., TRFK 31/8, TRFK 6/8)"
+      - "Shade management"
+      - "Regular pruning cycle"
+      - "Avoid excessive nitrogen"
+    imageTags: ["tea_blister_blight", "exobasidium", "tea"]
+    confidenceThreshold: 0.75
+  - id: "tea_gray_blight"
+    name: "Tea Gray Blight"
+    scientificName: "Pestalotiopsis theae"
+    cropIds: ["tea"]
+    symptoms:
+      - "Gray-brown lesions with dark margins"
+      - "Concentric rings in lesions"
+      - "Leaf drying and dropping"
+      - "Twig dieback in severe cases"
+    localNames:
+      en: "Gray Blight"
+      sw: "Ua wa Kijivu cha Chai"
+    severityLevels: ["low", "medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply mancozeb 75% WP @ 2.5g/L or propiconazole 25% EC @ 1ml/L. Remove affected twigs. Improve drainage."
+    preventiveMeasures:
+      - "Proper pruning"
+      - "Avoid waterlogging"
+      - "Balanced nutrition"
+      - "Remove crop debris"
+    imageTags: ["tea_gray_blight", "pestalotiopsis", "tea"]
+    confidenceThreshold: 0.7
+  - id: "tea_root_rot"
+    name: "Tea Root Rot"
+    scientificName: "Armillaria mellea / Phytophthora spp."
+    cropIds: ["tea"]
+    symptoms:
+      - "Yellowing and wilting of bush"
+      - "White fungal mycelium under bark"
+      - "Black rhizomorphs on roots"
+      - "Sudden bush death"
+    localNames:
+      en: "Root Rot"
+      sw: "Uavu wa Miguu ya Chai"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Remove and burn affected bushes. Trench around infected area. Soil fumigation. Replant with resistant clones after 2 years."
+    preventiveMeasures:
+      - "Improve drainage"
+      - "Avoid deep planting"
+      - "Remove old stumps"
+      - "Use clean planting material"
+    imageTags: ["tea_root_rot", "armillaria", "phytophthora", "tea"]
+    confidenceThreshold: 0.8
+  - id: "tea_mosquito_bug"
+    name: "Tea Mosquito Bug"
+    scientificName: "Helopeltis theivora"
+    cropIds: ["tea"]
+    symptoms:
+      - "Black lesions on young shoots"
+      - "Leaf curling and distortion"
+      - "Bud drop and yield loss"
+      - "Sap-sucking damage"
+    localNames:
+      en: "Tea Mosquito Bug"
+      sw: "Mdudu wa Chai"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply lambda-cyhalothrin 5% EC @ 1ml/L or thiamethoxam 25% WG @ 0.2g/L. Target nymphs. Spray early morning."
+    preventiveMeasures:
+      - "Regular monitoring"
+      - "Shade tree management"
+      - "Biological control (ants)"
+      - "Avoid excessive shade"
+    imageTags: ["tea_mosquito_bug", "helopeltis", "tea"]
+    confidenceThreshold: 0.75
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "Africa/Nairobi"
+  - id: "nasa-power"
+    name: "NASA POWER"
+    type: "nasa-power"
+    baseUrl: "https://power.larc.nasa.gov/api/temporal/daily/point"
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 1000
+    parameters:
+      community: "AG"
+      format: "JSON"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B05", "B06", "B07", "B08", "B8A", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+      gemini-1.5-pro:
+        id: "gemini-1.5-pro"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["kenya"]
+    priority: 100
+    enabled: true
+  - id: "groq-1"
+    name: "Groq"
+    type: "groq"
+    baseUrl: "https://api.groq.com/openai/v1"
+    apiKeyEnvVar: "GROQ_API_KEY"
+    models:
+      llama-3.1-70b-versatile:
+        id: "llama-3.1-70b-versatile"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+      llama-3.1-8b-instant:
+        id: "llama-3.1-8b-instant"
+        taskTypes: ["advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+      llama-3.2-11b-vision-preview:
+        id: "llama-3.2-11b-vision-preview"
+        taskTypes: ["disease-detection"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 6000
+      tokensPerMinute: 6000
+    regions: ["kenya"]
+    priority: 90
+    enabled: true
+  - id: "huggingface-1"
+    name: "Hugging Face Inference"
+    type: "huggingface"
+    baseUrl: "https://api-inference.huggingface.co"
+    apiKeyEnvVar: "HF_API_KEY"
+    models:
+      microsoft/resnet-50:
+        id: "microsoft/resnet-50"
+        taskTypes: ["disease-detection"]
+        maxTokens: 100
+      google/vit-base-patch16-224:
+        id: "google/vit-base-patch16-224"
+        taskTypes: ["disease-detection"]
+        maxTokens: 100
+      microsoft/beit-base-patch16-224:
+        id: "microsoft/beit-base-patch16-224"
+        taskTypes: ["disease-detection"]
+        maxTokens: 100
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 1000
+    regions: ["kenya"]
+    priority: 70
+    enabled: true
+  - id: "together-1"
+    name: "Together.ai"
+    type: "together"
+    baseUrl: "https://api.together.xyz/v1"
+    apiKeyEnvVar: "TOGETHER_API_KEY"
+    models:
+      meta-llama/Llama-3.2-11B-Vision-Instruct:
+        id: "meta-llama/Llama-3.2-11B-Vision-Instruct"
+        taskTypes: ["disease-detection"]
+        maxTokens: 4096
+        temperature: 0.3
+        costPer1kTokens: 0.0
+      meta-llama/Llama-3.1-70B-Instruct-Turbo:
+        id: "meta-llama/Llama-3.1-70B-Instruct-Turbo"
+        taskTypes: ["yield-prediction", "advisory", "chat"]
+        maxTokens: 4096
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 20
+      requestsPerDay: 1000
+      tokensPerMinute: 10000
+    regions: ["kenya"]
+    priority: 80
+    enabled: true
+  - id: "openrouter-1"
+    name: "OpenRouter"
+    type: "openrouter"
+    baseUrl: "https://openrouter.ai/api/v1"
+    apiKeyEnvVar: "OPENROUTER_API_KEY"
+    models:
+      google/gemini-flash-1.5:
+        id: "google/gemini-flash-1.5"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+      meta-llama/llama-3.2-11b-vision-instruct:
+        id: "meta-llama/llama-3.2-11b-vision-instruct"
+        taskTypes: ["disease-detection"]
+        maxTokens: 4096
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 20
+      requestsPerDay: 500
+    regions: ["kenya"]
+    priority: 60
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in Kenya.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "disease-detection-sw"
+    taskType: "disease-detection"
+    language: "sw"
+    systemPrompt: |
+      Wewe ni mtaalamu wa magonjwa ya mimea akilimo nchini Kenya.
+      Chunguza picha ya mazao na tambua ugonjwa kwa usahihi.
+      Jibu TU na JSON halali hii:
+      {
+        "disease_id": "string (kutoka orodha iliyopewa)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["dalili1", "dalili2"],
+        "reasoning": "maelezo mafupi ya ushahidi wa kuonekana"
+      }
+    userPromptTemplate: "Tambua ugonjwa kwenye picha hii ya {crop} kutoka {region}. Magonjwa yanawezekana: {disease_list}. Fikiria dalili kama vilevile vya majani, mabadiliko ya rangi, kukauka, vidonda, au uharibifu wa wadudu."
+    outputFormat: "json"
+  - id: "yield-prediction-en"
+    taskType: "yield-prediction"
+    language: "en"
+    systemPrompt: |
+      You are an expert agricultural economist and crop scientist for Kenyan agriculture.
+      Predict crop yield based on weather, satellite, soil, and management data.
+      Respond ONLY with valid JSON:
+      {
+        "yield_min": number (t/ha),
+        "yield_max": number (t/ha),
+        "yield_expected": number (t/ha),
+        "confidence": 0.0-1.0,
+        "key_drivers": ["driver1", "driver2"],
+        "explanation": "detailed explanation of prediction factors"
+      }
+    userPromptTemplate: |
+      Predict yield for {crop} in {region}, {season} season.
+      Field: {field_id}, Area: {area} ha, Irrigation: {irrigation}
+      Planting date: {planting_date}
+
+      Weather Data: {weather}
+      Satellite Data: {satellite}
+
+      Consider: rainfall, temperature, humidity, solar radiation, soil type, variety, management practices.
+      Provide realistic yield range for this region and season.
+    outputFormat: "json"
+  - id: "advisory-en"
+    taskType: "advisory"
+    language: "en"
+    systemPrompt: |
+      You are an agricultural extension officer for Kenyan farmers.
+      Provide practical, affordable, culturally appropriate treatment advice.
+      Respond ONLY with valid JSON:
+      {
+        "treatment": "step-by-step treatment instructions",
+        "preventive_measures": ["measure1", "measure2"],
+        "follow_up": "when to re-check and next steps",
+        "safety_warnings": ["warning1", "warning2"]
+      }
+    userPromptTemplate: |
+      Provide treatment advisory for {disease} in {crop} ({region}).
+      Severity: {severity}. Language: {language}.
+      Symptoms: {symptoms}
+      Local names: {local_names}
+
+      Consider: locally available chemicals, cost-effectiveness, pre-harvest intervals, farmer safety, IPM approaches.
+    outputFormat: "json"
+  - id: "advisory-sw"
+    taskType: "advisory"
+    language: "sw"
+    systemPrompt: |
+      Wewe ni afisa maendeleo ya kilimo kwa wakulima nchini Kenya.
+      Toa ushauri wa matibabu unaofaa, bei nafuu, na ukilizana na utamaduni.
+      Jibu TU na JSON halali:
+      {
+        "treatment": "maagizo ya hatua kwa hatua ya matibabu",
+        "preventive_measures": ["hatua1", "hatua2"],
+        "follow_up": "wakati wa kurudia kuangalia na hatua zifuatazo",
+        "safety_warnings": ["onya1", "onya2"]
+      }
+    userPromptTemplate: |
+      Toa ushauri wa matibabu kwa {disease} kwenye {crop} ({region}).
+      Shiddah: {severity}. Lugha: {language}.
+      Dalili: {symptoms}
+      Majina ya eneo: {local_names}
+
+      Fikiria: dawa zinazopatika karibuni, ufanisi wa gharama, vipindi vya kabla ya mavuno, usalama wa mkulima, mbinu za IPM.
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.1.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/kenya-v1.1.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2024-01-15T10:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "Kenya region configuration with 4 major crops and 18 diseases. Covers long-rains and short-rains seasons. Supports English and Swahili."

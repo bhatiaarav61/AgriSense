@@ -1,0 +1,20 @@
+# Render.com Blueprint — one-click free 24/7 hosting for AgriSense.
+# In Render: New → Blueprint → point at this repo. The free web service spins
+# down after ~15 min idle and wakes on the next request.
+services:
+  - type: web
+    name: agrisense
+    runtime: docker
+    repo: https://github.com/your-username/agrisense-platform
+    dockerfilePath: ./apps/web/Dockerfile
+    dockerContext: ./apps/web
+    plan: free
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Optional: paste a free AI key to raise accuracy/limits for all users.
+      # Leave unset — the app works keyless via Pollinations + offline demo.
+      # - key: GEMINI_API_KEY
+      #   sync: false

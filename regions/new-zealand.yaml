@@ -1,0 +1,265 @@
+id: new-zealand
+name: "New Zealand"
+displayName:
+  en: "New Zealand"
+  mi: "Aotearoa"
+isoCode: "NZ"
+timezone: "Pacific/Auckland"
+languages:
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+  - code: "mi"
+    name: "Maori"
+    nativeName: "Te Reo Maori"
+    rtl: false
+defaultLanguage: "en"
+currency: "NZD"
+coordinates:
+  latMin: -47.3
+  latMax: -34.4
+  lonMin: 166.4
+  lonMax: 178.5
+crops:
+  - id: "kiwifruit"
+    name: "Kiwifruit"
+    scientificName: "Actinidia deliciosa"
+    localNames:
+      en: "Kiwifruit"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["kiwifruit_psa"]
+    icon: "🥝"
+    color: "#84CC16"
+  - id: "apple"
+    name: "Apple"
+    scientificName: "Malus domestica"
+    localNames:
+      en: "Apple"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["apple_scab"]
+    icon: "🍎"
+    color: "#DC2626"
+  - id: "grape"
+    name: "Grapevine"
+    scientificName: "Vitis vinifera"
+    localNames:
+      en: "Grapevine"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["grape_powdery_mildew"]
+    icon: "🍇"
+    color: "#7C3AED"
+  - id: "barley"
+    name: "Barley"
+    scientificName: "Hordeum vulgare"
+    localNames:
+      en: "Barley"
+    growingSeasons: ["spring", "autumn"]
+    diseaseClasses: ["barley_net_blotch", "barley_scald"]
+    icon: "🌿"
+    color: "#65A30D"
+diseases:
+  - id: "kiwifruit_psa"
+    name: "Psa (Pseudomonas syringae pv. actinidiae)"
+    scientificName: "Pseudomonas syringae pv. actinidiae"
+    cropIds: ["kiwifruit"]
+    symptoms:
+      - "Dark angular leaf spots with yellow halos"
+      - "Reddish cane dieback and oozing (weeping canker)"
+      - "Vine collapse in susceptible varieties"
+    localNames:
+      en: "Psa-V"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure for vines with trunk symptoms — remove and destroy per KVH protocols. Protect orchards with registered copper/protectant programs in high-risk periods and use Psa-resistant varieties (e.g., G3)."
+    preventiveMeasures:
+      - "Plant Psa-tolerant varieties"
+      - "KVH movement controls and orchard hygiene"
+      - "Copper protectant sprays in autumn/spring"
+      - "Remove infected material promptly"
+    imageTags: ["psa", "pseudomonas", "kiwifruit"]
+    confidenceThreshold: 0.75
+  - id: "apple_scab"
+    name: "Apple Scab"
+    scientificName: "Venturia inaequalis"
+    cropIds: ["apple"]
+    symptoms:
+      - "Olive-green velvety spots on leaves and fruit"
+      - "Spots become corky and cracked on fruit"
+      - "Early-season infection from ascospores"
+    localNames:
+      en: "Apple Scab"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply registered fungicides timed to infection periods (Mills table) from green tip through cover sprays; rotate FRAC groups."
+    preventiveMeasures:
+      - "Resistant varieties where suitable"
+      - "Overwintering leaf litter management"
+      - "Infection-period based spraying"
+      - "Pruning for airflow"
+    imageTags: ["apple_scab", "venturia", "apple"]
+    confidenceThreshold: 0.7
+  - id: "grape_powdery_mildew"
+    name: "Grapevine Powdery Mildew"
+    scientificName: "Erysiphe necator"
+    cropIds: ["grape"]
+    symptoms:
+      - "White-gray powdery film on leaves and bunches"
+      - "Berries scar or split"
+      - "Favored by warm, shaded canopies"
+    localNames:
+      en: "Powdery Mildew"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply registered sulfur or DMI sprays from pre-flowering to bunch closure per label; open canopies by leaf plucking."
+    preventiveMeasures:
+      - "Sulfur program"
+      - "Canopy management"
+      - "Monitor bunch zone weekly"
+    imageTags: ["powdery_mildew", "erysiphe", "grape"]
+    confidenceThreshold: 0.7
+  - id: "barley_net_blotch"
+    name: "Net Blotch"
+    scientificName: "Pyrenophora teres"
+    cropIds: ["barley"]
+    symptoms:
+      - "Net-like dark streaks turning to blotches"
+      - "Yellow halos"
+      - "Stubble- and seed-borne"
+    localNames:
+      en: "Net Blotch"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Use certified seed and a registered fungicide at GS31–39 when lesions climb the canopy; avoid barley-after-barley paddocks."
+    preventiveMeasures:
+      - "Certified seed"
+      - "Rotation"
+      - "Residue management"
+    imageTags: ["net_blotch", "pyrenophora", "barley"]
+    confidenceThreshold: 0.7
+  - id: "barley_scald"
+    name: "Scald"
+    scientificName: "Rhynchosporium secalis"
+    cropIds: ["barley"]
+    symptoms:
+      - "Gray-green water-soaked lesions with dark scolloped edges"
+      - "On leaves and leaf sheaths"
+      - "Favored by cool, wet conditions"
+    localNames:
+      en: "Scald"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered fungicide when scald reaches the upper canopy; resistant varieties and seed treatment reduce risk."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Certified seed"
+      - "Rotation"
+    imageTags: ["scald", "rhynchosporium", "barley"]
+    confidenceThreshold: 0.7
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "Pacific/Auckland"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B08", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["new-zealand"]
+    priority: 100
+    enabled: true
+  - id: "groq-1"
+    name: "Groq"
+    type: "groq"
+    baseUrl: "https://api.groq.com/openai/v1"
+    apiKeyEnvVar: "GROQ_API_KEY"
+    models:
+      llama-3.1-70b-versatile:
+        id: "llama-3.1-70b-versatile"
+        taskTypes: ["advisory", "chat", "yield-prediction"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 6000
+      tokensPerMinute: 6000
+    regions: ["new-zealand"]
+    priority: 90
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in New Zealand.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "advisory-en"
+    taskType: "advisory"
+    language: "en"
+    systemPrompt: |
+      You are a horticulture/agronomy adviser for New Zealand growers.
+      Give practical, economical, NZ-approval-compliant advice (IPM first).
+      Respond ONLY with valid JSON:
+      {
+        "treatment": "step-by-step treatment instructions",
+        "preventive_measures": ["measure1", "measure2"],
+        "follow_up": "when to re-check and next steps",
+        "safety_warnings": ["warning1", "warning2"]
+      }
+    userPromptTemplate: |
+      Provide a recommendation for {disease} in {crop} ({region}).
+      Severity: {severity}. Language: {language}.
+      Symptoms: {symptoms}
+      Local names: {local_names}
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.1.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/new-zealand-v1.1.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2026-09-27T00:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "New Zealand region configuration: kiwifruit, apple, grapevine and barley; English and Te Reo Maori scaffolding."

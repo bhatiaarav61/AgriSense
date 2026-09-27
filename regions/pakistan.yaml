@@ -1,0 +1,498 @@
+id: pakistan
+name: "Pakistan"
+displayName:
+  en: "Pakistan"
+  ur: "پاکستان"
+isoCode: "PK"
+timezone: "Asia/Karachi"
+languages:
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+  - code: "ur"
+    name: "Urdu"
+    nativeName: "اردو"
+    rtl: true
+  - code: "pa"
+    name: "Punjabi"
+    nativeName: "پنجابی"
+    rtl: true
+  - code: "sd"
+    name: "Sindhi"
+    nativeName: "سنڌي"
+    rtl: true
+defaultLanguage: "en"
+currency: "PKR"
+coordinates:
+  latMin: 23.5
+  latMax: 37.1
+  lonMin: 60.9
+  lonMax: 77.8
+crops:
+  - id: "wheat"
+    name: "Wheat"
+    scientificName: "Triticum aestivum"
+    localNames:
+      en: "Wheat"
+      ur: "گندم"
+      pa: "کنک"
+      sd: "ڳنڱ"
+    growingSeasons: ["rabi"]
+    diseaseClasses: ["yellow_rust", "stem_rust", "loose_smut"]
+    icon: "🌾"
+    color: "#D97706"
+  - id: "cotton"
+    name: "Cotton"
+    scientificName: "Gossypium hirsutum"
+    localNames:
+      en: "Cotton"
+      ur: "کپاس"
+      pa: "کپاہ"
+      sd: "ڪپھ"
+    growingSeasons: ["kharif"]
+    diseaseClasses: ["cotton_leaf_curl", "pink_bollworm", "cotton_bacterial_blight"]
+    icon: "🧵"
+    color: "#E5E7EB"
+  - id: "rice"
+    name: "Rice"
+    scientificName: "Oryza sativa"
+    localNames:
+      en: "Rice"
+      ur: "چاول"
+      pa: "چانول"
+      sd: "چانور"
+    growingSeasons: ["kharif"]
+    diseaseClasses: ["rice_blast", "bacterial_leaf_blight", "sheath_blight"]
+    icon: "🍚"
+    color: "#10B981"
+  - id: "maize"
+    name: "Maize"
+    scientificName: "Zea mays"
+    localNames:
+      en: "Maize"
+      ur: "مکئی"
+      pa: "مکئی"
+      sd: "مڪئي"
+    growingSeasons: ["kharif", "rabi"]
+    diseaseClasses: ["fall_armyworm"]
+    icon: "🌽"
+    color: "#F59E0B"
+  - id: "sugarcane"
+    name: "Sugarcane"
+    scientificName: "Saccharum officinarum"
+    localNames:
+      en: "Sugarcane"
+      ur: "گنا"
+      pa: "کماد"
+      sd: "ڪمند"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["red_rot", "whip_smut"]
+    icon: "🎋"
+    color: "#84CC16"
+diseases:
+  - id: "yellow_rust"
+    name: "Yellow (Stripe) Rust"
+    scientificName: "Puccinia striiformis"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Yellow-orange pustules in narrow stripes on leaves"
+      - "Powder of yellow spores rubs off easily"
+      - "Stripes follow veins; leaves may dry prematurely"
+    localNames:
+      en: "Yellow Rust"
+      ur: "پیلا زنگ"
+      pa: "پیلا زنگ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply propiconazole 25% EC @ 1ml/L or tebuconazole at first sign. Monitor weekly in cool, humid weather. Grow resistant varieties (e.g., Akbar, Ujala-2016)."
+    preventiveMeasures:
+      - "Plant rust-resistant varieties"
+      - "Sow early-maturing cultivars on time"
+      - "Avoid excessive nitrogen"
+      - "Scout fields weekly Dec–Feb"
+    imageTags: ["yellow_rust", "wheat_rust", "wheat"]
+    confidenceThreshold: 0.7
+  - id: "stem_rust"
+    name: "Stem (Black) Rust"
+    scientificName: "Puccinia graminis tritici"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Reddish-brown, elongated pustules on stems and leaf sheaths"
+      - "Pustules rupture epidermis leaving ragged edges"
+      - "Black spore stage late in season; lodging"
+    localNames:
+      en: "Stem Rust"
+      ur: "کالا زنگ"
+      pa: "کالا زنگ"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply propiconazole 25% EC @ 1ml/L immediately; repeat after 15 days if pressure continues. Use Ug99-resistant varieties and destroy barberry hosts."
+    preventiveMeasures:
+      - "Grow certified resistant seed"
+      - "Timely sowing to escape peak rust"
+      - "Balanced fertilizer; avoid lush growth"
+      - "Monitor during warm, humid spells"
+    imageTags: ["stem_rust", "black_rust", "wheat"]
+    confidenceThreshold: 0.75
+  - id: "loose_smut"
+    name: "Loose Smut"
+    scientificName: "Ustilago tritici"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Black powdery spore masses replace grain heads"
+      - "Affected heads emerge earlier and darker"
+      - "Spores blown away leaving bare stalk"
+    localNames:
+      en: "Loose Smut"
+      ur: "کاج"
+      pa: "کج"
+    severityLevels: ["medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No field spray works once heads appear. Use certified seed treated with carboxin+thiram or solar seed treatment. Rogue out smutted heads before spore release."
+    preventiveMeasures:
+      - "Use certified, treated seed only"
+      - "Solar seed treatment (soak-dry-sun)"
+      - "Remove smutted heads and burn"
+      - "Source seed from smut-free plots"
+    imageTags: ["loose_smut", "ustilago", "wheat"]
+    confidenceThreshold: 0.8
+  - id: "cotton_leaf_curl"
+    name: "Cotton Leaf Curl Virus (CLCuD)"
+    scientificName: "Begomovirus (whitefly-transmitted)"
+    cropIds: ["cotton"]
+    symptoms:
+      - "Upward/downward curling of leaves with thickened veins"
+      - "Enations (leaf-like outgrowths) on veins"
+      - "Stunted plants with fewer bolls"
+    localNames:
+      en: "Cotton Leaf Curl"
+      ur: "کپاس کی پتہ لپیٹ ویروس"
+      pa: "پتہ کُرل"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure once infected — remove and destroy infected plants. Control whitefly vector with imidacloprid/acetamiprid rotations and yellow sticky traps. Plant resistant varieties (e.g., CIM series)."
+    preventiveMeasures:
+      - "Use CLCuD-resistant varieties"
+      - "Early complete destruction of previous crop stubble"
+      - "Manage whitefly from seedling stage"
+      - "Avoid overlapping cotton seasons"
+    imageTags: ["cotton_leaf_curl", "begomovirus", "cotton"]
+    confidenceThreshold: 0.75
+  - id: "pink_bollworm"
+    name: "Pink Bollworm"
+    scientificName: "Pectinophora gossypiella"
+    cropIds: ["cotton"]
+    symptoms:
+      - "Rosetted flowers with interlocked petals"
+      - "Bolls with interlocular feeding and stained lint"
+      - "Hollowed seeds; exit holes"
+    localNames:
+      en: "Pink Bollworm"
+      ur: "گلابی سنڈی"
+      pa: "گلابی سُنڈی"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Deploy pheromone traps @ 5/ha and mating disruption. Apply emamectin benzoate or spinosad at economic threshold. Never carryover lint/seed between seasons."
+    preventiveMeasures:
+      - "Short, uniform fruiting season; close season"
+      - "Destroy crop residues and ginning waste"
+      - "Pheromone trapping from squaring onset"
+      - "Avoid extended/late sowing"
+    imageTags: ["pink_bollworm", "pectinophora", "cotton"]
+    confidenceThreshold: 0.75
+  - id: "cotton_bacterial_blight"
+    name: "Bacterial Blight"
+    scientificName: "Xanthomonas citri pv. malvacearum"
+    cropIds: ["cotton"]
+    symptoms:
+      - "Angular, water-soaked leaf spots turning brown-black"
+      - "Black veins and black arm (stem) phases"
+      - "Boll lesions with sunken margins"
+    localNames:
+      en: "Bacterial Blight"
+      ur: "بیکٹیریائی جھلساؤ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Spray copper oxychloride 50% WP @ 2.5g/L + streptomycin @ 0.1g/L. Use acid-delinted certified seed; avoid overhead irrigation."
+    preventiveMeasures:
+      - "Use disease-free, treated seed"
+      - "Crop rotation out of cotton 1–2 seasons"
+      - "Incorporate crop debris after harvest"
+      - "Avoid wounding and excess canopy humidity"
+    imageTags: ["bacterial_blight", "xanthomonas", "cotton"]
+    confidenceThreshold: 0.7
+  - id: "rice_blast"
+    name: "Rice Blast"
+    scientificName: "Magnaporthe oryzae"
+    cropIds: ["rice"]
+    symptoms:
+      - "Diamond-shaped gray centers with brown margins on leaves"
+      - "Node and neck infections blacken and break the panicle"
+      - "Whiteheads in patches"
+    localNames:
+      en: "Rice Blast"
+      ur: "چاول کا بلائسٹ"
+      pa: "چانول سڑ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply tricyclazole 75% WP @ 0.6g/L or azoxystrobin @ 1ml/L at first lesions; protect neck at heading. Split nitrogen; keep fields drained when possible."
+    preventiveMeasures:
+      - "Use resistant varieties (e.g., Super Basmati lines with blast resistance)"
+      - "Avoid excess nitrogen fertilizer"
+      - "Maintain moderate, intermittent flooding"
+      - "Treat seed and remove infected stubble"
+    imageTags: ["rice_blast", "magnaporthe", "rice"]
+    confidenceThreshold: 0.7
+  - id: "bacterial_leaf_blight"
+    name: "Bacterial Leaf Blight"
+    scientificName: "Xanthomonas oryzae pv. oryzae"
+    cropIds: ["rice"]
+    symptoms:
+      - "Yellow to straw-colored lesions from leaf tips, wavy margins"
+      - "Milky droplets that dry as beads on leaf surface"
+      - "Grayish, rolled leaf tips (kresek in young plants)"
+    localNames:
+      en: "Bacterial Leaf Blight"
+      ur: "بیکٹیریائی پتی جھلساؤ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Spray copper-based compounds + validamycin where labelled. Drain and dry the field briefly. No curative chemistry once systemic — focus on resistant varieties and balanced nutrition."
+    preventiveMeasures:
+      - "Resistant varieties and certified seed"
+      - "Avoid excess nitrogen"
+      - "Keep seed beds disease-free"
+      - "Sanitize tools and drain between paddies"
+    imageTags: ["bacterial_leaf_blight", "xanthomonas", "rice"]
+    confidenceThreshold: 0.7
+  - id: "sheath_blight"
+    name: "Sheath Blight"
+    scientificName: "Rhizoctonia solani"
+    cropIds: ["rice"]
+    symptoms:
+      - "Gray-green, oval lesions with brown borders on leaf sheaths near waterline"
+      - "Lesions move up the plant in humid canopies"
+      - "Panicle discoloration and poor filling"
+    localNames:
+      en: "Sheath Blight"
+      ur: "شیث بلائسٹ"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply validamycin 3% L @ 2ml/L or azoxystrobin 23% SC @ 1ml/L at first lesions; repeat at 10–12 days in humid weather."
+    preventiveMeasures:
+      - "Optimize plant spacing for airflow"
+      - "Avoid excessive nitrogen"
+      - "Remove sclerotia-bearing debris"
+      - "Scout from maximum tillering onward"
+    imageTags: ["sheath_blight", "rhizoctonia", "rice"]
+    confidenceThreshold: 0.7
+  - id: "fall_armyworm"
+    name: "Fall Armyworm"
+    scientificName: "Spodoptera frugiperda"
+    cropIds: ["maize"]
+    symptoms:
+      - "Ragged leaf holes and 'window pane' feeding"
+      - "Sawdust-like frass in whorls"
+      - "Larvae with inverted Y marking on the head"
+    localNames:
+      en: "Fall Armyworm"
+      ur: "فال آرمی ورم"
+      pa: "فال آرمی ورم"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Whorl-application of emamectin benzoate 5% SG @ 0.4g/L or spinetoram in evening hours. Push-pull intercropping and pheromone traps @ 5/ha for monitoring."
+    preventiveMeasures:
+      - "Early, synchronous planting"
+      - "Intercrop with legumes (push-pull)"
+      - "Conserve natural enemies; avoid broad-spectrum sprays"
+      - "Whorl-applied sand/lime+neem in early instars"
+    imageTags: ["fall_armyworm", "spodoptera", "maize"]
+    confidenceThreshold: 0.75
+  - id: "red_rot"
+    name: "Red Rot"
+    scientificName: "Colletotrichum falcatum"
+    cropIds: ["sugarcane"]
+    symptoms:
+      - "Long red lesions with white centers on canes"
+      - "Sour alcoholic smell in split canes"
+      - "Drying of leaves top-down; internal reddening"
+    localNames:
+      en: "Red Rot"
+      ur: "سرخ سڑ"
+      pa: "سرخ سڑ"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No effective cure — rogue out infected clumps and burn. Sett treatment with carbendazim @ 0.1% or hot-water (52°C, 30 min) before planting. Use healthy seed cane."
+    preventiveMeasures:
+      - "Plant disease-free setts from nurseries"
+      - "Sett treatment before planting"
+      - "Avoid ratooning diseased fields"
+      - "Grow moderately resistant varieties"
+    imageTags: ["red_rot", "colletotrichum", "sugarcane"]
+    confidenceThreshold: 0.8
+  - id: "whip_smut"
+    name: "Whip Smut"
+    scientificName: "Sporisorium scitamineum"
+    cropIds: ["sugarcane"]
+    symptoms:
+      - "Black, whip-like smutted stalk from the growing point"
+      - "Grassy, slender shoots ( spike symptom)"
+      - "Stunting of infected stools"
+    localNames:
+      en: "Whip Smut"
+      ur: "کالا چابک"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Rogue out whips, bag before cutting and burn. Treat setts with fungicide or hot water (50°C for 2 h). Replace infected stools with healthy seed."
+    preventiveMeasures:
+      - "Use smut-free certified seed cane"
+      - "Hot-water sett treatment"
+      - "Field sanitation and rouging"
+      - "Three-eye budded setts from top portion"
+    imageTags: ["whip_smut", "sporisorium", "sugarcane"]
+    confidenceThreshold: 0.8
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "Asia/Karachi"
+  - id: "nasa-power"
+    name: "NASA POWER"
+    type: "nasa-power"
+    baseUrl: "https://power.larc.nasa.gov/api/temporal/daily/point"
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 1000
+    parameters:
+      community: "AG"
+      format: "JSON"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B08", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["pakistan"]
+    priority: 100
+    enabled: true
+  - id: "groq-1"
+    name: "Groq"
+    type: "groq"
+    baseUrl: "https://api.groq.com/openai/v1"
+    apiKeyEnvVar: "GROQ_API_KEY"
+    models:
+      llama-3.1-70b-versatile:
+        id: "llama-3.1-70b-versatile"
+        taskTypes: ["advisory", "chat", "yield-prediction"]
+        maxTokens: 8192
+        temperature: 0.3
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 30
+      requestsPerDay: 6000
+      tokensPerMinute: 6000
+    regions: ["pakistan"]
+    priority: 90
+    enabled: true
+  - id: "openrouter-1"
+    name: "OpenRouter"
+    type: "openrouter"
+    baseUrl: "https://openrouter.ai/api/v1"
+    apiKeyEnvVar: "OPENROUTER_API_KEY"
+    models:
+      google/gemini-flash-1.5:
+        id: "google/gemini-flash-1.5"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 20
+      requestsPerDay: 500
+    regions: ["pakistan"]
+    priority: 60
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in Pakistan.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "advisory-en"
+    taskType: "advisory"
+    language: "en"
+    systemPrompt: |
+      You are an agricultural extension officer for Pakistani farmers.
+      Provide practical, affordable, culturally appropriate treatment advice.
+      Respond ONLY with valid JSON:
+      {
+        "treatment": "step-by-step treatment instructions",
+        "preventive_measures": ["measure1", "measure2"],
+        "follow_up": "when to re-check and next steps",
+        "safety_warnings": ["warning1", "warning2"]
+      }
+    userPromptTemplate: |
+      Provide treatment advisory for {disease} in {crop} ({region}).
+      Severity: {severity}. Language: {language}.
+      Symptoms: {symptoms}
+      Local names: {local_names}
+      Consider: locally available chemicals, cost-effectiveness, pre-harvest intervals, farmer safety, IPM approaches.
+    outputFormat: "json"
+  - id: "advisory-ur"
+    taskType: "advisory"
+    language: "ur"
+    systemPrompt: |
+      آپ پاکستان کے کسانوں کے لیے زرعی ماہر ہیں۔ عملی، سستی اور ثقافت کے مطابق مشورہ دیں۔
+      صرف درست JSON میں جواب دیں:
+      {
+        "treatment": "قدم بہ قدم علاج",
+        "preventive_measures": ["پیمائش1", "پیمائش2"],
+        "follow_up": "دوبارہ جانچ اور اگلے اقدامات",
+        "safety_warnings": ["خطرہ1", "خطرہ2"]
+      }
+    userPromptTemplate: |
+      {disease} ({crop}, {region}) کے علاج کا مشورہ دیں۔ شدت: {severity}۔ زبان: {language}۔
+      علامات: {symptoms}۔ مقامی نام: {local_names}
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.1.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/pakistan-v1.1.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2026-09-27T00:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "Pakistan region configuration: wheat, cotton, rice, maize and sugarcane with major diseases; Urdu, Punjabi and Sindhi language support."

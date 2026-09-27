@@ -1,0 +1,31 @@
+# Fly.io deployment for AgriSense. Free-friendly: machines scale to zero when
+# idle and wake on the next request.
+#   cd apps/web && fly launch --copy-config --now   (first time)
+#   fly deploy                                       (updates)
+app = "agrisense"
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  NODE_ENV = "production"
+  PORT = "3000"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [[http_service.checks]]
+    method = "GET"
+    path = "/api/health"
+    interval = "30s"
+    timeout = "5s"
+    grace_period = "10s"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"

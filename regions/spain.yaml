@@ -1,0 +1,333 @@
+id: spain
+name: "Spain"
+displayName:
+  en: "Spain"
+  es: "España"
+isoCode: "ES"
+timezone: "Europe/Madrid"
+languages:
+  - code: "es"
+    name: "Spanish"
+    nativeName: "Español"
+    rtl: false
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+defaultLanguage: "es"
+currency: "EUR"
+coordinates:
+  latMin: 27.6
+  latMax: 43.8
+  lonMin: -18.2
+  lonMax: 4.3
+crops:
+  - id: "olive"
+    name: "Olive"
+    scientificName: "Olea europaea"
+    localNames:
+      en: "Olive"
+      es: "Olivo"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["olive_peacock_spot", "olive_verticillium"]
+    icon: "🫒"
+    color: "#78716C"
+  - id: "grape"
+    name: "Grapevine"
+    scientificName: "Vitis vinifera"
+    localNames:
+      en: "Grapevine"
+      es: "Vid"
+    growingSeasons: ["annual"]
+    diseaseClasses: ["grape_downy_mildew", "grape_powdery_mildew"]
+    icon: "🍇"
+    color: "#7C3AED"
+  - id: "tomato"
+    name: "Tomato"
+    scientificName: "Solanum lycopersicum"
+    localNames:
+      en: "Tomato"
+      es: "Tomate"
+    growingSeasons: ["spring", "autumn"]
+    diseaseClasses: ["tomato_yellow_leaf_curl", "tomato_late_blight"]
+    icon: "🍅"
+    color: "#EF4444"
+  - id: "wheat"
+    name: "Wheat"
+    scientificName: "Triticum aestivum"
+    localNames:
+      en: "Wheat"
+      es: "Trigo"
+    growingSeasons: ["winter"]
+    diseaseClasses: ["yellow_rust", "septoria_leaf_blotch"]
+    icon: "🌾"
+    color: "#D97706"
+diseases:
+  - id: "olive_peacock_spot"
+    name: "Olive Peacock Spot"
+    scientificName: "Venturia oleaginea"
+    cropIds: ["olive"]
+    symptoms:
+      - "Circular green-black spots with yellow halo on leaves ('peacock eye')"
+      - "Premature leaf drop"
+      - "Reduced flowering and yield next season"
+    localNames:
+      en: "Peacock Spot"
+      es: "Repilo"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply authorized copper fungicide in autumn and late winter before rains; improve canopy aeration by pruning."
+    preventiveMeasures:
+      - "Copper program before wet periods"
+      - "Pruning for light and airflow"
+      - "Avoid excess irrigation wetting canopy"
+      - "Remove heavily infected lower leaves"
+    imageTags: ["peacock_spot", "venturia", "olive"]
+    confidenceThreshold: 0.7
+  - id: "olive_verticillium"
+    name: "Verticillium Wilt"
+    scientificName: "Verticillium dahliae"
+    cropIds: ["olive"]
+    symptoms:
+      - "Branches wilt and die from one side (flagging)"
+      - "Leaves roll inward and dry while attached"
+      - "Internal wood discoloration"
+    localNames:
+      en: "Verticillium Wilt"
+      es: "Verticilosis"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — prune out affected branches 50–100 cm below symptoms and burn. Avoid planting in infested soil; use certified clean nursery trees."
+    preventiveMeasures:
+      - "Certified pathogen-free plants"
+      - "Do not plant after susceptible hosts (cotton, potato)"
+      - "Soil solarization in nurseries"
+      - "Disinfect pruning tools"
+    imageTags: ["verticillium", "wilt", "olive"]
+    confidenceThreshold: 0.75
+  - id: "grape_downy_mildew"
+    name: "Grapevine Downy Mildew"
+    scientificName: "Plasmopara viticola"
+    cropIds: ["grape"]
+    symptoms:
+      - "Oil spots on leaves with white down on underside"
+      - "Berries turn gray-brown and shrivel"
+      - "Favored by spring rains and humidity"
+    localNames:
+      en: "Downy Mildew"
+      es: "Mildiu"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply authorized fungicide (metalaxyl-family, cymoxanil, or copper for organic) preventively before rainy periods; manage canopy."
+    preventiveMeasures:
+      - "Pre-rain protective treatments"
+      - "Leaf thinning and airflow"
+      - "Remove infected plant debris"
+      - "Good drainage"
+    imageTags: ["downy_mildew", "plasmopara", "grape"]
+    confidenceThreshold: 0.7
+  - id: "grape_powdery_mildew"
+    name: "Grapevine Powdery Mildew"
+    scientificName: "Erysiphe necator"
+    cropIds: ["grape"]
+    symptoms:
+      - "White-gray dusty film on leaves and berries"
+      - "Berry cracking and scarring"
+      - "Ash-like spores on bunches near veraison"
+    localNames:
+      en: "Powdery Mildew"
+      es: "Oidio"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply sulfur or authorized DMI fungicides from pre-flowering through bunch closure; watch hot dry spells followed by humidity."
+    preventiveMeasures:
+      - "Sulfur program"
+      - "Canopy ventilation"
+      - "Timely bunch-zone treatments"
+    imageTags: ["powdery_mildew", "erysiphe", "grape"]
+    confidenceThreshold: 0.7
+  - id: "tomato_yellow_leaf_curl"
+    name: "Tomato Yellow Leaf Curl Virus"
+    scientificName: "TYLCV (whitefly-transmitted begomovirus)"
+    cropIds: ["tomato"]
+    symptoms:
+      - "Upward-cupped yellow leaf margins"
+      - "Severe stunting and flower abortion"
+      - "Little or no marketable fruit"
+    localNames:
+      en: "Yellow Leaf Curl"
+      es: "Virus del encrespamiento amarillo"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): No cure — remove infected plants immediately. Control whitefly vector (approved insecticides, sticky traps, insect-proof netting) and use resistant varieties."
+    preventiveMeasures:
+      - "Resistant hybrids"
+      - "Insect-proof screens in nurseries"
+      - "Whitefly integrated management"
+      - "Remove infected plants and crop residues"
+    imageTags: ["yellow_leaf_curl", "tylcv", "tomato"]
+    confidenceThreshold: 0.75
+  - id: "tomato_late_blight"
+    name: "Tomato Late Blight"
+    scientificName: "Phytophthora infestans"
+    cropIds: ["tomato"]
+    symptoms:
+      - "Water-soaked gray-green blotches turning brown"
+      - "White mold ring under leaves in humid mornings"
+      - "Greasy brown fruit rot"
+    localNames:
+      en: "Late Blight"
+      es: "Tizón tardío / Mildiu del tomate"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply authorized fungicide (mandipropamid, cymoxanil or copper for organic) at first signs and repeat 7–10 days in risk weather."
+    preventiveMeasures:
+      - "Avoid overhead irrigation"
+      - "Stake and prune for airflow"
+      - "Remove volunteer solanaceous plants"
+      - "Crop rotation"
+    imageTags: ["late_blight", "phytophthora", "tomato"]
+    confidenceThreshold: 0.7
+  - id: "yellow_rust"
+    name: "Yellow (Stripe) Rust"
+    scientificName: "Puccinia striiformis"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Yellow pustules in stripes along veins"
+      - "Yellow spore powder"
+      - "Favored by cool, humid spells"
+    localNames:
+      en: "Yellow Rust"
+      es: "Roya amarilla"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply an authorized triazole at first foci; monitor weekly in spring. Use resistant varieties."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Weekly scouting"
+      - "Balanced nitrogen"
+    imageTags: ["yellow_rust", "wheat_rust", "wheat"]
+    confidenceThreshold: 0.7
+  - id: "septoria_leaf_blotch"
+    name: "Septoria Leaf Blotch"
+    scientificName: "Zymoseptoria tritici"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Gray-brown streaks between veins"
+      - "Black fruiting specks in lesions"
+      - "Lower leaves first"
+    localNames:
+      en: "Septoria"
+      es: "Septoriosis"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Treat at T1–T2 with authorized fungicides, rotating modes of action; bury residue."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Residue incorporation"
+      - "Rotation"
+    imageTags: ["septoria", "zymoseptoria", "wheat"]
+    confidenceThreshold: 0.7
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "Europe/Madrid"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B08", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["spain"]
+    priority: 100
+    enabled: true
+  - id: "openrouter-1"
+    name: "OpenRouter"
+    type: "openrouter"
+    baseUrl: "https://openrouter.ai/api/v1"
+    apiKeyEnvVar: "OPENROUTER_API_KEY"
+    models:
+      google/gemini-flash-1.5:
+        id: "google/gemini-flash-1.5"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 20
+      requestsPerDay: 500
+    regions: ["spain"]
+    priority: 60
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in Spain.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "advisory-es"
+    taskType: "advisory"
+    language: "es"
+    systemPrompt: |
+      Eres un técnico agrícola para agricultores de España.
+      Da consejos prácticos, económicos y conformes a la normativa.
+      Responde SOLO con JSON válido:
+      {
+        "treatment": "instrucciones de tratamiento paso a paso",
+        "preventive_measures": ["medida1", "medida2"],
+        "follow_up": "cuándo y qué revisar",
+        "safety_warnings": ["advertencia1", "advertencia2"]
+      }
+    userPromptTemplate: |
+      Da un consejo para {disease} en {crop} ({region}).
+      Gravedad: {severity}. Idioma: {language}.
+      Síntomas: {symptoms}
+      Nombres locales: {local_names}
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.1.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/spain-v1.1.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2026-09-27T00:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "Spain region configuration: olive, grapevine, tomato and wheat; Spanish language support."

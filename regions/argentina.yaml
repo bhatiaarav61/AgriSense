@@ -1,0 +1,319 @@
+id: argentina
+name: "Argentina"
+displayName:
+  en: "Argentina"
+  es: "Argentina"
+isoCode: "AR"
+timezone: "America/Argentina/Buenos_Aires"
+languages:
+  - code: "es"
+    name: "Spanish"
+    nativeName: "Español"
+    rtl: false
+  - code: "en"
+    name: "English"
+    nativeName: "English"
+    rtl: false
+defaultLanguage: "es"
+currency: "ARS"
+coordinates:
+  latMin: -55.0
+  latMax: -21.8
+  lonMin: -73.6
+  lonMax: -53.6
+crops:
+  - id: "soybean"
+    name: "Soybean"
+    scientificName: "Glycine max"
+    localNames:
+      en: "Soybean"
+      es: "Soja"
+    growingSeasons: ["summer"]
+    diseaseClasses: ["soybean_rust", "frogeye_leaf_spot", "brown_spot"]
+    icon: "🫘"
+    color: "#16A34A"
+  - id: "maize"
+    name: "Maize"
+    scientificName: "Zea mays"
+    localNames:
+      en: "Maize"
+      es: "Maíz"
+    growingSeasons: ["summer"]
+    diseaseClasses: ["gray_leaf_spot", "common_rust", "tar_spot"]
+    icon: "🌽"
+    color: "#F59E0B"
+  - id: "wheat"
+    name: "Wheat"
+    scientificName: "Triticum aestivum"
+    localNames:
+      en: "Wheat"
+      es: "Trigo"
+    growingSeasons: ["winter"]
+    diseaseClasses: ["wheat_leaf_rust", "fusarium_head_blight"]
+    icon: "🌾"
+    color: "#D97706"
+diseases:
+  - id: "soybean_rust"
+    name: "Asian Soybean Rust"
+    scientificName: "Phakopsora pachyrhizi"
+    cropIds: ["soybean"]
+    symptoms:
+      - "Small tan-to-reddish pustules mostly on lower leaves"
+      - "Tiny raised bumps (uredinia) visible with a lens"
+      - "Rapid defoliation and early maturity"
+    localNames:
+      en: "Soybean Rust"
+      es: "Roya de la soja"
+    severityLevels: ["high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered fungicide (triazole + multisite mix) at first detection or per regional rust monitoring (red de monitoreo); repeat per label in high pressure."
+    preventiveMeasures:
+      - "Follow regional rust monitoring alerts"
+      - "Early sowing to escape peak pressure"
+      - "Scout lower canopy weekly from V4"
+      - "Rotate fungicide modes of action"
+    imageTags: ["soybean_rust", "phakopsora", "soybean"]
+    confidenceThreshold: 0.75
+  - id: "frogeye_leaf_spot"
+    name: "Frogeye Leaf Spot"
+    scientificName: "Cercospora sojina"
+    cropIds: ["soybean"]
+    symptoms:
+      - "Round brown spots with purple-brown margins"
+      - "Gray centers on older lesions"
+      - "Prefers warm, humid weather on young leaves"
+    localNames:
+      en: "Frogeye Leaf Spot"
+      es: "Mancha ojo de rana"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered fungicide at R3 when upper-canopy lesions are active; rotate FRAC groups (resistance reported in the region)."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Certified seed"
+      - "Rotate crops and chemistries"
+    imageTags: ["frogeye", "cercospora_sojina", "soybean"]
+    confidenceThreshold: 0.7
+  - id: "brown_spot"
+    name: "Septoria Brown Spot"
+    scientificName: "Septoria glycines"
+    cropIds: ["soybean"]
+    symptoms:
+      - "Small dark brown angular spots on lower leaves"
+      - "Yellow halos and early leaf drop"
+      - "Develops after canopy closure"
+    localNames:
+      en: "Brown Spot"
+      es: "Mancha marrón (Septoria)"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Usually cultural control is enough; a registered fungicide at R3 pays only when defoliation is moving through the mid-canopy."
+    preventiveMeasures:
+      - "Rotation"
+      - "Residue incorporation"
+      - "Better airflow"
+    imageTags: ["brown_spot", "septoria_glycines", "soybean"]
+    confidenceThreshold: 0.65
+  - id: "gray_leaf_spot"
+    name: "Gray Leaf Spot"
+    scientificName: "Cercospora zeae-maydis"
+    cropIds: ["maize"]
+    symptoms:
+      - "Rectangular gray-tan lesions parallel to veins"
+      - "Yellow halo around lesions"
+      - "Lower leaves first, rising to ear leaf"
+    localNames:
+      en: "Gray Leaf Spot"
+      es: "Mancha gris de la hoja"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered fungicide between VT–R1 when lesions reach the ear leaf; prefer tolerant hybrids and manage residue."
+    preventiveMeasures:
+      - "Tolerant hybrids"
+      - "Rotation"
+      - "Residue management"
+    imageTags: ["gray_leaf_spot", "cercospora", "maize"]
+    confidenceThreshold: 0.7
+  - id: "common_rust"
+    name: "Common Rust"
+    scientificName: "Puccinia sorghi"
+    cropIds: ["maize"]
+    symptoms:
+      - "Cinnamon-brown pustules scattered on leaves"
+      - "Powdery spores rub off easily"
+      - "Favored by mild humid nights"
+    localNames:
+      en: "Common Rust"
+      es: "Roya común"
+    severityLevels: ["low", "medium"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Usually minor; treat with a registered fungicide only if pustules are dense before silking on susceptible hybrids."
+    preventiveMeasures:
+      - "Resistant hybrids"
+      - "Timely planting"
+    imageTags: ["common_rust", "puccinia", "maize"]
+    confidenceThreshold: 0.65
+  - id: "tar_spot"
+    name: "Tar Spot"
+    scientificName: "Phyllachora maydis"
+    cropIds: ["maize"]
+    symptoms:
+      - "Small black raised stromata embedded in leaves"
+      - "Fish-eye halos later in the season"
+      - "Favored by prolonged leaf wetness"
+    localNames:
+      en: "Tar Spot"
+      es: "Mancha de alquitrán"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered fungicide at VT–R1 when stromata spread to the ear leaf; incorporate residue after harvest."
+    preventiveMeasures:
+      - "Resistant hybrids"
+      - "Residue management"
+      - "Rotation"
+    imageTags: ["tar_spot", "phyllachora", "maize"]
+    confidenceThreshold: 0.7
+  - id: "wheat_leaf_rust"
+    name: "Leaf Rust"
+    scientificName: "Puccinia triticina"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Orange-brown round pustules scattered on leaves"
+      - "Spores rub off as rust powder"
+      - "Premature leaf drying and shriveled grain"
+    localNames:
+      en: "Leaf Rust"
+      es: "Roya de la hoja"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered triazole/strobilurin at first pustules on the flag leaf or upper canopy; prefer resistant varieties."
+    preventiveMeasures:
+      - "Resistant varieties"
+      - "Avoid very early sowing"
+      - "Scout from stem extension"
+    imageTags: ["leaf_rust", "puccinia_triticina", "wheat"]
+    confidenceThreshold: 0.7
+  - id: "fusarium_head_blight"
+    name: "Fusarium Head Blight (Scab)"
+    scientificName: "Fusarium graminearum"
+    cropIds: ["wheat"]
+    symptoms:
+      - "Bleached spikelets on green heads"
+      - "Orange spore masses at glume bases"
+      - "Shriveled chalky grain with DON mycotoxin risk"
+    localNames:
+      en: "Head Blight"
+      es: "Fusariosis de la espiga"
+    severityLevels: ["medium", "high"]
+    treatmentTemplate: "For {disease} in {crop} ({region}): Apply a registered DMI fungicide at flowering when humidity risk is high; avoid maize as previous crop; segregate damaged grain at harvest."
+    preventiveMeasures:
+      - "Moderately resistant varieties"
+      - "Flowering-time fungicide per risk model"
+      - "Rotate out of maize"
+      - "Clean seed and grain handling"
+    imageTags: ["fusarium_head_blight", "scab", "wheat"]
+    confidenceThreshold: 0.75
+weatherSources:
+  - id: "open-meteo"
+    name: "Open-Meteo"
+    type: "open-meteo"
+    baseUrl: "https://api.open-meteo.com/v1"
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 10000
+    parameters:
+      models: "best_match"
+      timezone: "America/Argentina/Buenos_Aires"
+satelliteSources:
+  - id: "sentinel-2"
+    name: "Sentinel-2"
+    type: "sentinel-2"
+    baseUrl: "https://services.sentinel-hub.com"
+    apiKeyEnvVar: "SENTINEL_HUB_API_KEY"
+    bands: ["B02", "B03", "B04", "B08", "B11", "B12"]
+    resolution: 10
+    revisitDays: 5
+    cloudCoverThreshold: 30
+providers:
+  - id: "gemini-1"
+    name: "Google Gemini"
+    type: "gemini"
+    baseUrl: "https://generativelanguage.googleapis.com"
+    apiKeyEnvVar: "GEMINI_API_KEY"
+    models:
+      gemini-1.5-flash:
+        id: "gemini-1.5-flash"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 60
+      requestsPerDay: 1500
+      tokensPerMinute: 32000
+    regions: ["argentina"]
+    priority: 100
+    enabled: true
+  - id: "openrouter-1"
+    name: "OpenRouter"
+    type: "openrouter"
+    baseUrl: "https://openrouter.ai/api/v1"
+    apiKeyEnvVar: "OPENROUTER_API_KEY"
+    models:
+      google/gemini-flash-1.5:
+        id: "google/gemini-flash-1.5"
+        taskTypes: ["disease-detection", "yield-prediction", "advisory", "chat"]
+        maxTokens: 8192
+        temperature: 0.4
+        costPer1kTokens: 0.0
+    rateLimit:
+      requestsPerMinute: 20
+      requestsPerDay: 500
+    regions: ["argentina"]
+    priority: 60
+    enabled: true
+promptTemplates:
+  - id: "disease-detection-en"
+    taskType: "disease-detection"
+    language: "en"
+    systemPrompt: |
+      You are an expert plant pathologist specializing in crop diseases in Argentina.
+      Analyze the crop image and identify the disease with high accuracy.
+      Respond ONLY with valid JSON in this exact format:
+      {
+        "disease_id": "string (from provided list)",
+        "confidence": 0.0-1.0,
+        "symptoms": ["symptom1", "symptom2"],
+        "reasoning": "brief explanation of visual evidence"
+      }
+    userPromptTemplate: "Identify the disease in this {crop} image from {region}. Possible diseases: {disease_list}. Consider symptoms like leaf spots, discoloration, wilting, lesions, or pest damage."
+    outputFormat: "json"
+  - id: "advisory-es"
+    taskType: "advisory"
+    language: "es"
+    systemPrompt: |
+      Eres un agrónomo para productores de Argentina.
+      Da consejos prácticos y ajustados al manejo local (Buenas Prácticas Agrícolas).
+      Responde SOLO con JSON válido:
+      {
+        "treatment": "instrucciones de tratamiento paso a paso",
+        "preventive_measures": ["medida1", "medida2"],
+        "follow_up": "cuándo y qué revisar",
+        "safety_warnings": ["advertencia1", "advertencia2"]
+      }
+    userPromptTemplate: |
+      Da una recomendación para {disease} en {crop} ({region}).
+      Gravedad: {severity}. Idioma: {language}.
+      Síntomas: {symptoms}
+      Nombres locales: {local_names}
+    outputFormat: "json"
+modelConfig:
+  edgeModelVersion: "v1.1.0"
+  edgeModelUrl: "https://cdn.agrisense.app/models/argentina-v1.1.0.tflite"
+  edgeModelHash: "sha256:placeholder_hash_replace_with_actual"
+  inputSize: 224
+  confidenceThreshold: 0.7
+  topK: 5
+caching:
+  diseaseDetectionTtlSeconds: 3600
+  yieldPredictionTtlSeconds: 86400
+  weatherTtlSeconds: 1800
+  satelliteTtlSeconds: 43200
+metadata:
+  version: "1.0.0"
+  lastUpdated: "2026-09-27T00:00:00Z"
+  maintainer: "AgriSense Team"
+  notes: "Argentina region configuration: soybean, maize and wheat; Spanish language support."
