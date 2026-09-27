@@ -52,7 +52,17 @@ export default function HomePage() {
           <div className="animate-fade-up space-y-4">
             <span className="chip-brand"><Sparkles className="h-3 w-3" /> {t('hero_badge')}</span>
             <h1 className="font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-[2.6rem] lg:leading-[1.15]">
-              {t('hero_title_pre')} <span className="text-gradient">{region?.name ?? 'your farm'}</span>
+              {(() => {
+                const regionName = region?.name ?? 'your farm';
+                const [before, after] = t('hero_title_pre').split('{region}');
+                return (
+                  <>
+                    {before}
+                    <span className="text-gradient">{regionName}</span>
+                    {after}
+                  </>
+                );
+              })()}
             </h1>
             <p className="max-w-xl text-muted sm:text-lg">{t('hero_sub')}</p>
             <div className="flex flex-wrap gap-2.5 pt-1">

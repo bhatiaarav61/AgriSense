@@ -3,6 +3,7 @@ import { resolveCreds } from '@/lib/providers';
 import { cachedGenerate } from '@/lib/ai-pool';
 import { agronomistSystem } from '@/lib/ai-context';
 import { rateLimit, clientIp } from '@/lib/rate-limit';
+import { languageName } from '@/lib/languages';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -46,7 +47,7 @@ export async function POST(req: Request) {
   };
 
   const creds = resolveCreds(req.headers);
-  const langName = region.languages?.find((l) => l.code === body.language)?.name;
+  const langName = body.language ? languageName(String(body.language).slice(0, 8)) : undefined;
   const user = [
     `Create a practical field action plan for a farmer dealing with "${disease.name}"${crop ? ` in ${crop.name}` : ''} in ${region.name}.`,
     `Known symptoms: ${base.symptoms.join('; ') || 'n/a'}.`,

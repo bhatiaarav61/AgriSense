@@ -16,11 +16,12 @@ import {
   Settings as SettingsIcon,
   Moon,
   Sun,
+  Globe,
 } from 'lucide-react';
 import { Logo } from '@/components/Logo';
 import { useSettings } from '@/lib/store';
 import { getRegions } from '@/lib/regions';
-import { useT, isRtl } from '@/lib/i18n';
+import { useT, isRtl, ALL_LANGUAGES } from '@/lib/i18n';
 import { clsx } from 'clsx';
 
 const LINK_HREFS = [
@@ -58,6 +59,7 @@ export function Nav() {
   const regionId = useSettings((s) => s.regionId);
   const setRegion = useSettings((s) => s.setRegion);
   const language = useSettings((s) => s.language);
+  const setLanguage = useSettings((s) => s.setLanguage);
   const t = useT();
   const regions = getRegions();
 
@@ -74,7 +76,7 @@ export function Nav() {
         <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4">
           <Link href="/" className="flex items-center gap-2.5">
             <Logo className="h-9 w-9 drop-shadow-sm" />
-            <span className="font-display text-lg font-bold tracking-tight">AgriSense</span>
+            <span className="hidden font-display text-lg font-bold tracking-tight sm:inline">AgriSense</span>
           </Link>
 
           <nav className="ml-6 hidden lg:block" aria-label="Primary">
@@ -98,6 +100,26 @@ export function Nav() {
           </nav>
 
           <div className="ml-auto flex items-center gap-2">
+            {/* Language: always visible in the header so users can find their
+                regional language without hunting through Settings. Native
+                names are shown first so the list is readable before you can
+                read English. */}
+            <label className="relative" title="Language">
+              <Globe className="pointer-events-none absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted" />
+              <select
+                aria-label="Language"
+                className="input h-9 w-auto max-w-[7.75rem] truncate py-1 pl-8 pr-2 text-xs"
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+              >
+                {ALL_LANGUAGES.map((l) => (
+                  <option key={l.code} value={l.code}>
+                    {l.nativeName}
+                  </option>
+                ))}
+              </select>
+            </label>
+
             <select
               aria-label="Region"
               className="input hidden h-9 w-auto py-1 sm:block"

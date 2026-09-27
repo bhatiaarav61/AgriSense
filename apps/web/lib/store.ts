@@ -16,6 +16,7 @@ interface SettingsState {
   apiKey: string;
   ttsEnabled: boolean;
   hdVoice: boolean;
+  voice: string;
   liveIntervalMs: number;
   activeModelId: string | null;
 
@@ -27,6 +28,7 @@ interface SettingsState {
   setApiKey: (k: string) => void;
   setTts: (v: boolean) => void;
   setHdVoice: (v: boolean) => void;
+  setVoice: (v: string) => void;
   setLiveInterval: (ms: number) => void;
   setActiveModel: (id: string | null) => void;
 }
@@ -41,6 +43,7 @@ export const useSettings = create<SettingsState>()(
       apiKey: '',
       ttsEnabled: true,
       hdVoice: true,
+      voice: 'nova',
       liveIntervalMs: 1500,
       activeModelId: null,
 
@@ -52,6 +55,7 @@ export const useSettings = create<SettingsState>()(
       setApiKey: (apiKey) => set({ apiKey }),
       setTts: (ttsEnabled) => set({ ttsEnabled }),
       setHdVoice: (hdVoice) => set({ hdVoice }),
+      setVoice: (voice) => set({ voice }),
       setLiveInterval: (liveIntervalMs) => set({ liveIntervalMs }),
       setActiveModel: (activeModelId) => set({ activeModelId }),
     }),

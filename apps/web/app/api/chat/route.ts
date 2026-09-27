@@ -4,6 +4,7 @@ import { generateWithFailover } from '@/lib/ai-pool';
 import { agronomistSystem, regionKnowledge } from '@/lib/ai-context';
 import { demoChat } from '@/lib/demo';
 import { rateLimit, clientIp } from '@/lib/rate-limit';
+import { languageName } from '@/lib/languages';
 import type { ChatMessage } from '@/lib/types';
 
 export const runtime = 'nodejs';
@@ -15,6 +16,7 @@ export const dynamic = 'force-dynamic';
 interface ChatBody {
   messages?: Pick<ChatMessage, 'role' | 'content'>[];
   regionId?: string;
+  language?: string;
 }
 
 export async function POST(req: Request) {
@@ -44,8 +46,9 @@ export async function POST(req: Request) {
   const user = `${regionKnowledge(region)}\n\nConversation so far:\n${convo}\n\nReply as AgriSense to the farmer's last message. Use markdown. Be concise.`;
 
   try {
+    const userLanguage = typeof body.language === 'string' ? body.language.slice(0, 8) : undefined;
     const { text: reply, provider, model } = await generateWithFailover(creds, {
-      system: agronomistSystem(region),
+      system: agronomistSystem(region, userLanguage, userLanguage ? languageName(userLanguage) : undefined),
       user,
       temperature: 0.6,
       maxTokens: 900,

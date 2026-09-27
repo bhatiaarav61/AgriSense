@@ -9,7 +9,7 @@ import { Markdown } from './Markdown';
 import { VoiceControls } from './VoiceControls';
 import { useSettings } from '@/lib/store';
 import { getRegion } from '@/lib/regions';
-import { useT, languageName } from '@/lib/i18n';
+import { useT } from '@/lib/i18n';
 import { speak, cancelSpeech } from '@/lib/speech';
 import { clsx } from 'clsx';
 
@@ -38,7 +38,6 @@ export function ChatWindow({ initialQuery }: { initialQuery?: string }) {
   const [sending, setSending] = useState(false);
   const scroller = useRef<HTMLDivElement>(null);
   const region = getRegion(regionId);
-  const langName = languageName(language);
 
   const send = useCallback(
     async (text: string) => {
@@ -50,14 +49,14 @@ export function ChatWindow({ initialQuery }: { initialQuery?: string }) {
       setMessages(history);
       setInput('');
       setSending(true);
-      const outgoing = language !== 'en' && langName ? `${q}\n\n(Please answer in ${langName}.)` : q;
       try {
         const res = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', ...(apiKey ? { 'x-api-key': apiKey, 'x-provider': provider } : {}) },
           body: JSON.stringify({
             regionId,
-            messages: [...history.slice(0, -1), { role: 'user', content: outgoing }].map((m) => ({ role: m.role, content: m.content })),
+            language,
+            messages: history.map((m) => ({ role: m.role, content: m.content })),
           }),
         });
         const json = await res.json();
@@ -70,7 +69,7 @@ export function ChatWindow({ initialQuery }: { initialQuery?: string }) {
         setSending(false);
       }
     },
-    [messages, sending, regionId, language, langName, apiKey, provider, ttsEnabled],
+    [messages, sending, regionId, language, apiKey, provider, ttsEnabled],
   );
 
   // Seed greeting + optional deep-link query (once).
@@ -78,7 +77,7 @@ export function ChatWindow({ initialQuery }: { initialQuery?: string }) {
   useEffect(() => {
     if (started.current) return;
     started.current = true;
-    setMessages([{ id: uid(), role: 'assistant', content: `Hi! I'm your AgriSense assistant for **${region?.name ?? 'your region'}**. Ask me about crop diseases, treatments, prevention, weather or yield — by typing or the mic. 🌱`, source: 'demo' }]);
+    setMessages([{ id: uid(), role: 'assistant', content: (t('chat_greeting') || '').replace('{region}', region?.name ?? 'your region'), source: 'demo' }]);
     if (initialQuery) setTimeout(() => send(initialQuery), 50);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -90,7 +89,7 @@ export function ChatWindow({ initialQuery }: { initialQuery?: string }) {
   const showSuggestions = messages.length === 1 && !sending;
 
   return (
-    <div className="card flex h-[70vh] flex-col overflow-hidden">
+    <div className="card chat-height flex flex-col overflow-hidden">
       <div ref={scroller} className="flex-1 space-y-4 overflow-y-auto p-4">
         {messages.map((m) => (
           <div key={m.id} className={clsx('flex items-end gap-2', m.role === 'user' ? 'justify-end' : 'justify-start')}>

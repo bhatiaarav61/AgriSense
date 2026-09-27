@@ -1,10 +1,10 @@
-'use client';
-
 // UI internationalization. English is the base dictionary; other languages
 // override any subset and fall back to English per key. The app's language is
-// chosen globally (Settings or Nav), independent of region: crop/disease names,
-// chat answers, advisories and voice follow it too.
+// chosen globally (header selector or Settings): crop/disease names, chat
+// answers, advisories and voice follow it too.
 import { useSettings } from './store';
+
+export { ALL_LANGUAGES, isRtl, languageName } from './languages';
 
 export interface Dict {
   nav_home: string;
@@ -16,6 +16,7 @@ export interface Dict {
   nav_settings: string;
 
   hero_badge: string;
+  /** Title template — the literal {region} is replaced with the region name. */
   hero_title_pre: string;
   hero_sub: string;
   hero_cta1: string;
@@ -85,6 +86,7 @@ export interface Dict {
 
   chat_placeholder: string;
   chat_thinking: string;
+  chat_greeting: string;
 
   g_title: string;
   g_sub: string;
@@ -106,7 +108,7 @@ const en: Dict = {
   nav_settings: 'Settings',
 
   hero_badge: 'Free & open · works offline',
-  hero_title_pre: 'AI crop assistant for',
+  hero_title_pre: 'AI crop assistant for {region}',
   hero_sub: 'Detect diseases from a photo or live camera, chat by voice, check the weather and estimate yield — all in your browser. No sign-up, and it works with no API key.',
   hero_cta1: 'Scan a leaf',
   hero_cta2: 'Ask the assistant',
@@ -175,6 +177,7 @@ const en: Dict = {
 
   chat_placeholder: 'Ask about a disease, crop, weather…',
   chat_thinking: 'AgriSense is thinking…',
+  chat_greeting: `Hi! I'm your AgriSense assistant for **{region}**. Ask me about crop diseases, treatments, prevention, weather or yield — by typing or the mic.`,
 
   g_title: 'AI visual guide',
   g_sub: 'See what each disease typically looks like — free AI images, no key needed.',
@@ -186,12 +189,13 @@ const en: Dict = {
   region: 'Region',
 };
 
-const DICTS: Record<string, Partial<Dict>> = {
+// Hand-written, reviewed translations (quality layer).
+const HAND: Record<string, Partial<Dict>> = {
   en,
   hi: {
     nav_home: 'डैशबोर्ड', nav_detect: 'पहचान', nav_assistant: 'सहायक', nav_weather: 'मौसम', nav_yield: 'उपज', nav_models: 'मॉडल', nav_settings: 'सेटिंग्स',
     hero_badge: 'मुफ़्त और खुला · ऑफ़लाइन भी चलता है',
-    hero_title_pre: 'के लिए एआई फसल सहायक',
+    hero_title_pre: '{region} के लिए एआई फसल सहायक',
     hero_sub: 'फोटो या लाइव कैमरे से रोग पहचानें, आवाज़ से बात करें, मौसम देखें और उपज का अनुमान लगाएँ — सब आपके ब्राउज़र में। न साइन-अप, न API की।',
     hero_cta1: 'पत्ती स्कैन करें', hero_cta2: 'सहायक से पूछें',
     hero_note_free: 'मुफ़्त कीलेस एआई चल रहा है — बेहतर सटीकता के लिए सेटिंग्स में अपनी की जोड़ें।',
@@ -217,13 +221,14 @@ const DICTS: Record<string, Partial<Dict>> = {
     search: 'खोजें', my_location: 'मेरी लोकेशन', humidity: 'नमी', wind_kmh: 'किमी/घं', mm_now: 'मिमी अब', forecast7: '7-दिन का पूर्वानुमान',
     y_crop: 'फसल', y_area: 'क्षेत्र (हेक्टेयर)', y_planting: 'बुवाई तिथि', y_irrigation: 'सिंचाई', y_add_wx: 'लाइव मौसम जोड़ें', y_estimate: 'उपज का अनुमान', y_expected: 'अपेक्षित कुल', y_risks: 'जोखिम', y_recs: 'सिफ़ारिशें',
     chat_placeholder: 'रोग, फसल, मौसम के बारे में पूछें…', chat_thinking: 'AgriSense सोच रहा है…',
+    chat_greeting: 'नमस्ते! मैं **{region}** के लिए आपका AgriSense सहायक हूँ। फसल रोग, उपचार, बचाव, मौसम या उपज के बारे में पूछें — टाइप करें या बोलें।',
     g_title: 'एआई विज़ुअल गाइड', g_sub: 'देखें कि रोग कैसा दिखता है — मुफ़्त एआई चित्र, कोई की नहीं।', g_generate: 'बनाएँ', g_regenerate: 'फिर बनाएँ',
     theme: 'थीम', language: 'भाषा', region: 'क्षेत्र',
   },
   bn: {
     nav_home: 'ড্যাশবোর্ড', nav_detect: 'সনাক্ত', nav_assistant: 'সহকারী', nav_weather: 'আবহাওয়া', nav_yield: 'ফলন', nav_models: 'মডেল', nav_settings: 'সেটিংস',
     hero_badge: 'বিনামূল্যে ও উন্মুক্ত · অফলাইনেও চলে',
-    hero_title_pre: 'এর জন্য এআই ফসল সহকারী',
+    hero_title_pre: '{region}-এর জন্য এআই ফসল সহকারী',
     hero_sub: 'ছবি বা লাইভ ক্যামেরায় রোগ শনাক্ত করুন, কণ্ঠে কথা বলুন, আবহাওয়া দেখুন ও ফলন অনুমান করুন — সব আপনার ব্রাউজারেই। কোনো সাইন-আপ বা API কী লাগে না।',
     hero_cta1: 'পাতা স্ক্যান করুন', hero_cta2: 'সহকারীকে জিজ্ঞাসা করুন',
     hero_note_free: 'বিনামূল্যে কী-ছাড়া এআই চলছে — আরও নির্ভুলতার জন্য সেটিংসে নিজের কী যোগ করুন।',
@@ -237,6 +242,7 @@ const DICTS: Record<string, Partial<Dict>> = {
     detect_title: 'ফসলের রোগ শনাক্ত করুন',
     assistant_title: 'ভয়েস সহকারী', weather_title: 'আবহাওয়া', yield_title: 'ফলন অনুমান', models_title: 'আপনার মডেল', settings_title: 'সেটিংস',
     chat_placeholder: 'রোগ, ফসল বা আবহাওয়া সম্পর্কে জিজ্ঞাসা করুন…', chat_thinking: 'AgriSense ভাবছে…',
+    chat_greeting: 'হ্যালো! আমি **{region}**-এর জন্য আপনার AgriSense সহকারী। ফসলের রোগ, চিকিৎসা, প্রতিরোধ, আবহাওয়া বা ফলন নিয়ে জিজ্ঞাসা করুন।',
     g_title: 'এআই ভিজ্যুয়াল গাইড', g_generate: 'তৈরি করুন', g_regenerate: 'আবার তৈরি করুন',
     theme: 'থিম', language: 'ভাষা', region: 'অঞ্চল',
     y_crop: 'ফসল', y_estimate: 'ফলন অনুমান করুন', y_risks: 'ঝুঁকি', y_recs: 'সুপারিশ',
@@ -244,7 +250,7 @@ const DICTS: Record<string, Partial<Dict>> = {
   ur: {
     nav_home: 'ڈیش بورڈ', nav_detect: 'تشخیص', nav_assistant: 'معاون', nav_weather: 'موسم', nav_yield: 'پیداوار', nav_models: 'ماڈلز', nav_settings: 'ترتیبات',
     hero_badge: 'مفت اور آزاد · آف لائن بھی چلتا ہے',
-    hero_title_pre: 'کے لیے اے آئی فصل معاون',
+    hero_title_pre: '{region} کے لیے اے آئی فصل معاون',
     hero_sub: 'تصویر یا لائیو کیمرے سے بیماری پہچانیں، آواز سے بات کریں، موسم دیکھیں اور پیداوار کا اندازہ لگائیں — سب آپ کے براؤزر میں۔ نہ سائن اپ، نہ API کی۔',
     hero_cta1: 'پتہ اسکین کریں', hero_cta2: 'معاون سے پوچھیں',
     hero_note_free: 'مفت کی لیس اے آئی چل رہا ہے — بہتر درستگی کے لیے ترتیبات میں اپنی کلید شامل کریں۔',
@@ -258,6 +264,7 @@ const DICTS: Record<string, Partial<Dict>> = {
     detect_title: 'فصل کی بیماری کی تشخیص',
     assistant_title: 'صوتی معاون', weather_title: 'موسم', yield_title: 'پیداوار کا اندازہ', models_title: 'آپ کے ماڈلز', settings_title: 'ترتیبات',
     chat_placeholder: 'بیماری، فصل یا موسم کے بارے میں پوچھیں…', chat_thinking: 'AgriSense سوچ رہا ہے…',
+    chat_greeting: 'خوش آمدید! میں **{region}** کے لیے آپ کا AgriSense معاون ہوں۔ فصل کی بیماریاں، علاج، بچاؤ، موسم یا پیداوار کے بارے میں پوچھیں۔',
     g_title: 'اے آئی بصری رہنما', g_generate: 'بنائیں', g_regenerate: 'دوبارہ بنائیں',
     theme: 'تھیم', language: 'زبان', region: 'علاقہ',
     y_crop: 'فصل', y_estimate: 'پیداوار کا اندازہ', y_risks: 'خطرات', y_recs: 'سفارشات',
@@ -265,7 +272,7 @@ const DICTS: Record<string, Partial<Dict>> = {
   sw: {
     nav_home: 'Dashibodi', nav_detect: 'Gundua', nav_assistant: 'Msaidizi', nav_weather: 'Hali ya hewa', nav_yield: 'Mavuno', nav_models: 'Mifano', nav_settings: 'Mipangilio',
     hero_badge: 'Bure na wazi · hufanya kazi nje ya mtandao',
-    hero_title_pre: 'Msaidizi wa kilimo wa AI kwa',
+    hero_title_pre: 'Msaidizi wa kilimo wa AI kwa {region}',
     hero_sub: 'Gundua magonjwa kwa picha au kamera ya moja kwa moja, Wasiliana kwa sauti, angalia hali ya hewa na kadiria mavuno — yote kwenye kivinjari chako. Hakuna kujisajili wala funguo ya API.',
     hero_cta1: 'Chora jani', hero_cta2: 'Uliza msaidizi',
     hero_note_free: 'Inatumia AI ya bure bila funguo — ongeza funguo yako kwenye Mipangilio kwa usahihi zaidi.',
@@ -279,6 +286,7 @@ const DICTS: Record<string, Partial<Dict>> = {
     detect_title: 'Gundua magonjwa ya mazao',
     assistant_title: 'Msaidizi wa sauti', weather_title: 'Hali ya hewa', yield_title: 'Kikadiriaji cha mavuno', models_title: 'Mifano yako', settings_title: 'Mipangilio',
     chat_placeholder: 'Uliza kuhusu ugonjwa, zao, hali ya hewa…', chat_thinking: 'AgriSense inafikiri…',
+    chat_greeting: 'Habari! Mimi ni msaidizi wako wa kilimo wa AgriSense kwa **{region}**. Niulize kuhusu magonjwa ya mazao, matibabu, kinga, hali ya hewa au mavuno.',
     g_title: 'Mwongozo wa picha wa AI', g_generate: 'Tengeneza', g_regenerate: 'Tengeneza upya',
     theme: 'Mandhari', language: 'Lugha', region: 'Mkoa',
     y_crop: 'Zao', y_estimate: 'Kadiria mavuno', y_risks: 'Hatari', y_recs: 'Mapendekezo',
@@ -286,7 +294,7 @@ const DICTS: Record<string, Partial<Dict>> = {
   pt: {
     nav_home: 'Painel', nav_detect: 'Detectar', nav_assistant: 'Assistente', nav_weather: 'Clima', nav_yield: 'Colheita', nav_models: 'Modelos', nav_settings: 'Ajustes',
     hero_badge: 'Grátis e aberto · funciona offline',
-    hero_title_pre: 'Assistente de cultivo com IA para',
+    hero_title_pre: 'Assistente de cultivo com IA para {region}',
     hero_sub: 'Detecte doenças por foto ou câmera ao vivo, converse por voz, veja o clima e estime a colheita — tudo no seu navegador. Sem cadastro e sem chave de API.',
     hero_cta1: 'Escanear uma folha', hero_cta2: 'Perguntar ao assistente',
     hero_note_free: 'Usando IA gratuita sem chave — adicione sua chave nos Ajustes para mais precisão.',
@@ -300,6 +308,7 @@ const DICTS: Record<string, Partial<Dict>> = {
     detect_title: 'Detectar doenças na plantação',
     assistant_title: 'Assistente de voz', weather_title: 'Clima', yield_title: 'Estimativa de colheita', models_title: 'Seus modelos', settings_title: 'Ajustes',
     chat_placeholder: 'Pergunte sobre doenças, culturas, clima…', chat_thinking: 'AgriSense está pensando…',
+    chat_greeting: 'Olá! Sou o seu assistente AgriSense para **{region}**. Pergunte sobre doenças de plantas, tratamentos, prevenção, clima ou colheita.',
     g_title: 'Guia visual com IA', g_generate: 'Gerar', g_regenerate: 'Regerar',
     theme: 'Tema', language: 'Idioma', region: 'Região',
     y_crop: 'Cultura', y_estimate: 'Estimar colheita', y_risks: 'Riscos', y_recs: 'Recomendações',
@@ -307,7 +316,7 @@ const DICTS: Record<string, Partial<Dict>> = {
   es: {
     nav_home: 'Panel', nav_detect: 'Detectar', nav_assistant: 'Asistente', nav_weather: 'Clima', nav_yield: 'Cosecha', nav_models: 'Modelos', nav_settings: 'Ajustes',
     hero_badge: 'Gratis y abierto · funciona sin conexión',
-    hero_title_pre: 'Asistente de cultivo con IA para',
+    hero_title_pre: 'Asistente de cultivo con IA para {region}',
     hero_sub: 'Detecta enfermedades con una foto o la cámara, consulta por voz, mira el clima y estima la cosecha — todo en tu navegador. Sin registro ni clave de API.',
     hero_cta1: 'Escanear una hoja', hero_cta2: 'Preguntar al asistente',
     hero_note_free: 'Usando IA gratuita sin clave — añade tu clave en Ajustes para más precisión.',
@@ -321,6 +330,7 @@ const DICTS: Record<string, Partial<Dict>> = {
     detect_title: 'Detectar enfermedades del cultivo',
     assistant_title: 'Asistente de voz', weather_title: 'Clima', yield_title: 'Estimador de cosecha', models_title: 'Tus modelos', settings_title: 'Ajustes',
     chat_placeholder: 'Pregunta sobre enfermedades, cultivos, clima…', chat_thinking: 'AgriSense está pensando…',
+    chat_greeting: '¡Hola! Soy tu asistente AgriSense para **{region}**. Pregunta sobre enfermedades de las plantas, tratamientos, prevención, clima o cosecha.',
     g_title: 'Guía visual con IA', g_generate: 'Generar', g_regenerate: 'Regenerar',
     theme: 'Tema', language: 'Idioma', region: 'Región',
     y_crop: 'Cultivo', y_estimate: 'Estimar cosecha', y_risks: 'Riesgos', y_recs: 'Recomendaciones',
@@ -328,7 +338,7 @@ const DICTS: Record<string, Partial<Dict>> = {
   fr: {
     nav_home: 'Tableau de bord', nav_detect: 'Détecter', nav_assistant: 'Assistant', nav_weather: 'Météo', nav_yield: 'Rendement', nav_models: 'Modèles', nav_settings: 'Réglages',
     hero_badge: 'Gratuit et ouvert · fonctionne hors ligne',
-    hero_title_pre: 'Assistant cultural IA pour',
+    hero_title_pre: 'Assistant cultural IA pour {region}',
     hero_sub: 'Détectez les maladies par photo ou caméra, discutez en voix, consultez la météo et estimez le rendement — tout dans votre navigateur. Sans inscription ni clé API.',
     hero_cta1: 'Scanner une feuille', hero_cta2: 'Demander à l’assistant',
     hero_note_free: 'IA gratuite sans clé — ajoutez votre clé dans les Réglages pour plus de précision.',
@@ -342,6 +352,7 @@ const DICTS: Record<string, Partial<Dict>> = {
     detect_title: 'Détecter les maladies des cultures',
     assistant_title: 'Assistant vocal', weather_title: 'Météo', yield_title: 'Estimateur de rendement', models_title: 'Vos modèles', settings_title: 'Réglages',
     chat_placeholder: 'Posez une question sur une maladie, une culture…', chat_thinking: 'AgriSense réfléchit…',
+    chat_greeting: 'Bonjour ! Je suis votre assistant AgriSense pour **{region}**. Posez vos questions sur les maladies des cultures, les traitements, la prévention, la météo ou le rendement.',
     g_title: 'Guide visuel IA', g_generate: 'Générer', g_regenerate: 'Régénérer',
     theme: 'Thème', language: 'Langue', region: 'Région',
     y_crop: 'Culture', y_estimate: 'Estimer le rendement', y_risks: 'Risques', y_recs: 'Recommandations',
@@ -349,7 +360,7 @@ const DICTS: Record<string, Partial<Dict>> = {
   de: {
     nav_home: 'Übersicht', nav_detect: 'Erkennen', nav_assistant: 'Assistent', nav_weather: 'Wetter', nav_yield: 'Ertrag', nav_models: 'Modelle', nav_settings: 'Einstellungen',
     hero_badge: 'Kostenlos & offen · funktioniert offline',
-    hero_title_pre: 'KI-Pflanzenassistent für',
+    hero_title_pre: 'KI-Pflanzenassistent für {region}',
     hero_sub: 'Erkenne Krankheiten per Foto oder Kamera, sprich per Sprache, prüfe das Wetter und schätze den Ertrag — alles im Browser. Ohne Anmeldung und ohne API-Schlüssel.',
     hero_cta1: 'Blatt scannen', hero_cta2: 'Assistenten fragen',
     hero_note_free: 'Kostenlose KI ohne Schlüssel — füge in den Einstellungen deinen Schlüssel für mehr Genauigkeit hinzu.',
@@ -363,6 +374,7 @@ const DICTS: Record<string, Partial<Dict>> = {
     detect_title: 'Pflanzenkrankheiten erkennen',
     assistant_title: 'Sprachassistent', weather_title: 'Wetter', yield_title: 'Ertragsschätzer', models_title: 'Deine Modelle', settings_title: 'Einstellungen',
     chat_placeholder: 'Frag zu Krankheiten, Kulturen, Wetter…', chat_thinking: 'AgriSense denkt nach…',
+    chat_greeting: 'Hallo! Ich bin dein AgriSense-Assistent für **{region}**. Frag mich zu Pflanzenkrankheiten, Behandlung, Vorbeugung, Wetter oder Ertrag.',
     g_title: 'KI-Bildführer', g_generate: 'Erzeugen', g_regenerate: 'Neu erzeugen',
     theme: 'Design', language: 'Sprache', region: 'Region',
     y_crop: 'Kultur', y_estimate: 'Ertrag schätzen', y_risks: 'Risiken', y_recs: 'Empfehlungen',
@@ -370,7 +382,7 @@ const DICTS: Record<string, Partial<Dict>> = {
   fil: {
     nav_home: 'Dashboard', nav_detect: 'Tuklasin', nav_assistant: 'Katulong', nav_weather: 'Panahon', nav_yield: 'Ani', nav_models: 'Mga Modelo', nav_settings: 'Mga Setting',
     hero_badge: 'Libre at bukas · gumagana offline',
-    hero_title_pre: 'AI na katulong sa pananim para sa',
+    hero_title_pre: 'AI na katulong sa pananim para sa {region}',
     hero_sub: 'Tuklasin ang sakit sa pamamagitan ng larawan o camera, magtanong gamit ang boses, tingnan ang panahon at tantiyahin ang ani — lahat sa browser mo. Walang sign-up at API key.',
     hero_cta1: 'I-scan ang dahon', hero_cta2: 'Tanungin ang katulong',
     hero_note_free: 'Gumagamit ng libreng AI na walang key — magdagdag ng sariling key sa Settings para mas tumpak.',
@@ -384,6 +396,7 @@ const DICTS: Record<string, Partial<Dict>> = {
     detect_title: 'Tuklasin ang sakit ng pananim',
     assistant_title: 'Voice assistant', weather_title: 'Panahon', yield_title: 'Tagatantiya ng ani', models_title: 'Mga modelo mo', settings_title: 'Mga Setting',
     chat_placeholder: 'Magtanong tungkol sa sakit, pananim, panahon…', chat_thinking: 'Nag-iisip si AgriSense…',
+    chat_greeting: 'Kumusta! Ako ang AgriSense katulong mo para sa **{region}**. Magtanong tungkol sa sakit ng pananim, gamutan, pag-iwas, panahon o ani.',
     g_title: 'AI na gabay na biswal', g_generate: 'Gumawa', g_regenerate: 'Gumawa muli',
     theme: 'Tema', language: 'Wika', region: 'Rehiyon',
     y_crop: 'Pananim', y_estimate: 'Tantiyahin ang ani', y_risks: 'Mga panganib', y_recs: 'Mga rekomendasyon',
@@ -391,7 +404,7 @@ const DICTS: Record<string, Partial<Dict>> = {
   am: {
     nav_home: 'ዳሽቦርድ', nav_detect: 'መለየት', nav_assistant: 'ረዳት', nav_weather: 'አየር ሁኔታ', nav_yield: 'ምርት', nav_models: 'ሞዴሎች', nav_settings: 'ቅንብሮች',
     hero_badge: 'ነጻ እና ክፍት · ከመስመር ውጭም ይሠራል',
-    hero_title_pre: 'ለ አአ የሰብል እርዳታ',
+    hero_title_pre: 'ለ{region} የአአ የሰብል እርዳታ',
     hero_sub: 'በፎቶ ወይም በካሜራ በሽታዎችን ይለዩ፣ በድምፅ ይጠይቁ፣ አየር ሁኔታን ይመልከቱ እና ምርትን ይገምግሙ — ሁሉም በአሳሽዎ ውስጥ። ምንም ምዝገባ ወይም API ቁልፍ አያስፈልግም።',
     hero_cta1: 'ቅጠል ይቃኙ', hero_cta2: 'ረዳቱን ይጠይቁ',
     hero_note_free: 'ነጻ የሆነ ቁልፍ የሌለው አአ እየሠራ ነው — ትክክለኛነትን ለመጨመር በቅንብሮች ውስጥ የራስዎን ቁልፍ ያክሉ።',
@@ -405,47 +418,25 @@ const DICTS: Record<string, Partial<Dict>> = {
     detect_title: 'የሰብል በሽታ መለየት',
     assistant_title: 'የድምፅ ረዳት', weather_title: 'አየር ሁኔታ', yield_title: 'የምርት ግምተኛ', models_title: 'የእርስዎ ሞዴሎች', settings_title: 'ቅንብሮች',
     chat_placeholder: 'ስለ በሽታ፣ ሰብል ወይም አየር ሁኔታ ይጠይቁ…', chat_thinking: 'AgriSense እያሰበ ነው…',
+    chat_greeting: 'ሰላም! ለ**{region}** የAgriSense ረዳትዎ ነኝ። ስለ ሰብል በሽታዎች፣ ሕክምና፣ መከላከያ፣ አየር ሁኔታ ወይም ምርት ይጠይቁ።',
     g_title: 'የአአ ምስላዊ መመሪያ', g_generate: 'ፍጠር', g_regenerate: 'እንደገና ፍጠር',
     theme: 'ገጽታ', language: 'ቋንቋ', region: 'ክልል',
     y_crop: 'ሰብል', y_estimate: 'ምርትን ገምግም', y_risks: 'ስጋቶች', y_recs: 'ምክሮች',
   },
 };
 
-/** All languages offered for the UI + voice (union of region languages). */
-export const ALL_LANGUAGES: { code: string; name: string; nativeName: string }[] = [
-  { code: 'en', name: 'English', nativeName: 'English' },
-  { code: 'es', name: 'Spanish', nativeName: 'Español' },
-  { code: 'fr', name: 'French', nativeName: 'Français' },
-  { code: 'de', name: 'German', nativeName: 'Deutsch' },
-  { code: 'pt', name: 'Portuguese', nativeName: 'Português' },
-  { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी' },
-  { code: 'bn', name: 'Bengali', nativeName: 'বাংলা' },
-  { code: 'ur', name: 'Urdu', nativeName: 'اردو' },
-  { code: 'sw', name: 'Swahili', nativeName: 'Kiswahili' },
-  { code: 'fil', name: 'Filipino', nativeName: 'Filipino' },
-  { code: 'am', name: 'Amharic', nativeName: 'አማርኛ' },
-  { code: 'ta', name: 'Tamil', nativeName: 'தமிழ்' },
-  { code: 'te', name: 'Telugu', nativeName: 'తెలుగు' },
-  { code: 'mr', name: 'Marathi', nativeName: 'मराठी' },
-  { code: 'gu', name: 'Gujarati', nativeName: 'ગુજરાતી' },
-  { code: 'kn', name: 'Kannada', nativeName: 'ಕನ್ನಡ' },
-  { code: 'ml', name: 'Malayalam', nativeName: 'മലയാളം' },
-  { code: 'pa', name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ' },
-  { code: 'sd', name: 'Sindhi', nativeName: 'سنڌي' },
-  { code: 'tw', name: 'Twi', nativeName: 'Twi' },
-  { code: 'ee', name: 'Ewe', nativeName: 'Eʋegbe' },
-  { code: 'ha', name: 'Hausa', nativeName: 'Hausa' },
-  { code: 'yo', name: 'Yoruba', nativeName: 'Yorùbá' },
-  { code: 'ig', name: 'Igbo', nativeName: 'Igbo' },
-  { code: 'om', name: 'Oromo', nativeName: 'Afaan Oromoo' },
-  { code: 'ceb', name: 'Cebuano', nativeName: 'Cebuano' },
-];
+// AI-translated core strings for the remaining languages
+// (data/ui-i18n.generated.json — regenerate with scripts/translate-ui.mjs).
+// Hand-written dictionaries above always win on conflicting keys.
+import generated from '../data/ui-i18n.generated.json';
+const GENERATED = (generated ?? {}) as Record<string, Partial<Dict>>;
 
-const RTL = new Set(['ur', 'sd', 'fa', 'ar', 'he']);
-
-/** True when the language code is right-to-left (affects document direction). */
-export function isRtl(lang: string): boolean {
-  return RTL.has(lang);
+const DICTS: Record<string, Partial<Dict>> = { en };
+{
+  const codes = new Set([...Object.keys(GENERATED), ...Object.keys(HAND)]);
+  for (const code of codes) {
+    DICTS[code] = { ...(GENERATED[code] ?? {}), ...(HAND[code] ?? {}) };
+  }
 }
 
 /** React hook: translate a key in the user's chosen language (English fallback). */
@@ -457,10 +448,4 @@ export function useT() {
 /** Non-hook translation (for plain module contexts). */
 export function tFor(language: string) {
   return (key: keyof Dict): string => DICTS[language]?.[key] ?? en[key];
-}
-
-/** Display name of a language code (native name preferred). */
-export function languageName(code: string): string {
-  const l = ALL_LANGUAGES.find((x) => x.code === code);
-  return l?.nativeName ?? l?.name ?? code;
 }

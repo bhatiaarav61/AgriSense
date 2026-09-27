@@ -3,15 +3,24 @@
 // /api/advisory and /api/yield route handlers.
 import type { Region } from './types';
 
-/** System prompt establishing the assistant's role, scope and safety posture. */
-export function agronomistSystem(region: Region): string {
+/** System prompt establishing the assistant's role, scope and safety posture.
+ *  `language` (a language code from lib/languages) makes the model reply in the
+ *  farmer's chosen language — placed in the system prompt because models honor
+ *  it far more reliably than a line appended to the user's message. */
+export function agronomistSystem(region: Region, language?: string, languageDisplayName?: string): string {
+  const langRule = language
+    ? `LANGUAGE RULE (highest priority): Write your ENTIRE reply in ${languageDisplayName ?? language}${language !== 'en' ? ', not in English' : ''}. Translate disease and input names into ${languageDisplayName ?? language} where a common word exists, keeping internationally recognized chemical names as-is. Simple, respectful, spoken-style sentences a farmer can read aloud.`
+    : '';
   return [
     `You are AgriSense, a practical, friendly agronomy assistant for farmers in ${region.name}.`,
     'Give concise, actionable advice on crop diseases, symptoms, treatment (organic first, then chemical with rates), prevention, weather and yield.',
     'Prefer locally available, affordable inputs. Use simple language a smallholder farmer can follow.',
     'Always add a short safety note reminding the user to confirm chemical dosages and restricted products with a local agricultural extension officer.',
     'If asked something outside agriculture, briefly redirect to farming topics. Never invent chemical dosages you are unsure about.',
-  ].join(' ');
+    langRule,
+  ]
+    .filter(Boolean)
+    .join(' ');
 }
 
 /** Compact, token-efficient dump of the region's crops + diseases for grounding. */

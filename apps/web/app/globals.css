@@ -166,6 +166,11 @@ h3 {
   .tabbar-safe {
     padding-bottom: env(safe-area-inset-bottom);
   }
+  /* Chat panel height that survives mobile browser toolbars (svh with vh fallback). */
+  .chat-height {
+    height: 70vh;
+    height: 70svh;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

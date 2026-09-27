@@ -100,6 +100,19 @@ export default function SettingsPage() {
           </div>
           <button className={`btn h-8 px-3 ${s.hdVoice !== false ? 'btn-soft' : 'btn-ghost'}`} onClick={() => s.setHdVoice(!(s.hdVoice !== false))}>{s.hdVoice !== false ? 'On' : 'Off'}</button>
         </div>
+        {s.hdVoice !== false && (
+          <div className="flex items-center justify-between">
+            <span className="text-sm">Voice</span>
+            <select className="input h-8 w-auto py-1 text-xs capitalize" value={s.voice || 'nova'} onChange={(e) => s.setVoice(e.target.value)}>
+              <option value="nova">Nova · clear female</option>
+              <option value="shimmer">Shimmer · warm female</option>
+              <option value="coral">Coral · lively female</option>
+              <option value="alloy">Alloy · balanced</option>
+              <option value="echo">Echo · calm male</option>
+              <option value="onyx">Onyx · deep male</option>
+            </select>
+          </div>
+        )}
         <label className="block">
           <span className="label">Live scan interval: {s.liveIntervalMs} ms</span>
           <input type="range" min={800} max={4000} step={100} value={s.liveIntervalMs} onChange={(e) => s.setLiveInterval(+e.target.value)} className="w-full accent-[rgb(var(--brand))]" />
